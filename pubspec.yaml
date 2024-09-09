@@ -52,7 +52,8 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   #Local storage for state persistence
   shared_preferences: ^2.3.2
-
+  #Recommended lints for Flutter apps, packages, and plugins to encourage good coding practices
+  flutter_lints: ^4.0.0
   #environment configuration
   flutter_dotenv: ^5.1.0
   # for splash screen
