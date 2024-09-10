@@ -45,9 +45,9 @@ dependencies:
   # powerful HTTP networking package for dealing with api
   dio: ^5.7.0
   # a dio client generator
-  retrofit: ^4.3.0
+  retrofit: ^4.4.1
   # retrofit generator
-  retrofit_generator: ^9.0.0
+  retrofit_generator: ^9.1.1
   # Pretty Dio logger is a Dio interceptor that logs network calls in a pretty
   pretty_dio_logger: ^1.4.0
   #Local storage for state persistence
