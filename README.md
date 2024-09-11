@@ -26,7 +26,7 @@ The Silk Road is an AI-driven mobile application designed to guide developers an
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yshedid/SilkRoad-MarcoPolo
+git clone https://github.com/SilckRoad-MarcoPolo/mobile_development.git
 ```
 ### Install Dependencies
 ```bash
