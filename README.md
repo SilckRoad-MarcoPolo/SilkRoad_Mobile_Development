@@ -1,14 +1,17 @@
 # Silk Road
 
+
+
+## About
+The Silk Road is an AI-driven mobile application designed to guide developers and software engineers through personalised learning paths. The app uses machine learning to assess user skills and preferences, generating tailored roadmaps that lead to mastery in specific tracks. It also features a robust community, gamification, and specialised content for students.
+![App Screens](assets/images/readme_img.jpeg)
+
 ## Table of Contents
 - [About](#about)
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Features](#features)
 - [Developers](#developers)
-
-## About
-The Silk Road is an AI-driven mobile application designed to guide developers and software engineers through personalised learning paths. The app uses machine learning to assess user skills and preferences, generating tailored roadmaps that lead to mastery in specific tracks. It also features a robust community, gamification, and specialised content for students.
 
 ## Technologies
 - Flutter
