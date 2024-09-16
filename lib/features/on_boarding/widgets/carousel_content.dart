@@ -5,9 +5,13 @@ import '../../../core/helpers/screen_utils.dart';
 
 class CarouselContent extends StatelessWidget {
   final int index;
+  final List<Widget> images;
+  final List<Widget> backgroundImages;
   const CarouselContent({
     required this.index,
     super.key,
+    required this.images,
+    required this.backgroundImages,
   });
 
   @override
@@ -15,17 +19,18 @@ class CarouselContent extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        (Stack(
-          alignment: AlignmentDirectional.bottomCenter,
-          children: [
-            Image.asset(
-              onboardingImagesBackground[index],
-              height: (397.5 / 932) * ScreenUtils.screenHeight(context),
-              width: ScreenUtils.screenWidth(context),
-            ),
-            Image.asset(onboardingImages[index]),
-          ],
-        )),
+        SizedBox(
+          height: (447.67 / 932) * ScreenUtils.screenHeight(context),
+          child: (Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              backgroundImages[index],
+              Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: images[index]),
+            ],
+          )),
+        ),
         SizedBox(
           height: (32 / 930) * ScreenUtils.screenHeight(context),
         ),

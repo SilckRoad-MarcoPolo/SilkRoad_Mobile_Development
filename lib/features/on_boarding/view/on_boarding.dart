@@ -4,6 +4,7 @@ import 'package:silk_road/core/helpers/screen_utils.dart';
 import '../widgets/build_indicator.dart';
 import '../widgets/carousel_content.dart';
 import '../widgets/circular_indicator_button.dart';
+import '../widgets/image_provider.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
@@ -40,6 +41,9 @@ class _OnBoardingState extends State<OnBoarding> {
             itemBuilder: (BuildContext context, int index, int realIndex) {
               return CarouselContent(
                 index: index,
+                images: OnboardingImageProvider.getImages(context),
+                backgroundImages:
+                    OnboardingImageProvider.getBackgroundImages(context),
               );
             },
           ),
