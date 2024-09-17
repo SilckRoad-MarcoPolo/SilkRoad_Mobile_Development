@@ -14,7 +14,7 @@ class CustomButton extends StatelessWidget {
       child: Container(
       height: (44 / 932) * ScreenUtils.screenHeight(context),
        
-         width: (398 / 414) * ScreenUtils.screenWidth(context),
+         width: (498 / 414) * ScreenUtils.screenWidth(context),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           color: Colors.black,
