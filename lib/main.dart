@@ -9,7 +9,6 @@ import 'package:silk_road/features/reset_password/view/new_password.dart';
 
 import 'features/reset_password/view/otp_verification.dart';
 
-
 void main() {
   runApp(const SilkRoad());
 }
@@ -19,20 +18,13 @@ class SilkRoad extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      theme: ThemeData(
-  
- 
-    // fontFamily:'Rubik'
-    
-     
-    
-    
-  ),
+    return MaterialApp(
+        theme: ThemeData(
 
-      debugShowCheckedModeBanner: false,
+            // fontFamily:'Rubik'
 
-      home:RegisterPage()
-    );
+            ),
+        debugShowCheckedModeBanner: false,
+        home: const OnBoarding());
   }
 }

@@ -7,6 +7,7 @@ import 'package:silk_road/core/shared_components/google_button.dart';
 import '../../../core/helpers/screen_utils.dart';
 import '../../../core/shared_components/widgets/password_reset_text.dart';
 import '../../../core/shared_components/widgets/shared_buttons.dart';
+import '../../register/view/register_page.dart';
 
 class NewPassword extends StatelessWidget {
   const NewPassword({super.key});
@@ -24,7 +25,9 @@ class NewPassword extends StatelessWidget {
               SizedBox(
                 height: (60 / 932) * ScreenUtils.screenHeight(context),
               ),
-              const ArrowBackButton(),
+              ArrowBackButton(onTap: () {
+                Navigator.pop(context);
+              }),
               PasswordResetText(
                   title: "New Password",
                   description: "your new password must be different  \n"
@@ -101,21 +104,28 @@ class NewPassword extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Don't have an account?",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: (16/932) * ScreenUtils.screenHeight(context)
-                          ),
+                          Text(
+                            "Don't have an account?",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: (16 / 932) *
+                                    ScreenUtils.screenHeight(context)),
                           ),
                           TextButton(
                             child: Text(
-                              "Sign in",
+                              "Sign up",
                               style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: (16/932) * ScreenUtils.screenHeight(context)
-                              ),
+                                  fontSize: (16 / 932) *
+                                      ScreenUtils.screenHeight(context)),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const RegisterPage()));
+                            },
                           )
                         ],
                       )

@@ -3,6 +3,7 @@ import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/custom_button.dart';
 import 'package:silk_road/core/shared_components/custom_text_field.dart';
 import 'package:silk_road/core/shared_components/google_button.dart';
+import 'package:silk_road/features/login/view/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -112,7 +113,12 @@ class _RegisterPageState extends State<RegisterPage> {
                             style: TextStyle(color: Colors.grey, fontSize: 16),
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const LoginPage()));
+                            },
                             child: Text(
                               ' Sign in',
                               style: TextStyle(

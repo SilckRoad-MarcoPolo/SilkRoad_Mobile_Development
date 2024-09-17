@@ -5,12 +5,8 @@ class PasswordResetText extends StatelessWidget {
   String title;
   String description;
   String? logo;
-   PasswordResetText({
-    super.key,
-     required this.title,
-     required this.description,
-     this.logo
-  });
+  PasswordResetText(
+      {super.key, required this.title, required this.description, this.logo});
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +25,12 @@ class PasswordResetText extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     color: Colors.black),
               ),
-              logo == null ? const Text(""): Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Image.asset(logo!),
-              )
+              logo == null
+                  ? const Text("")
+                  : Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Image.asset(logo!),
+                    )
             ],
           ),
           Text(

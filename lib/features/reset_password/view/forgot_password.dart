@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/widgets/password_reset_text.dart';
+import 'package:silk_road/features/reset_password/view/otp_verification.dart';
 
 import '../../../core/shared_components/custom_button.dart';
 import '../../../core/shared_components/custom_text_field.dart';
@@ -24,7 +25,11 @@ class ForgotPassword extends StatelessWidget {
                 ),
                 Positioned(
                   top: (60 / 932) * ScreenUtils.screenHeight(context),
-                  child: const ArrowBackButton(),
+                  child: ArrowBackButton(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
                 ),
                 Positioned(
                   bottom: 0,
@@ -52,20 +57,26 @@ class ForgotPassword extends StatelessWidget {
             height: (32 / 932) * ScreenUtils.screenHeight(context),
           ),
           Padding(
-            padding:  EdgeInsets.symmetric(horizontal: (16/432) * ScreenUtils.screenWidth(context)),
+            padding: EdgeInsets.symmetric(
+                horizontal: (16 / 432) * ScreenUtils.screenWidth(context)),
             child: CustomTextFormField(
               hintText: 'Email',
             ),
-
           ),
           SizedBox(
             height: (115 / 932) * ScreenUtils.screenHeight(context),
           ),
-          CustomButton(text: "Send",onTap: (){},),
+          CustomButton(
+            text: "Send",
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const OtpVerification()));
+            },
+          ),
         ],
       ),
     );
   }
 }
-
-

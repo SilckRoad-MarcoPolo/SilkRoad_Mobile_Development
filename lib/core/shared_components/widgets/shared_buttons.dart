@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ArrowBackButton extends StatelessWidget {
-  const ArrowBackButton({
-    super.key,
-  });
+  VoidCallback onTap;
+  ArrowBackButton({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-        onPressed: () {}, icon: const Icon(Icons.arrow_back_ios));
+    return IconButton(onPressed: onTap, icon: const Icon(Icons.arrow_back_ios));
   }
 }

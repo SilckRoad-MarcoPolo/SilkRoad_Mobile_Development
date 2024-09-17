@@ -14,8 +14,7 @@ class GoogleButton extends StatelessWidget {
         width: (398 / 414) * ScreenUtils.screenWidth(context),
         decoration: BoxDecoration(
           border: Border.all(
-            color: Colors.black, 
-         
+            color: Colors.black,
           ),
           borderRadius: BorderRadius.circular(15),
           color: Colors.white,
@@ -23,7 +22,8 @@ class GoogleButton extends StatelessWidget {
         child: Row(
           children: [
             Padding(
-              padding:  EdgeInsets.only(left:(16 / 414) * ScreenUtils.screenWidth(context) ),
+              padding: EdgeInsets.only(
+                  left: (16 / 414) * ScreenUtils.screenWidth(context)),
               child: Image.asset(
                 'assets/images/google_icon/download.png',
                 height: 24,

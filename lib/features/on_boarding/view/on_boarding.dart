@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/features/login/view/login_page.dart';
 import '../widgets/build_indicator.dart';
 import '../widgets/carousel_content.dart';
 import '../widgets/circular_indicator_button.dart';
@@ -60,7 +61,10 @@ class _OnBoardingState extends State<OnBoarding> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
+                  },
                   child: Text(
                     "Skip",
                     style: TextStyle(
@@ -73,10 +77,8 @@ class _OnBoardingState extends State<OnBoarding> {
                 CircularIndicatorButton(
                   onNext: () {
                     if (index == 2) {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (ctx) => const Scaffold()));
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => LoginPage()));
                     }
                     carouselControl.nextPage();
                   },
