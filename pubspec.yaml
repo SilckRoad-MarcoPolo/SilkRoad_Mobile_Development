@@ -77,10 +77,14 @@ flutter:
     - assets/images/google_icon/
     - assets/images/
     - assets/images/auth/Group 481592 (1).png
+
     - assets/images/auth/Group 481593.png
     
     
     
+
+    - assets/images/reset_password/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
