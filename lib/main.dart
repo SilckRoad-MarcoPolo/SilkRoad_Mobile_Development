@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:silk_road/features/login/view/login_page.dart';
+import 'package:silk_road/features/register/view/register_page.dart';
 
 void main() {
   runApp(const SilkRoad());
@@ -22,7 +22,7 @@ class SilkRoad extends StatelessWidget {
   ),
 
       debugShowCheckedModeBanner: false,
-      home:LoginPage()
+      home:RegisterPage()
     );
   }
 }
