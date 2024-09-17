@@ -27,7 +27,6 @@ class SilkRoad extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
       home:LoginPage()
-      home: OtpVerification(),
     );
   }
 }
