@@ -29,7 +29,7 @@ class PasswordResetText extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     color: Colors.black),
               ),
-              logo == null ? const Placeholder(): Padding(
+              logo == null ? const Text(""): Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Image.asset(logo!),
               )
