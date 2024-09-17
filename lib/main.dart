@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:silk_road/features/login/view/login_page.dart';
 import 'package:silk_road/features/on_boarding/view/on_boarding.dart';
 import 'package:silk_road/features/reset_password/view/forgot_password.dart';
 
@@ -13,8 +14,19 @@ class SilkRoad extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
+      theme: ThemeData(
+  
+ 
+    // fontFamily:'Rubik'
+    
+     
+    
+    
+  ),
+
       debugShowCheckedModeBanner: false,
+      home:LoginPage()
       home: OtpVerification(),
     );
   }
