@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/widgets/password_reset_text.dart';
 
+import '../../../core/shared_components/custom_button.dart';
+import '../../../core/shared_components/custom_text_field.dart';
 import '../../../core/shared_components/widgets/shared_buttons.dart';
 
 class ForgotPassword extends StatelessWidget {
@@ -46,6 +48,20 @@ class ForgotPassword extends StatelessWidget {
             width: (92.22 / 430) * ScreenUtils.screenWidth(context),
             height: (75.23 / 932) * ScreenUtils.screenHeight(context),
           ),
+          SizedBox(
+            height: (32 / 932) * ScreenUtils.screenHeight(context),
+          ),
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal: (16/432) * ScreenUtils.screenWidth(context)),
+            child: CustomTextFormField(
+              hintText: 'Email',
+            ),
+
+          ),
+          SizedBox(
+            height: (115 / 932) * ScreenUtils.screenHeight(context),
+          ),
+          CustomButton(text: "Send",onTap: (){},),
         ],
       ),
     );
