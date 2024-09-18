@@ -58,6 +58,42 @@ class customAppBar extends StatelessWidget {
             Text('navigator',style: TextStyle(fontSize: 20),)
           ],
         ),
-        actions: [Image.asset('assets/images/Group 481506.png')]);
+        actions: [
+          Image.asset('assets/images/Group 481506.png')
+//           Stack(
+//             clipBehavior: Clip.none,
+//             children: [
+//             Image.asset('assets/images/Group 481719.png'),
+
+//  Positioned(
+  
+//          left: 14,
+//        bottom: 22,
+//           child: Container(
+//             padding: EdgeInsets.all(4),
+//             decoration: BoxDecoration(
+//               color: Colors.red,
+//               borderRadius: BorderRadius.circular(15),
+//             ),
+//             constraints: BoxConstraints(
+//               minWidth: 20,
+//               minHeight: 20,
+//             ),
+//             child: Center(
+//               child: Text(
+//                 '5',
+//                 style: TextStyle(color: Colors.white, fontSize: 12),
+//               ),
+//             ),
+//           ),
+//         ),
+            
+//           ],
+          
+          
+//           )
+          
+          
+          ]);
   }
 }
