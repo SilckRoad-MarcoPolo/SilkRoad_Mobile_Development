@@ -55,12 +55,7 @@ class MyCourses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.add), label: ""),
-        BottomNavigationBarItem(icon: Icon(Icons.add), label: ""),
-      ]),
-      body: SingleChildScrollView(
+    return SingleChildScrollView(
         child: Column(
           children: [
             GradiantColorHeader(title: "My Courses",),
@@ -153,8 +148,7 @@ class MyCourses extends StatelessWidget {
                 }),
           ],
         ),
-      ),
-    );
+      );
   }
 }
 

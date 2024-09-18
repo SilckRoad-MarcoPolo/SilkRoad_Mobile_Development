@@ -3,13 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:silk_road/core/constants.dart';
 import 'package:silk_road/features/home/view/home_view.dart';
 
+import '../../features/my_courses/view/my_courses.dart';
+
 class BOttomNavigationBar extends StatefulWidget {
   @override
   _BOttomNavigationBarState createState() => _BOttomNavigationBarState();
 }
 
 class _BOttomNavigationBarState extends State<BOttomNavigationBar> {
-  int _selectedIndex = 0; 
+  int _selectedIndex = 0;
+  List<Widget> bodyContent = [
+    HomeView(),
+    MyCourses(),
+  ];
 
 
  
@@ -48,7 +54,7 @@ class _BOttomNavigationBarState extends State<BOttomNavigationBar> {
         selectedItemColor: kOrange, // Color of selected item
         onTap: _onItemTapped, // Callback when an item is tapped
       ),
-      body: HomeView(),
+      body: bodyContent[_selectedIndex],
     );
   }
 }

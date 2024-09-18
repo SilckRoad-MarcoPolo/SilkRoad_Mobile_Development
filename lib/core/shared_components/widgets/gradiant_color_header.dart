@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
 
+import '../../../features/home/widgets/customSearch.dart';
 import '../../helpers/screen_utils.dart';
 
 class GradiantColorHeader extends StatelessWidget {
   String title;
+  bool button;
   GradiantColorHeader({
+    this.button = false,
     required this.title,
     super.key,
   });
@@ -27,24 +31,36 @@ class GradiantColorHeader extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+              height:(43 / 932) * ScreenUtils.screenHeight(context) ,
+            ),
             Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:  EdgeInsets.only(left: (20/ 430) * ScreenUtils.screenWidth(context)),
-                    child: Text(
+              child: Padding(
+                padding:  EdgeInsets.only(left: (10/ 430) * ScreenUtils.screenWidth(context)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    button?ArrowBackButton(onTap: (){}): const Text(""),
+                    Text(
                       title,
                       style: TextStyle(
                           fontSize: (32 / 932) * ScreenUtils.screenHeight(context),
                           fontWeight: FontWeight.w600,
                           color: const Color(0xffE0E0E0)),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-            TextField()
+            SizedBox(
+              height:(20 / 932) * ScreenUtils.screenHeight(context) ,
+            ),
+            Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)
+                ),
+                child: CustOmSearch())
           ],
         ));
   }
