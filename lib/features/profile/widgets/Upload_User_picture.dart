@@ -8,49 +8,56 @@ class UploadUserPicture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      Container(
-        width: ScreenUtils.screenHeight(context) * (106 / 462), // Set width
-        height: ScreenUtils.screenHeight(context) * (106 / 932), // Set height
-        decoration: BoxDecoration(
-          shape: BoxShape.circle, // Make it circular
+     return Stack(
+      children: [
+       
+        Container(
+          width: ScreenUtils.screenHeight(context) * (106 / 462), // Set width
+         height: ScreenUtils.screenHeight(context) * (106 / 932),
+           decoration: BoxDecoration(
+          shape: BoxShape.circle,
           border: Border.all(
-            color: Colors.black, // Border color
+            color: Colors.black, 
             width: 3.0, // Border width
           ),
         ),
-        child: CircleAvatar(
-          backgroundColor: Colors.white,
-          child: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.person,
-                size: 60,
-                 color: Colors.black,
-              )),
+          child: CircleAvatar(
+            radius: 50, // Size of the avatar
+            backgroundColor: Colors.white, // Background color
+            child: Icon(
+              Icons.person,
+              size: 50,
+              color: Colors.black,
+            ),
+          ),
         ),
-      ),
-      Positioned(
-          right: 34,
+        // Edit icon
+        Positioned(
+       
+           right: 57,
           bottom: 4,
-          child: Container(
-            width: ScreenUtils.screenHeight(context) * (32 / 462), // Set width
-            height:
-                ScreenUtils.screenHeight(context) * (32 / 932), // Set height
-            decoration: BoxDecoration(
-              shape: BoxShape.circle, // Make it circular
-              border: Border.all(
-                color: Colors.black, // Border color
-                width: 2.0, // Border width
+          child: GestureDetector(
+            onTap: (){},
+            child: Container(
+              padding: EdgeInsets.all(3),
+              decoration: BoxDecoration(
+                color: Colors.white, 
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.black, width: 1),
+              ),
+              child: Icon(
+                Icons.camera_enhance, 
+                size: 15,
+                color: Colors.black,
               ),
             ),
-            child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                                  Icons.camera_enhance,
-                                  size: 18,
-                                )),
-          ))
-    ]);
+          ),
+        ),
+      ],
+    );
+    
+  
+
+
   }
 }
