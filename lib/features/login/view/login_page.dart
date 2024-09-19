@@ -7,6 +7,8 @@ import 'package:silk_road/core/shared_components/google_button.dart';
 import 'package:silk_road/features/register/view/register_page.dart';
 import 'package:silk_road/features/reset_password/view/forgot_password.dart';
 
+import '../../../core/shared_components/BottomNavigationBa.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -129,7 +131,10 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       CustomButton(
                         text: 'Sign in',
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushReplacement(context, MaterialPageRoute(
+                              builder: (ctx)=>BOttomNavigationBar()));
+                        },
                       ),
                       const Center(
                           child: Text(
