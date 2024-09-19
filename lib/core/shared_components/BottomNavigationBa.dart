@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/constants.dart';
 import 'package:silk_road/features/home/view/home_view.dart';
+import 'package:silk_road/features/profile/view/profile_view.dart';
 
 import '../../features/my_courses/view/my_courses.dart';
 
@@ -14,7 +15,9 @@ class _BOttomNavigationBarState extends State<BOttomNavigationBar> {
   int _selectedIndex = 0;
   List<Widget> bodyContent = [
     HomeView(),
-    MyCourses(),
+  
+  ProfilePage(),
+      MyCourses()
   ];
 
 
