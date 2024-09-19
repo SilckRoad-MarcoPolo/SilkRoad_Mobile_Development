@@ -1,18 +1,19 @@
 
 import 'package:flutter/material.dart';
-import 'package:silk_road/core/helpers/screen_utils.dart';
 
 class UserPicture extends StatelessWidget {
   const UserPicture({
-    super.key,
+    super.key, required this.width, required this.height,
   });
+final double  width;
+  final  double height;
 
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
       Container(
-        width: ScreenUtils.screenHeight(context) * (106 / 462), // Set width
-        height: ScreenUtils.screenHeight(context) * (106 / 932), // Set height
+        width: width, // Set width
+        height: height, // Set height
         decoration: BoxDecoration(
           shape: BoxShape.circle, // Make it circular
           border: Border.all(

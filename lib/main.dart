@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:silk_road/features/profile/view/change_email_page.dart';
+import 'package:silk_road/core/shared_components/BottomNavigationBa.dart';
+
 
 
 void main() {
@@ -19,6 +20,6 @@ class SilkRoad extends StatelessWidget {
             ),
         debugShowCheckedModeBanner: false,
 
-        home:ChangeEmailPage() ,);
+        home:BOttomNavigationBar() ,);
   }
 }
