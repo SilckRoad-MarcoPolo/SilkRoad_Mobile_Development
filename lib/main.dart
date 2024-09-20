@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+
+import 'package:silk_road/features/videos/views/video_page.dart';
+
+import 'package:silk_road/core/shared_components/BottomNavigationBa.dart';
+
+
 import 'package:silk_road/features/my_courses/view/my_courses.dart';
 import 'package:silk_road/features/register/view/register_page.dart';
 import 'package:silk_road/features/login/view/login_page.dart';
@@ -12,6 +18,8 @@ import 'features/streak_screen/view/streak_screen.dart';
 import 'features/trending_courses/view/trending_courses.dart';
 import 'package:silk_road/core/shared_components/BottomNavigationBa.dart';
 import 'package:silk_road/features/profile/view/change_email_page.dart';
+
+
 
 
 
@@ -32,8 +40,10 @@ class SilkRoad extends StatelessWidget {
             ),
         debugShowCheckedModeBanner: false,
 
+
         home:StreakScreen() ,
     );
 
+        
   }
 }

@@ -17,7 +17,11 @@ class UserProfile extends StatelessWidget {
           children: [
           
             
-          UserPicture(),
+          UserPicture(
+             width: ScreenUtils.screenHeight(context) * (106 / 462), // Set width
+        height: ScreenUtils.screenHeight(context) * (106 / 932),
+        size: 60,
+          ),
             SizedBox(
               height: ScreenUtils.screenHeight(context) * (50 / 932),
             ),
