@@ -66,14 +66,20 @@ class ForgotPassword extends StatelessWidget {
           SizedBox(
             height: (115 / 932) * ScreenUtils.screenHeight(context),
           ),
-          CustomButton(
-            text: "Send",
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const OtpVerification()));
-            },
+          Padding(
+            padding: EdgeInsets.only(
+              left: (16 / 430) * ScreenUtils.screenWidth(context),
+              right: (16 / 430) * ScreenUtils.screenWidth(context),
+            ),
+            child: CustomButton(
+              text: "Send",
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const OtpVerification()));
+              },
+            ),
           ),
         ],
       ),
