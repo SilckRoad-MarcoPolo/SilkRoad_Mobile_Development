@@ -22,6 +22,7 @@ class ChangeProfileSetting extends StatelessWidget {
               height: ScreenUtils.screenHeight(context) * (90 / 932),
             ),
             UserPicture(
+              size: 60,
               width:
                   ScreenUtils.screenHeight(context) * (40.5 / 462), // Set width
               height: ScreenUtils.screenHeight(context) * (40.5 / 932),
