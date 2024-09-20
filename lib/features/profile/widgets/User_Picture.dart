@@ -3,32 +3,30 @@ import 'package:flutter/material.dart';
 
 class UserPicture extends StatelessWidget {
   const UserPicture({
-    super.key, required this.width, required this.height,
+    super.key, required this.width, required this.height,required this.size
   });
 final double  width;
   final  double height;
+  final double? size;
 
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
       Container(
-        width: width, // Set width
-        height: height, // Set height
+        width: width, 
+        height: height, 
         decoration: BoxDecoration(
-          shape: BoxShape.circle, // Make it circular
+          shape: BoxShape.circle, 
           border: Border.all(
-            color: Colors.black, // Border color
-            width: 3.0, // Border width
+            color: Colors.black, 
+            width: 2.0, 
           ),
         ),
-        child: CircleAvatar(
-          backgroundColor: Colors.white,
-          child: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.person,
-                size: 60,
-                 color: Colors.black,
-              )),
-        ),
+        child: 
+            
+             Icon(
+              Icons.person,
+              size: size,
+               color: Colors.black,
+            ),
       ),]);}}

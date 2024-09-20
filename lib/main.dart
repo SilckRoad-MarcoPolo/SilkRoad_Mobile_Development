@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:silk_road/core/shared_components/BottomNavigationBa.dart';
+import 'package:silk_road/features/videos/views/video_page.dart';
 
 
 
@@ -20,6 +20,6 @@ class SilkRoad extends StatelessWidget {
             ),
         debugShowCheckedModeBanner: false,
 
-        home:BOttomNavigationBar() ,);
+        home: VideoPage(),);
   }
 }

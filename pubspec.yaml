@@ -32,6 +32,7 @@ dependencies:
   carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.8
   dio: ^5.7.0
+  flick_video_player: ^0.9.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
@@ -43,21 +44,16 @@ dependencies:
   get_it: ^7.7.0
   json_annotation: ^4.9.0
   json_serializable: ^6.8.0
+  otp_text_field: ^1.1.3
   pretty_dio_logger: ^1.4.0
   retrofit: ^4.4.1
   retrofit_generator: ^9.1.1
   shared_preferences: ^2.3.2
   sign_in_button: ^3.2.0
   smooth_page_indicator: ^1.2.0+3
-  otp_text_field: ^1.1.3
+  video_player: ^2.9.1
 
 dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
@@ -76,18 +72,14 @@ flutter:
   assets:
     - assets/images/onboarding/
     - assets/images/google_icon/
-   
+
     - assets/images/auth/Group 481592 (1).png
 
     - assets/images/auth/Group 481593.png
     - assets/images/
     - assets/images/Group 481720.png
-    
-    
-    
 
     - assets/images/reset_password/
-
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -99,11 +91,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Rubik 
+    - family: Rubik
       fonts:
         - asset: assets/fonts/Rubik-VariableFont_wght.ttf
         - asset: assets/fonts/Rubik-Bold.ttf
           weight: 700
-   
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
