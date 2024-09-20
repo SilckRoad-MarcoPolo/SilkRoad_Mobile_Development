@@ -7,6 +7,8 @@ import 'package:silk_road/features/reset_password/view/forgot_password.dart';
 import 'package:silk_road/features/reset_password/view/new_password.dart';
 import 'features/appointments/view/appointments.dart';
 import 'features/reset_password/view/otp_verification.dart';
+import 'features/roadmap/view/roadmap.dart';
+import 'features/streak_screen/view/streak_screen.dart';
 import 'features/trending_courses/view/trending_courses.dart';
 import 'package:silk_road/core/shared_components/BottomNavigationBa.dart';
 import 'package:silk_road/features/profile/view/change_email_page.dart';
@@ -30,7 +32,8 @@ class SilkRoad extends StatelessWidget {
             ),
         debugShowCheckedModeBanner: false,
 
-        home:ChangeEmailPage() ,);
+        home:StreakScreen() ,
+    );
 
   }
 }
