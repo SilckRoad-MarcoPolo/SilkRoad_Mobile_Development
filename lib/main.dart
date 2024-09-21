@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/shared_components/BottomNavigationBa.dart';
+import 'package:silk_road/features/on_boarding/view/on_boarding.dart';
 import 'package:silk_road/features/videos/views/video_page.dart';
 
 
@@ -24,7 +25,7 @@ class SilkRoad extends StatelessWidget {
 
 
 
-        home:BOttomNavigationBar(),
+        home:OnBoarding(),
 
     );
 
