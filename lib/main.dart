@@ -12,8 +12,11 @@ import 'package:silk_road/features/on_boarding/view/on_boarding.dart';
 import 'package:silk_road/features/reset_password/view/forgot_password.dart';
 import 'package:silk_road/features/reset_password/view/new_password.dart';
 import 'features/appointments/view/appointments.dart';
+import 'features/quiz_page/view/quiz_screen.dart';
+import 'features/quiz_page/view/start_quiz_screen.dart';
 import 'features/reset_password/view/otp_verification.dart';
 import 'features/roadmap/view/roadmap.dart';
+import 'features/quiz_page/view/quiz_overview_screen.dart';
 import 'features/streak_screen/view/streak_screen.dart';
 import 'features/trending_courses/view/trending_courses.dart';
 import 'package:silk_road/core/shared_components/BottomNavigationBa.dart';
@@ -41,7 +44,7 @@ class SilkRoad extends StatelessWidget {
         debugShowCheckedModeBanner: false,
 
 
-        home:StreakScreen() ,
+        home:QuizStartScreen() ,
     );
 
         

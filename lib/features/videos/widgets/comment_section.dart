@@ -43,11 +43,12 @@ class CommentSection extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 16),
+        SizedBox(height: (16 / 932) *
+            ScreenUtils.screenHeight(context)),
         // Comment Section
         Container(
           width: ScreenUtils.screenHeight(context) * (398 / 462), // Set width
-          height: ScreenUtils.screenHeight(context) * (83 / 932),
+          // height: ScreenUtils.screenHeight(context) * (89 / 932),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(11), color: Colors.grey[200]),
           child: Padding(
@@ -89,7 +90,8 @@ class CommentSection extends StatelessWidget {
                             fillColor: Colors.white,
                             contentPadding: EdgeInsets.symmetric(
                               vertical: 10,
-                              horizontal: 16,
+                              horizontal: (16 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                           ),
                         ),

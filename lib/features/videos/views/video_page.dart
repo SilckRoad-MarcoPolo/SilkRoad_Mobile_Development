@@ -14,6 +14,7 @@ class VideoPage extends StatefulWidget {
 class _VideoPageState extends State<VideoPage> {
   @override
   late FlickManager flickManager;
+
   @override
   void initState() {
     super.initState();
@@ -40,150 +41,104 @@ class _VideoPageState extends State<VideoPage> {
           SizedBox(
             height: (16 / 932) * ScreenUtils.screenHeight(context),
           ),
-       
-      
-      
-      Expanded(child: CustomScrollView(
-          slivers: [
-          
-            SliverPadding(padding: EdgeInsets.symmetric(
-            horizontal: ScreenUtils.screenHeight(context) * (12 / 462),
-           ), 
-           sliver: SliverList(delegate: SliverChildListDelegate([
-      
-      
-      Row(
-        children: [
-         
-          Column(children: [ Text(
-                              'Introduction and The Basics of    ',
-                              style: TextStyle(
-                                  fontSize: (19 / 932) *
-                                      ScreenUtils.screenHeight(context),
-                                  fontWeight: FontWeight.w700),
-                            ),
-                            Text(
-                              '      Programming in Python',
-                              style: TextStyle(
-                                  fontSize: (18 / 932) *
-                                      ScreenUtils.screenHeight(context),
-                                  fontWeight: FontWeight.w800),
-                            ),],),
-        
-          IconButton(
-                      icon: Icon(
-                        Icons.more_vert,
-                        color: Colors.black,
-                        size: 30,
+          Expanded(
+              child: CustomScrollView(
+            slivers: [
+              SliverPadding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: ScreenUtils.screenHeight(context) * (12 / 462),
+                ),
+                sliver: SliverList(
+                    delegate: SliverChildListDelegate([
+                  Row(
+                    children: [
+                      Column(
+                        children: [
+                          Text(
+                            'Introduction and The Basics of    ',
+                            style: TextStyle(
+                                fontSize: (19 / 932) *
+                                    ScreenUtils.screenHeight(context),
+                                fontWeight: FontWeight.w700),
+                          ),
+                          Text(
+                            '      Programming in Python',
+                            style: TextStyle(
+                                fontSize: (18 / 932) *
+                                    ScreenUtils.screenHeight(context),
+                                fontWeight: FontWeight.w800),
+                          ),
+                        ],
                       ),
-                      onPressed: () {
-                        // Define the action for the menu button
-                      },
-                    ),
-                  
-                
-        
-        ],
-      ),
-       Row(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(
-                          right: (13 / 414) * ScreenUtils.screenWidth(context)),
-                      child: Text(
-                        '100 views',
+                      IconButton(
+                        icon: Icon(
+                          Icons.more_vert,
+                          color: Colors.black,
+                          size: 30,
+                        ),
+                        onPressed: () {
+                          // Define the action for the menu button
+                        },
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            right:
+                                (13 / 414) * ScreenUtils.screenWidth(context)),
+                        child: Text(
+                          '100 views',
+                          style: TextStyle(
+                              color: Color(0xffAFB1A0),
+                              fontSize: (12 / 932) *
+                                  ScreenUtils.screenHeight(context),
+                              fontWeight: FontWeight.w800),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            right:
+                                (13 / 414) * ScreenUtils.screenWidth(context)),
+                        child: Text(
+                          ' 12d ago',
+                          style: TextStyle(
+                              color: Color(0xffAFB1A0),
+                              fontSize: (12 / 932) *
+                                  ScreenUtils.screenHeight(context),
+                              fontWeight: FontWeight.w800),
+                        ),
+                      ),
+                      Text(
+                        '.....more',
                         style: TextStyle(
-                            color: Color(0xffAFB1A0),
                             fontSize:
                                 (12 / 932) * ScreenUtils.screenHeight(context),
                             fontWeight: FontWeight.w800),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(
-                          right: (13 / 414) * ScreenUtils.screenWidth(context)),
-                      child: Text(
-                        ' 12d ago',
-                        style: TextStyle(
-                            color: Color(0xffAFB1A0),
-                            fontSize:
-                                (12 / 932) * ScreenUtils.screenHeight(context),
-                            fontWeight: FontWeight.w800),
-                      ),
-                    ),
-                    Text(
-                      '.....more',
-                      style: TextStyle(
-                          fontSize:
-                              (12 / 932) * ScreenUtils.screenHeight(context),
-                          fontWeight: FontWeight.w800),
-                    ),
-                  ],
-                ),
-                 
-                 SizedBox(
-                  height: (16 / 932) * ScreenUtils.screenHeight(context),
-                ),
-              CommentSection(),
-              SizedBox(
-                  height: (17 / 932) * ScreenUtils.screenHeight(context),
-                ),
-                 Text(
-                  "Play List",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
-                ),
+                    ],
+                  ),
+
                   SizedBox(
-                  height: (23 / 932) * ScreenUtils.screenHeight(context),
-                ),
-                // Audio_List()
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-           ])),
-           
-           
-           
-           
-           
-           
-           
-           
-           )],
-        ))
-      
-      
-      
-      
-      
+                    height: (16 / 932) * ScreenUtils.screenHeight(context),
+                  ),
+                  CommentSection(),
+                  SizedBox(
+                    height: (17 / 932) * ScreenUtils.screenHeight(context),
+                  ),
+                  Text(
+                    "Play List",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
+                  ),
+                  SizedBox(
+                    height: (23 / 932) * ScreenUtils.screenHeight(context),
+                  ),
+                  // Audio_List()
+                ])),
+              )
+            ],
+          ))
         ],
       ),
     );

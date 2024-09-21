@@ -94,6 +94,7 @@ class _SlideReviewDialogState extends State<SlideReviewDialog> {
 
             // Interactive Rating Bar
             RatingBar.builder(
+
               glow: false,
               initialRating: rating,
               minRating: 1,
