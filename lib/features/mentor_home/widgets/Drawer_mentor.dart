@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:silk_road/core/constants.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/custom_button.dart';
 
-class NavBar extends StatelessWidget {
-  const NavBar({super.key});
+class DrawerMentor extends StatelessWidget {
+  const DrawerMentor({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +17,14 @@ class NavBar extends StatelessWidget {
       Container(
          height: (116/ 932) * ScreenUtils.screenHeight(context),
         decoration: BoxDecoration(
-                color: kOrange,
+                color:Color(0xffF1E5D6),
               ),
         child: Padding(
            padding: EdgeInsets.only(left: (13 / 414) * ScreenUtils.screenWidth(context),top:
            (46/ 932) * ScreenUtils.screenHeight(context),
             
            ),
-          child: Row(children: [Image.asset('assets/images/photo_6008145075550404211_m 4.png'),
+          child: Row(children: [Image.asset('assets/images/photo_1_2024-09-18_03-10-14 2.png'),
           
           Padding(
             padding: EdgeInsets.only(left: (13 / 414) * ScreenUtils.screenWidth(context), ),
@@ -46,13 +45,7 @@ class NavBar extends StatelessWidget {
     
     ),
   
-                  ListTile(
-                    leading: Icon(Icons.note_alt_rounded),
-                    title: Text('IQ Test'),
-                    onTap: () {
-                      // Handle tap
-                    },
-                  ),
+                 
                   ListTile(
                     leading: Icon(Icons.notifications),
                     title: Text('Notifications'),
@@ -97,15 +90,12 @@ class NavBar extends StatelessWidget {
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.school),
-                    title: Text('My Learnings'),
+                    leading: Icon(Icons.payment),
+                    title: Text('Payments'),
                     onTap: () {
                       // Handle tap
                     },),
-                   
-
-     
-     SizedBox(
+ SizedBox(
                 height: ScreenUtils.screenHeight(context) * (210 / 932),
               ),
                 Padding(
@@ -114,9 +104,7 @@ class NavBar extends StatelessWidget {
                   ),
                   child: CustomButton(text: 'log out'),
                 )
-     
       ],),
-      
 
 
 

@@ -25,7 +25,11 @@ class _HomeViewState extends State<HomeView> {
         ),
         child: SingleChildScrollView(
           child: Column(children: [
-            customAppBar(),
+            customAppBar(
+              title: 'Welcome',
+              subtile: 'navigator',
+              actions: [Image.asset('assets/images/Group 481506.png')],
+            ),
             SizedBox(
               height: (26 / 932) * ScreenUtils.screenHeight(context),
             ),
