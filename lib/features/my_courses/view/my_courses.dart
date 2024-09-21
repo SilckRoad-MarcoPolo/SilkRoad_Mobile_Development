@@ -48,6 +48,18 @@ class MyCourses extends StatelessWidget {
     'hours': '37/40 hrs',
     'progress': 80,
     'image': 'assets/data_analysis.png',
+  },{
+    'name': 'Data Analysis',
+    'instructor': 'Jhon Doe',
+    'hours': '37/40 hrs',
+    'progress': 80,
+    'image': 'assets/data_analysis.png',
+  },{
+    'name': 'Data Analysis',
+    'instructor': 'Jhon Doe',
+    'hours': '37/40 hrs',
+    'progress': 80,
+    'image': 'assets/data_analysis.png',
   },
   ];
 

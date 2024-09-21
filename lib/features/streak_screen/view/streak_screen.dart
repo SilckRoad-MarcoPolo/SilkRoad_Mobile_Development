@@ -12,6 +12,8 @@ class StreakScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         titleSpacing: (-15 / 430) * ScreenUtils.screenWidth(context),
         leading: ArrowBackButton(onTap: () {
           Navigator.pop(context);

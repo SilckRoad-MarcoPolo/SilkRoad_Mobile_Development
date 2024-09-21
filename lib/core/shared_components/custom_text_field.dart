@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField(
       {super.key,
+        this.controller,
       this.hintText,
       this.onChanged,
       this.suffixIcon,
@@ -13,12 +14,13 @@ class CustomTextFormField extends StatelessWidget {
   Widget? suffixIcon;
 
   bool? obscureText;
-
+  TextEditingController? controller;
   Function(String)? onChanged;
   String? Function(String?)? validate;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
         obscureText: obscureText!,
         validator: validate,
         onChanged: onChanged,

@@ -1,15 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/shared_components/custom_button.dart';
 import 'package:silk_road/core/shared_components/custom_text_field.dart';
-import 'package:silk_road/core/shared_components/google_button.dart';
+import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/core/shared_components/widgets/password_reset_text.dart';
+import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
 
-import '../../../core/helpers/screen_utils.dart';
-import '../../../core/shared_components/widgets/password_reset_text.dart';
-import '../../../core/shared_components/widgets/shared_buttons.dart';
-import '../../register/view/register_page.dart';
-
-class NewPassword extends StatelessWidget {
+class NewPassword extends StatefulWidget {
   const NewPassword({super.key});
+
+  @override
+  State<NewPassword> createState() => _NewPasswordState();
+}
+
+class _NewPasswordState extends State<NewPassword> {
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+  TextEditingController();
+  bool _obscurePassword = true;
+  bool _obscureConfirmPassword = true;
+
+  void _togglePasswordVisibility() {
+    setState(() {
+      _obscurePassword = !_obscurePassword;
+    });
+  }
+
+  void _toggleConfirmPasswordVisibility() {
+    setState(() {
+      _obscureConfirmPassword = !_obscureConfirmPassword;
+    });
+  }
+
+  void _confirmNewPassword() {
+    if (_formKey.currentState!.validate()) {
+      final password = _passwordController.text;
+      final confirmPassword = _confirmPasswordController.text;
+
+      if (password == confirmPassword) {
+        debugPrint("New password set successfully!");
+        // Add logic to handle new password confirmation
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Passwords do not match')),
+        );
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,109 +65,79 @@ class NewPassword extends StatelessWidget {
                 Navigator.pop(context);
               }),
               PasswordResetText(
-                  title: "New Password",
-                  description: "your new password must be different  \n"
-                      "from previous used password"),
+                title: "New Password",
+                description: "Your new password must be different \n"
+                    "from the previously used passwords",
+              ),
               SizedBox(
                 height: (109 / 932) * ScreenUtils.screenHeight(context),
               ),
               Padding(
-                padding: EdgeInsets.only(
-                  left: (16 / 430) * ScreenUtils.screenWidth(context),
-                  right: (16 / 430) * ScreenUtils.screenWidth(context),
+                padding: EdgeInsets.symmetric(
+                  horizontal: (16 / 430) * ScreenUtils.screenWidth(context),
                 ),
-                child: CustomTextFormField(
-                  obscureText: true,
-                  hintText: "Password",
-                  suffixIcon: const Icon(Icons.visibility_off),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      CustomTextFormField(
+                        controller: _passwordController,
+                        obscureText: _obscurePassword,
+                        hintText: "Password",
+                        suffixIcon: IconButton(
+                          icon: Icon(_obscurePassword
+                              ? Icons.visibility_off
+                              : Icons.visibility),
+                          onPressed: _togglePasswordVisibility,
+                        ),
+                        validate: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter your password';
+                          } else if (value.length < 8) {
+                            return 'Password must be at least 8 characters long';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(
+                        height: (56 / 932) * ScreenUtils.screenHeight(context),
+                      ),
+                      CustomTextFormField(
+                        controller: _confirmPasswordController,
+                        obscureText: _obscureConfirmPassword,
+                        hintText: "Confirm Password",
+                        suffixIcon: IconButton(
+                          icon: Icon(_obscureConfirmPassword
+                              ? Icons.visibility_off
+                              : Icons.visibility),
+                          onPressed: _toggleConfirmPasswordVisibility,
+                        ),
+                        validate: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please confirm your password';
+                          }
+                          return null;
+                        },
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: (56 / 932) * ScreenUtils.screenHeight(context),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: (16 / 430) * ScreenUtils.screenWidth(context),
-                  right: (16 / 430) * ScreenUtils.screenWidth(context),
-                ),
-                child: CustomTextFormField(
-                    obscureText: true,
-                    hintText: "Confirm Password",
-                    suffixIcon: const Icon(Icons.visibility_off)),
               ),
               SizedBox(
                 height: (72 / 932) * ScreenUtils.screenHeight(context),
               ),
-              Stack(
-                children: [
-                  Image.asset(
-                    "assets/images/reset_password/third.png",
-                    height: (385 / 932) * ScreenUtils.screenHeight(context),
-                    width: ScreenUtils.screenWidth(context),
-                    fit: BoxFit.fitWidth,
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        height: (22 / 932) * ScreenUtils.screenHeight(context),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: (16 / 430) * ScreenUtils.screenWidth(context),
-                          right: (16 / 430) * ScreenUtils.screenWidth(context),
-                        ),
-                        child: CustomButton(text: "Sign in"),
-                      ),
-                      Center(
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.symmetric(
-                              vertical: 8),
-                          child: Text(
-                            "or",
-                            style: TextStyle(
-                                fontSize: (20 / 932) *
-                                    ScreenUtils.screenHeight(context)),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                          left: (16 / 430) * ScreenUtils.screenWidth(context),
-                          right: (16 / 430) * ScreenUtils.screenWidth(context),
-                        ),
-                        child: const GoogleButton(),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Don't have an account?",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: (16 / 932) *
-                                    ScreenUtils.screenHeight(context)),
-                          ),
-                          TextButton(
-                            child: Text(
-                              "Sign up",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: (16 / 932) *
-                                      ScreenUtils.screenHeight(context)),
-                            ),
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RegisterPage()));
-                            },
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                ],
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: (16 / 430) * ScreenUtils.screenWidth(context),
+                ),
+                child: CustomButton(
+                  text: "Confirm",
+                  onTap: _confirmNewPassword,
+                ),
+              ),
+              const Spacer(),
+              Image.asset(
+                "assets/images/new_password_back.png",
               ),
             ],
           ),

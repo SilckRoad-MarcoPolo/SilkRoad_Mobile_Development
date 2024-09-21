@@ -17,7 +17,7 @@ class _Audio_cardState extends State<Audio_card> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: EdgeInsets.all(0),
+      contentPadding: EdgeInsets.symmetric(horizontal: 12),
       onTap: () {
            setState(() {
              isClicked=true;

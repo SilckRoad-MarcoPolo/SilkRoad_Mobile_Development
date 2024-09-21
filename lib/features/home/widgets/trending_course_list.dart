@@ -67,7 +67,7 @@ class TrendingCourseList extends StatelessWidget {
      return
 
     SliverList(
-        delegate: SliverChildBuilderDelegate(childCount: 10,
+        delegate: SliverChildBuilderDelegate(childCount: courses.length,
             (BuildContext context,int index) {
               var course = courses[index];
      return TrendingCoursesCard(course: course);
