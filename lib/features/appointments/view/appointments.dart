@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'appointment_card.dart';
 
@@ -80,6 +79,8 @@ class _AppointmentsState extends State<Appointments> {
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (ctx, index) {
                     return (AppointmentCard(
+                      text1: 'Message',
+                      text2: 'Review',
                       instructorInfo: appointments[index],
                     ));
                   })
@@ -89,6 +90,8 @@ class _AppointmentsState extends State<Appointments> {
                 shrinkWrap: true,
                 itemBuilder: (ctx, index) {
                     return (AppointmentCard(
+                      text1: 'Message',
+                      text2: 'Review',
                       instructorInfo: appointments[1],
                     ));
                   })
