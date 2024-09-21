@@ -5,8 +5,9 @@ import '../../../core/helpers/screen_utils.dart';
 
 class AppointmentCard extends StatelessWidget {
   Map<String, String> instructorInfo;
+  final String text1,text2;
 
-  AppointmentCard({super.key, required this.instructorInfo});
+  AppointmentCard({super.key, required this.instructorInfo, required this.text1, required this.text2});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +15,7 @@ class AppointmentCard extends StatelessWidget {
       padding: EdgeInsetsDirectional.symmetric(
           horizontal: (8 / 430) * ScreenUtils.screenWidth(context)),
       child: Card(
+        color: Colors.white,
         elevation: 1,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -115,8 +117,8 @@ class AppointmentCard extends StatelessWidget {
                     onPressed: () {
                       // Add action here
                     },
-                    child: const Text(
-                      'Message',
+                    child:  Text(
+                      text1,
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
@@ -136,8 +138,8 @@ class AppointmentCard extends StatelessWidget {
                     onPressed: () {
                       showReviewDialog(context);
                     },
-                    child: const Text(
-                      'Review',
+                    child: Text(
+                     text2,
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
