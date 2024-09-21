@@ -56,13 +56,22 @@ class TrendingCourseList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-       shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: courses.length,
-      itemBuilder: (BuildContext,index){
-      var course = courses[index];
-      return TrendingCoursesCard(course: course);
-    });
+    // return ListView.builder(
+    //    shrinkWrap: true,
+    //             physics: const NeverScrollableScrollPhysics(),
+    //             itemCount: courses.length,
+    //   itemBuilder: (BuildContext,index){
+    //   var course = courses[index];
+    //   return TrendingCoursesCard(course: course);
+    // });
+     return
+
+    SliverList(
+        delegate: SliverChildBuilderDelegate(childCount: 10,
+            (BuildContext context,int index) {
+              var course = courses[index];
+     return TrendingCoursesCard(course: course);
+        
+    }));
   }
 }
