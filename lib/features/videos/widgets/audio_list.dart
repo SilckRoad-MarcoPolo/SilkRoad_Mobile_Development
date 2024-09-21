@@ -12,7 +12,7 @@ class Audio_List extends StatelessWidget {
     return
 
     SliverList(
-        delegate: SliverChildBuilderDelegate(childCount: 6,
+        delegate: SliverChildBuilderDelegate(childCount: 10,
             (BuildContext context,int index) {
       return Audio_card();
         
