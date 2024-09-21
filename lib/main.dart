@@ -24,7 +24,7 @@ class SilkRoad extends StatelessWidget {
 
 
 
-        home:VideoPage(),
+        home:BOttomNavigationBar(),
 
     );
 

@@ -83,17 +83,8 @@ class _HomeViewState extends State<HomeView> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               slivers: [
-                
-                  CustomScrollView(
-              // shrinkWrap: true,
-              // physics: NeverScrollableScrollPhysics(),
-              slivers: [
-                
-                
+
                   TrendingCourseList()
-               
-              ],
-            )
                 
               ],
            )

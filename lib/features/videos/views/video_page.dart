@@ -146,25 +146,7 @@ class _VideoPageState extends State<VideoPage> {
             CustomScrollView(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              slivers: [
-                SliverPadding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: ScreenUtils.screenHeight(context) * (12 / 462),
-                    ),
-                    sliver: CustomScrollView(
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      slivers: [
-                        SliverPadding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: ScreenUtils.screenHeight(context) * (12 / 462),
-                            ),
-                            sliver:Audio_List()
-                        )
-                      ],
-                    )
-                )
-              ],
+              slivers: [Audio_List()],
             )
 
           ],
