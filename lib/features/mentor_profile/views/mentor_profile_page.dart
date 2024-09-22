@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
 import 'package:silk_road/features/mentor_profile/widgets/mentor_followers.dart';
 import 'package:silk_road/features/mentor_profile/widgets/social_media.dart';
 
@@ -10,6 +11,7 @@ class MentorProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         leading: ArrowBackButton(onTap: (){}),
         title: Text(
           'Zeyad Salama',
           style: TextStyle(

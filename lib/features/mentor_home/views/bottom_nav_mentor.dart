@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/constants.dart';
 import 'package:silk_road/features/mentor_home/views/mentor_home_view.dart';
-import 'package:silk_road/features/mentor_profile/views/mentor_profile_page.dart';
+
 
 
 
@@ -15,7 +15,7 @@ class _BOttomNavMentorState extends State<BOttomNavMentor> {
   int _selectedIndex = 0;
   List<Widget> bodyContent = [
     MentorHomeView(),
-    MentorProfilePage()
+   
   ];
 
 
