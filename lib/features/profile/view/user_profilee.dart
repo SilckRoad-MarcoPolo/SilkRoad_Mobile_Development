@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/custom_text_field.dart';
-import 'package:silk_road/features/profile/widgets/User_picture.dart';
+import 'package:silk_road/features/profile/widgets/User_Picture.dart';
 
 class UserProfile extends StatelessWidget {
   const UserProfile({super.key});
