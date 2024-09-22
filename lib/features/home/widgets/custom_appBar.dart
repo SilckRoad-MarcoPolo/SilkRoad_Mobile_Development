@@ -11,7 +11,9 @@ String title,subtile;
   @override
   Widget build(BuildContext context) {
     return AppBar(
-       
+       elevation: 0,
+        scrolledUnderElevation: 0,
+        backgroundColor: Colors.transparent,
         title: Column(
           children: [
             Text(

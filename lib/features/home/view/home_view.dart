@@ -80,24 +80,15 @@ class _HomeViewState extends State<HomeView> {
               ],
             ),
              SizedBox(
-              height: (21 / 932) * ScreenUtils.screenHeight(context),
+              height: (37 / 932) * ScreenUtils.screenHeight(context),
             ),
             // TrendingCourseList(),
              CustomScrollView(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               slivers: [
-                
-                  CustomScrollView(
-              // shrinkWrap: true,
-              // physics: NeverScrollableScrollPhysics(),
-              slivers: [
-                
-                
+
                   TrendingCourseList()
-               
-              ],
-            )
                 
               ],
            )

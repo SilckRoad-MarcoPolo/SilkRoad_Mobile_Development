@@ -15,15 +15,15 @@ class VideoPage extends StatefulWidget {
 class _VideoPageState extends State<VideoPage> {
   @override
   late FlickManager flickManager;
+
   @override
   void initState() {
     super.initState();
     flickManager = FlickManager(
         videoPlayerController: VideoPlayerController.networkUrl(
-      Uri.parse(
-          //  "https://path-to-your-direct-video-url.mp4"
-          "https://www.w3schools.com/html/mov_bbb.mp4"),
-    ));
+          Uri.parse(
+              "https://www.w3schools.com/html/mov_bbb.mp4"),
+        ));
   }
 
   void dispose() {
@@ -44,20 +44,20 @@ class _VideoPageState extends State<VideoPage> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(
-                  horizontal: ScreenUtils.screenWidth(context) * (16 / 462),
-                ),
+                horizontal: ScreenUtils.screenWidth(context) * (16 / 462),
+              ),
               child: Column(
 
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                 
+
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Introduction and The Basics of    ',
+                            'Introduction and The Basics of',
                             style: TextStyle(
                                 fontSize: (19 / 932) *
                                     ScreenUtils.screenHeight(context),
@@ -71,11 +71,10 @@ class _VideoPageState extends State<VideoPage> {
                                 fontWeight: FontWeight.w800),
                           ),
                         ],
-                        
                       ),
                       SizedBox(
-                    width: (64 / 450) * ScreenUtils.screenWidth(context),
-                  ),
+                        width: (64 / 450) * ScreenUtils.screenWidth(context),
+                      ),
                       IconButton(
                         icon: Icon(
                           Icons.more_vert,
@@ -101,7 +100,7 @@ class _VideoPageState extends State<VideoPage> {
                           style: TextStyle(
                               color: Color(0xffAFB1A0),
                               fontSize:
-                                  (12 / 932) * ScreenUtils.screenHeight(context),
+                              (12 / 932) * ScreenUtils.screenHeight(context),
                               fontWeight: FontWeight.w800),
                         ),
                       ),
@@ -113,7 +112,7 @@ class _VideoPageState extends State<VideoPage> {
                           style: TextStyle(
                               color: Color(0xffAFB1A0),
                               fontSize:
-                                  (12 / 932) * ScreenUtils.screenHeight(context),
+                              (12 / 932) * ScreenUtils.screenHeight(context),
                               fontWeight: FontWeight.w800),
                         ),
                       ),
@@ -121,7 +120,7 @@ class _VideoPageState extends State<VideoPage> {
                         '.....more',
                         style: TextStyle(
                             fontSize:
-                                (12 / 932) * ScreenUtils.screenHeight(context),
+                            (12 / 932) * ScreenUtils.screenHeight(context),
                             fontWeight: FontWeight.w800),
                       ),
                     ],
@@ -136,7 +135,7 @@ class _VideoPageState extends State<VideoPage> {
                   Text(
                     "Play List",
                     style: TextStyle(fontSize:(20 / 932) * ScreenUtils.screenHeight(context),
-                     fontWeight: FontWeight.w600),
+                        fontWeight: FontWeight.w600),
                   ),
                   SizedBox(
                     height: (23 / 932) * ScreenUtils.screenHeight(context),
@@ -147,26 +146,8 @@ class _VideoPageState extends State<VideoPage> {
             CustomScrollView(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              slivers: [
-                SliverPadding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: ScreenUtils.screenHeight(context) * (12 / 462),
-                  ),
-                  sliver: CustomScrollView(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              slivers: [
-                SliverPadding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: ScreenUtils.screenHeight(context) * (12 / 462),
-                  ),
-                  sliver:Audio_List()
-                )
-              ],
+              slivers: [Audio_List()],
             )
-                )
-              ],
-           )
 
           ],
         ),
