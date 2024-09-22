@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/features/user_profile/user_profile_view.dart';
 
 class StudentCard extends StatelessWidget {
   const StudentCard({super.key});
@@ -14,6 +15,9 @@ class StudentCard extends StatelessWidget {
           border: Border.all(color: Color(0xffB27743)),
           borderRadius: BorderRadius.circular(12)),
       child: ListTile(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> UserProfilePage()));
+        },
         leading: Image.asset(
             'assets/images/photo_6008145075550404211_m 6 (1).png'),
         title: Text(

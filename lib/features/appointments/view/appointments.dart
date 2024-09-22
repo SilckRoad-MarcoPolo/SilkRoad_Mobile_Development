@@ -50,7 +50,7 @@ class _AppointmentsState extends State<Appointments> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: ArrowBackButton(onTap: () {}),
+        // leading: ArrowBackButton(onTap: () {}),
         title: Text(
           "Appointments",
           style: TextStyle(
@@ -58,7 +58,7 @@ class _AppointmentsState extends State<Appointments> {
               fontWeight: FontWeight.w500,
               fontSize: (24 / 932) * ScreenUtils.screenHeight(context)),
         ),
-        titleSpacing: -((10 / 430) * ScreenUtils.screenWidth(context)),
+        titleSpacing: ((20 / 430) * ScreenUtils.screenWidth(context)),
       ),
       body: SingleChildScrollView(
         child: Column(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:silk_road/features/course_content/view/course_content.dart';
 import 'package:silk_road/features/trending_courses/view/trending_courses_card.dart';
 
 class TrendingCourseList extends StatelessWidget {
@@ -25,34 +26,7 @@ class TrendingCourseList extends StatelessWidget {
       'progress': 80,
       'image': 'assets/data_analysis.png',
     },
-    {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
-    },
-    {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
-    },
-    {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
-    },
-    {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
-    },];
+    ];
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +44,9 @@ class TrendingCourseList extends StatelessWidget {
         delegate: SliverChildBuilderDelegate(childCount: courses.length,
             (BuildContext context,int index) {
               var course = courses[index];
-     return TrendingCoursesCard(course: course,borderColor: Color(0xffB27743),);
+     return TrendingCoursesCard(course: course,borderColor: Color(0xffB27743),ontap: (){
+       Navigator.push(context, MaterialPageRoute(builder: (context)=> CourseContent()));
+     },);
         
     }));
   }

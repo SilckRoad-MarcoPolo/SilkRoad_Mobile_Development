@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/constants.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/features/Appointments_mentor/view/appointments.dart';
+import 'package:silk_road/features/Students/views/Students_page.dart';
 import 'package:silk_road/features/appointments/view/appointment_card.dart';
 import 'package:silk_road/features/home/widgets/customSearch.dart';
 import 'package:silk_road/features/home/widgets/custom_appBar.dart';
@@ -74,7 +76,11 @@ class MentorHomeView extends StatelessWidget {
                       style: TextStyle(fontSize:(22 / 932) * ScreenUtils.screenHeight(context), fontWeight: FontWeight.w500),
                     ),
                     TextButton(
-                        onPressed: () {},
+                        onPressed:
+                              (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> AppointmentsMentor()));
+
+                        },
                         child: Text(
                           'more >',
                           style: TextStyle(color: kOrange, fontSize: (14 / 932) * ScreenUtils.screenHeight(context)),
@@ -87,6 +93,7 @@ class MentorHomeView extends StatelessWidget {
            
          ),
         AppointmentCard(
+          dialog: false,
               text1: 'Complete',
                           text2: 'Reschedule',
               instructorInfo:{
@@ -112,7 +119,9 @@ class MentorHomeView extends StatelessWidget {
                       style: TextStyle(fontSize:(18 / 932) * ScreenUtils.screenHeight(context), fontWeight: FontWeight.w500),
                     ),
                     TextButton(
-                        onPressed: () {},
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> StudentsPage()));
+                        },
                         child: Text(
                           'more >',
                           style: TextStyle(color: kOrange, fontSize: (14 / 932) * ScreenUtils.screenHeight(context)),

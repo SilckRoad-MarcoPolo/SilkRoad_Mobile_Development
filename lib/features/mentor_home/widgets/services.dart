@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/features/Reviews/views/review_page.dart';
 import 'package:silk_road/features/mentor_home/widgets/showCalendar.dart';
 
 class Services extends StatelessWidget {
@@ -53,7 +54,9 @@ class Services extends StatelessWidget {
          Column(
           children: [
             IconButton(
-                onPressed: () {},
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> ReviewPage()));
+                },
                 icon: Icon(
                   Icons.star,
                 color: Color(0xffFFD747),

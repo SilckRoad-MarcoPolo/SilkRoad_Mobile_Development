@@ -3,6 +3,8 @@ import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/features/profile/view/setting_profile_page.dart';
 import 'package:silk_road/features/profile/view/user_profilee.dart';
 
+import '../../../core/shared_components/widgets/shared_buttons.dart';
+
 class ProfilePage extends StatefulWidget {
   const ProfilePage({
     super.key,
@@ -20,9 +22,14 @@ class _ProfilePageState extends State<ProfilePage> {
       body: Column(
         children: [
            SizedBox(
-              height: ScreenUtils.screenHeight(context) * (98 / 932),
+              height: ScreenUtils.screenHeight(context) * (60 / 932),
             ),
-       
+          Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: ArrowBackButton(onTap: (){Navigator.pop(context);})),
+          SizedBox(
+            height: ScreenUtils.screenHeight(context) * (20 / 932),
+          ),
           Container(
             width: (398 / 414) * ScreenUtils.screenWidth(context),
             decoration: BoxDecoration(

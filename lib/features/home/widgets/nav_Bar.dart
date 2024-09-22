@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:silk_road/core/constants.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/custom_button.dart';
+import 'package:silk_road/features/iq_skills/view/iq_skills.dart';
+import 'package:silk_road/features/profile/view/profile_view.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -42,7 +44,9 @@ class NavBar extends StatelessWidget {
       )
     , ListTile(leading: Icon(Icons.person),
         title: Text('Profile Settings',),
-        onTap: (){},
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfilePage()));
+        },
 
     
     ),
@@ -50,8 +54,8 @@ class NavBar extends StatelessWidget {
                   ListTile(
                     leading: Icon(Icons.note_alt_rounded),
                     title: Text('IQ Test'),
-                    onTap: () {
-                      // Handle tap
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> IqSkills()));
                     },
                   ),
                   ListTile(
@@ -79,13 +83,6 @@ class NavBar extends StatelessWidget {
                   ListTile(
                     leading: Icon(Icons.help_center),
                     title: Text('Help Center'),
-                    onTap: () {
-                      // Handle tap
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
                     onTap: () {
                       // Handle tap
                     },

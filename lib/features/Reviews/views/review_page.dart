@@ -10,7 +10,12 @@ class ReviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
-       leading: ArrowBackButton(onTap: (){}),
+      backgroundColor: Colors.transparent,
+       elevation: 0,
+       scrolledUnderElevation: 0,
+       leading: ArrowBackButton(onTap: (){
+         Navigator.pop(context);
+       }),
       title: Text(
               "Reviews",
               style: TextStyle(
@@ -29,6 +34,7 @@ class ReviewPage extends StatelessWidget {
                     SizedBox(height: ScreenUtils.screenHeight(context) * (32 / 932),),
                    ListView.builder(
                     shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
                     itemCount: 10,
                     itemBuilder: (context,index){
                     return ReviewUser();

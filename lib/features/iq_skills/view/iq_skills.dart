@@ -78,6 +78,7 @@ class _IqSkillsState extends State<IqSkills> {
         slivers: [
           SliverToBoxAdapter(
             child: GradiantColorHeader(
+              function: (){Navigator.pop(context);},
               title: "IQ Skills",
               icon: true,
             ),

@@ -11,7 +11,7 @@ class UserProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         leading: ArrowBackButton(onTap: (){}),
+         leading: ArrowBackButton(onTap: (){Navigator.pop(context);}),
         title: Text(
           'ElAmir Mansour',
           style: TextStyle(

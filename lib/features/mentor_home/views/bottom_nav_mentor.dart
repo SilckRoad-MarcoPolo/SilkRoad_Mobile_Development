@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/constants.dart';
+import 'package:silk_road/features/Appointments_mentor/view/appointments.dart';
+import 'package:silk_road/features/Mentor%20Ship/views/Mentor_Ship.dart';
 import 'package:silk_road/features/mentor_home/views/mentor_home_view.dart';
 
 
@@ -15,15 +17,20 @@ class _BOttomNavMentorState extends State<BOttomNavMentor> {
   int _selectedIndex = 0;
   List<Widget> bodyContent = [
     MentorHomeView(),
+    AppointmentsMentor(button: false,),
+    MentorShip()
    
   ];
 
 
  
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index; 
-    });
+    if(index < 3){
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
+
   }
 
 
@@ -38,15 +45,15 @@ class _BOttomNavMentorState extends State<BOttomNavMentor> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.calendar_month),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.history),
+            icon: Icon(Icons.supervised_user_circle),
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
+            icon: Icon(Icons.messenger_outline),
             label: '',
           ),
         ],

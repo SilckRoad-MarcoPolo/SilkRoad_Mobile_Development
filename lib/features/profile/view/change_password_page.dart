@@ -47,7 +47,7 @@ class ChangePasswordPage extends StatelessWidget {
                 hintText: 'Confirm Password',
               ),
               SizedBox(
-                height: (150 / 932) * ScreenUtils.screenHeight(context),
+                height: (100 / 932) * ScreenUtils.screenHeight(context),
               ),
               CustomButton(text: 'Confirm')
             ],

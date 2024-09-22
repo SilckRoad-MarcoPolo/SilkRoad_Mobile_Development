@@ -6,8 +6,9 @@ import '../../../core/helpers/screen_utils.dart';
 class AppointmentCard extends StatelessWidget {
   Map<String, String> instructorInfo;
   final String text1,text2;
+  bool? dialog ;
 
-  AppointmentCard({super.key, required this.instructorInfo, required this.text1, required this.text2});
+  AppointmentCard({super.key, required this.instructorInfo, required this.text1, required this.text2,this.dialog = true});
 
   @override
   Widget build(BuildContext context) {
@@ -136,7 +137,9 @@ class AppointmentCard extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      showReviewDialog(context);
+                      if(dialog == true){
+                        showReviewDialog(context);
+                      }
                     },
                     child: Text(
                      text2,

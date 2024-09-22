@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
+import 'package:silk_road/features/iq_skills/view/iq_skills.dart';
 
 
 class QuizOverviewScreen extends StatelessWidget {
@@ -175,7 +176,9 @@ class QuizOverviewScreen extends StatelessWidget {
                       padding: EdgeInsets.all((10 / 430) * ScreenUtils.screenWidth(context)),
                     ),
                     child: Icon(Icons.arrow_forward, color: Colors.white),
-                    onPressed: (){}
+                    onPressed: (){
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>IqSkills()));
+                    }
                   ),
                 ],
               ),

@@ -8,8 +8,8 @@ void showCalendar(BuildContext context) {
     builder: (BuildContext context) {
       return AlertDialog(
         content: Container(
-          width: ScreenUtils.screenHeight(context) * (380 / 462),
-          height: (370/ 932) * ScreenUtils.screenHeight(context),
+          width: ScreenUtils.screenWidth(context) * (420 / 462),
+          height: (400/ 932) * ScreenUtils.screenHeight(context),
           child: TableCalendar(
             firstDay: DateTime.utc(2010, 10, 16),
             lastDay: DateTime.utc(2030, 3, 14),

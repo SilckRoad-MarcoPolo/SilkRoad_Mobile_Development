@@ -19,7 +19,9 @@ class _CouresPageState extends State<CouresPage> {
     return Scaffold(
         appBar: AppBar(
           leading:
-              IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back_ios)),
+              IconButton(onPressed: () {
+                Navigator.pop(context);
+              }, icon: Icon(Icons.arrow_back_ios)),
           title: Row(
             children: [
               Image.asset('assets/images/py-removebg-preview 2.png'),

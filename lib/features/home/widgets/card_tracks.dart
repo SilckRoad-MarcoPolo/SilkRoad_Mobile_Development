@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 
+import '../../quiz_page/view/start_quiz_screen.dart';
+
 class CardofTracks extends StatelessWidget {
   const CardofTracks({
     super.key,
@@ -21,7 +23,9 @@ class CardofTracks extends StatelessWidget {
         decoration: BoxDecoration(
             color: color, borderRadius: BorderRadius.circular(16)),
         child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => QuizStartScreen()));
+            },
             child: Text(
               text,
               style: TextStyle(fontSize: 18, color: Colors.white),

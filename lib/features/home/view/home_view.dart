@@ -6,6 +6,9 @@ import 'package:silk_road/features/home/widgets/customSearch.dart';
 import 'package:silk_road/features/home/widgets/custom_appBar.dart';
 import 'package:silk_road/features/home/widgets/nav_Bar.dart';
 import 'package:silk_road/features/home/widgets/trending_course_list.dart';
+import 'package:silk_road/features/iq_skills/view/iq_skills.dart';
+import 'package:silk_road/features/streak_screen/view/streak_screen.dart';
+import 'package:silk_road/features/trending_courses/view/trending_courses.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -28,7 +31,11 @@ class _HomeViewState extends State<HomeView> {
             customAppBar(
               title: 'Welcome',
               subtile: 'navigator',
-              actions: [Image.asset('assets/images/Group 481506.png')],
+              actions: [GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> StreakScreen()));
+                },
+                  child: Image.asset('assets/images/Group 481506.png'))],
             ),
             SizedBox(
               height: (26 / 932) * ScreenUtils.screenHeight(context),
@@ -38,7 +45,7 @@ class _HomeViewState extends State<HomeView> {
               height: (26 / 932) * ScreenUtils.screenHeight(context),
             ),
             Image.asset('assets/images/Group 481720.png'),
-          
+
             SizedBox(
               height: (37 / 932) * ScreenUtils.screenHeight(context),
             ),
@@ -50,7 +57,10 @@ class _HomeViewState extends State<HomeView> {
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
                 ),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => IqSkills()));
+                    },
                     child: Text(
                       'more >',
                       style: TextStyle(color: kOrange, fontSize: 14),
@@ -62,8 +72,7 @@ class _HomeViewState extends State<HomeView> {
             ),
             ListOfTracks(),
             // ListOfTracks(),
-            SizedBox(
-            ),
+            SizedBox(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -72,27 +81,27 @@ class _HomeViewState extends State<HomeView> {
                   style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
                 ),
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => TrendingCourses()));
+                    },
                     child: Text(
                       'more >',
                       style: TextStyle(color: kOrange, fontSize: 14),
                     ))
               ],
             ),
-             SizedBox(
+            SizedBox(
               height: (37 / 932) * ScreenUtils.screenHeight(context),
             ),
             // TrendingCourseList(),
-             CustomScrollView(
+            CustomScrollView(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              slivers: [
-
-                  TrendingCourseList()
-                
-              ],
-           )
-
+              slivers: [TrendingCourseList()],
+            )
           ]),
         ),
       ),

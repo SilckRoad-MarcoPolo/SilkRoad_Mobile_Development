@@ -16,7 +16,7 @@ class CardTracks extends StatelessWidget {
       padding:
           EdgeInsets.only(right: (16 / 414) * ScreenUtils.screenWidth(context)),
       child: Container(
-        width: (85 / 414) * ScreenUtils.screenWidth(context),
+        width: (100 / 414) * ScreenUtils.screenWidth(context),
         height: (38 / 932) * ScreenUtils.screenHeight(context),
         decoration: BoxDecoration(
           border: Border.all(color: Color(0xffB27743)),

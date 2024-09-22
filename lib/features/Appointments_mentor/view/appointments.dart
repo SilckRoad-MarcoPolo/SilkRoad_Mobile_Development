@@ -5,8 +5,8 @@ import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
 import 'appointment_card.dart';
 
 class AppointmentsMentor extends StatefulWidget {
-  const AppointmentsMentor({super.key});
-
+   AppointmentsMentor({super.key, this.button = true});
+  bool button;
   @override
   State<AppointmentsMentor> createState() => _AppointmentsMentorState();
 }
@@ -50,7 +50,7 @@ class _AppointmentsMentorState extends State<AppointmentsMentor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: ArrowBackButton(onTap: () {}),
+        leading:widget.button? ArrowBackButton(onTap: () {Navigator.pop(context);}): Text(""),
         title: Text(
           "Appointments",
           style: TextStyle(
@@ -79,6 +79,7 @@ class _AppointmentsMentorState extends State<AppointmentsMentor> {
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (ctx, index) {
                     return (AppointmentCard(
+
                       text1: 'Complete',
                       text2: 'Reschedule',
                       instructorInfo: appointments[index],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/custom_button.dart';
+import 'package:silk_road/features/profile/view/profile_view.dart';
 
 class DrawerMentor extends StatelessWidget {
   const DrawerMentor({super.key});
@@ -40,7 +41,9 @@ class DrawerMentor extends StatelessWidget {
       )
     , ListTile(leading: Icon(Icons.person),
         title: Text('Profile Settings',),
-        onTap: (){},
+        onTap:(){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfilePage()));
+        } ,
 
     
     ),
@@ -71,13 +74,6 @@ class DrawerMentor extends StatelessWidget {
                   ListTile(
                     leading: Icon(Icons.help_center),
                     title: Text('Help Center'),
-                    onTap: () {
-                      // Handle tap
-                    },
-                  ),
-                  ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Home'),
                     onTap: () {
                       // Handle tap
                     },

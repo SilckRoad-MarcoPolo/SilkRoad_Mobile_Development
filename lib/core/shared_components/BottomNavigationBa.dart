@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/constants.dart';
+import 'package:silk_road/features/appointments/view/appointments.dart';
 import 'package:silk_road/features/home/view/home_view.dart';
 import 'package:silk_road/features/profile/view/profile_view.dart';
 
@@ -12,7 +13,7 @@ class BOttomNavigationBar extends StatefulWidget {
 
 class _BOttomNavigationBarState extends State<BOttomNavigationBar> {
   int _selectedIndex = 0;
-  List<Widget> bodyContent = [HomeView(), ProfilePage(), MyCourses()];
+  List<Widget> bodyContent = [HomeView(), Appointments(), MyCourses()];
 
   void _onItemTapped(int index) {
     if (index < 3) {
@@ -32,7 +33,7 @@ class _BOttomNavigationBarState extends State<BOttomNavigationBar> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.calendar_month),
             label: '',
           ),
           BottomNavigationBarItem(
@@ -40,7 +41,7 @@ class _BOttomNavigationBarState extends State<BOttomNavigationBar> {
             label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
+            icon: Icon(Icons.messenger_outline),
             label: '',
           ),
         ],

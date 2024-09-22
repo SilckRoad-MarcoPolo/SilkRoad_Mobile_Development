@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/features/mentor_profile/views/mentor_profile_page.dart';
 
 class UserInfo extends StatefulWidget {
   final double rating;
@@ -81,7 +82,9 @@ class _UserInfoState extends State<UserInfo> {
                 ),
         
                 GestureDetector(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> MentorProfilePage()));
+                  },
                   child: Padding(
                     padding:  EdgeInsets.only(left: (8 / 414) * ScreenUtils.screenWidth(context)),
                     child: Container(

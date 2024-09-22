@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
+import 'package:silk_road/features/course_content/view/course_content.dart';
 import 'package:silk_road/features/home/widgets/customSearch.dart';
 
 import '../../../core/shared_components/widgets/gradiant_color_header.dart';
@@ -74,6 +75,9 @@ class MyCourses extends StatelessWidget {
       elevation: 0,
       color: Colors.transparent,
       child: ListTile(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> CourseContent()));
+        },
         shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
           borderSide: const BorderSide(
@@ -189,7 +193,9 @@ class MyCourses extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> CourseContent()));
+                },
                 child: Text(
                   'view all',
                   style: TextStyle(

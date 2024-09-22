@@ -7,14 +7,18 @@ import '../../helpers/screen_utils.dart';
 class GradiantColorHeader extends StatelessWidget {
   String title;
   bool icon;
+  var function;
+
   GradiantColorHeader({
     this.icon = false,
     required this.title,
+    this.function,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Container(
@@ -33,7 +37,7 @@ class GradiantColorHeader extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      ArrowBackButton(onTap: (){}),
+                      ArrowBackButton(onTap: function == null? (){}: function),
                       Text(
                         title,
                         style: TextStyle(

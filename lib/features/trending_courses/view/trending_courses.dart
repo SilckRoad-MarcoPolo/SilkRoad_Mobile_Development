@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:silk_road/features/course_content/view/course_content.dart';
 import 'package:silk_road/features/trending_courses/view/trending_courses_card.dart';
 
 import '../../../core/shared_components/widgets/gradiant_color_header.dart';
@@ -68,6 +69,7 @@ class TrendingCourses extends StatelessWidget {
             child: GradiantColorHeader(
               title: "Trending Courses",
               icon: true,
+              function: (){Navigator.pop(context);},
             ),
           ),
           SliverPadding(
@@ -76,7 +78,9 @@ class TrendingCourses extends StatelessWidget {
               delegate: SliverChildBuilderDelegate(
                     (context, index) {
                   var course = courses[index];
-                  return TrendingCoursesCard(course: course,borderColor:  Color(0xffB27743),);
+                  return TrendingCoursesCard(course: course,borderColor:  Color(0xffB27743),ontap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => CourseContent()));
+                  },);
                 },
                 childCount: courses.length,
               ),

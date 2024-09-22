@@ -6,6 +6,7 @@ import 'package:silk_road/features/Appointments_mentor/view/appointments.dart';
 
 import 'package:silk_road/core/shared_components/BottomNavigationBa.dart';
 import 'package:silk_road/features/my_courses/view/my_courses.dart';
+import 'package:silk_road/features/on_boarding/view/on_boarding.dart';
 
 
 
@@ -38,7 +39,7 @@ class SilkRoad extends StatelessWidget {
 
 
     
-        home:AppointmentsMentor()
+        home:BOttomNavMentor()
 
 
 

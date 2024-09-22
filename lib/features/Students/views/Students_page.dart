@@ -11,7 +11,9 @@ class StudentsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: ArrowBackButton(onTap: (){}),
+        leading: ArrowBackButton(onTap: (){
+          Navigator.pop(context);
+        }),
           title: Text(
         "Students",
         style: TextStyle(
