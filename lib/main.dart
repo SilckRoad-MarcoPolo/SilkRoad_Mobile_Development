@@ -33,7 +33,7 @@ class SilkRoad extends StatelessWidget {
             ),
         debugShowCheckedModeBanner: false,
 
-        home:IqSkills(),
+        home:BOttomNavigationBar(),
 
 
 

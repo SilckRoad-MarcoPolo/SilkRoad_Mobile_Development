@@ -10,54 +10,59 @@ class UserProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-       padding: EdgeInsets.symmetric(
-                  horizontal: ScreenUtils.screenHeight(context) * (16 / 462),
-                ),
+        padding: EdgeInsets.symmetric(
+          horizontal: ScreenUtils.screenHeight(context) * (16 / 462),
+        ),
         child: Column(
           children: [
-          
-            
-          UserPicture(
-             width: ScreenUtils.screenHeight(context) * (106 / 462), // Set width
-        height: ScreenUtils.screenHeight(context) * (106 / 932),
-        size: 60,
-          ),
+            UserPicture(
+              width: ScreenUtils.screenHeight(context) * (106 / 462),
+              // Set width
+              height: ScreenUtils.screenHeight(context) * (106 / 932),
+              size: 60,
+            ),
             SizedBox(
               height: ScreenUtils.screenHeight(context) * (50 / 932),
             ),
-           CustomTextFormField(
-                          hintText: 'Dina Ragab',
-                        ),
-                        SizedBox(
-                          height: (22/ 932) * ScreenUtils.screenHeight(context),
-                        ),
-                        CustomTextFormField(
-                          hintText: 'userName',
-                        ),
-                        SizedBox(
-                          height: (22 / 932) * ScreenUtils.screenHeight(context),
-                        ),
-                        CustomTextFormField(
-                          hintText: 'Phone Number',
-                        ),
-                        SizedBox(
-                          height: (22 / 932) * ScreenUtils.screenHeight(context),
-                        ),
-                          CustomTextFormField(
-                          hintText: 'Age',
-                        ),
-                        SizedBox(
-                          height: (22 / 932) * ScreenUtils.screenHeight(context),
-                        ),
-                        CustomTextFormField(
-                          hintText: 'E-mail',
-                        ),
-                        SizedBox(
-                          height: (22 / 932) * ScreenUtils.screenHeight(context),
-                        ),
-                        CustomTextFormField(
-                          hintText: 'Experience',
-                        ),
+            CustomTextFormField(
+              isEditable: false,
+              hintText: 'Dina Ragab',
+            ),
+            SizedBox(
+              height: (22 / 932) * ScreenUtils.screenHeight(context),
+            ),
+            CustomTextFormField(
+              isEditable: false,
+              hintText: 'userName',
+            ),
+            SizedBox(
+              height: (22 / 932) * ScreenUtils.screenHeight(context),
+            ),
+            CustomTextFormField(
+              isEditable: false,
+              hintText: 'Phone Number',
+            ),
+            SizedBox(
+              height: (22 / 932) * ScreenUtils.screenHeight(context),
+            ),
+            CustomTextFormField(
+              isEditable: false,
+              hintText: 'Age',
+            ),
+            SizedBox(
+              height: (22 / 932) * ScreenUtils.screenHeight(context),
+            ),
+            CustomTextFormField(
+              isEditable: false,
+              hintText: 'E-mail',
+            ),
+            SizedBox(
+              height: (22 / 932) * ScreenUtils.screenHeight(context),
+            ),
+            CustomTextFormField(
+              isEditable: false,
+              hintText: 'Experience',
+            ),
           ],
         ),
       ),
