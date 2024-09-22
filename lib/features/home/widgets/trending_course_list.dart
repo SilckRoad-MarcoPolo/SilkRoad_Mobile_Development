@@ -70,7 +70,7 @@ class TrendingCourseList extends StatelessWidget {
         delegate: SliverChildBuilderDelegate(childCount: courses.length,
             (BuildContext context,int index) {
               var course = courses[index];
-     return TrendingCoursesCard(course: course);
+     return TrendingCoursesCard(course: course,borderColor: Color(0xffB27743),);
         
     }));
   }

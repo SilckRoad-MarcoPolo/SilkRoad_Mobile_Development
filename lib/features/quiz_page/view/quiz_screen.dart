@@ -68,7 +68,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
   void finishQuiz() {
     timer?.cancel();
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>QuizOverviewScreen()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>QuizOverviewScreen(arrowButton: true,)));
   }
 
   List<int> getVisibleIndicatorIndices() {

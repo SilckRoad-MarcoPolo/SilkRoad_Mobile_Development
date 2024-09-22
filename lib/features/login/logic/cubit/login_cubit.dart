@@ -24,8 +24,7 @@ class LoginCubit extends Cubit<LoginState> {
         // On success, emit LoginSuccess state
         emit(LoginSuccess());
         // You can navigate to the next page here after a successful login
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => BOttomNavigationBar()));
+
       } else {
         // Emit failure state with the response data in case of an error
         emit(LoginFailure("Login failed: ${response.data.toString()}"));

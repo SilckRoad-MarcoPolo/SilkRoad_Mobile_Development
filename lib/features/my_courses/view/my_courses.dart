@@ -129,14 +129,14 @@ class MyCourses extends StatelessWidget {
                   width: (50 / 432) * ScreenUtils.screenWidth(context),
                   height: (50 / 432) * ScreenUtils.screenWidth(context),
                   child: CircularProgressIndicator(
-                    value: course['progress'] / 100,
+                    value: course['progress'] != null ? course['progress'] / 100 : 0, // Add progress logic if available
                     strokeWidth: 1,
                     backgroundColor: Color(0xbeffc100),
                     valueColor: const AlwaysStoppedAnimation<Color>(Colors.black),
                   ),
                 ),
                 Text(
-                  '${course['progress']}%',
+                  '${course['progress'] ?? 0}%', // Display progress
                   style: TextStyle(
                     fontSize: (12 / 932) * ScreenUtils.screenHeight(context),
                     fontWeight: FontWeight.bold,

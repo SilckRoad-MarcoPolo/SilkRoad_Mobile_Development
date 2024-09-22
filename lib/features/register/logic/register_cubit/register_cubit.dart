@@ -20,7 +20,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     try {
       Response response = await AuthApi.signUpApi(firstName, lastName, email, password);
 
-      if (response.statusCode == 200) {
+      if (response.statusCode! < 300) {
         emit(RegisterSuccess());
         // On success, you can navigate to the next page or login screen
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BOttomNavigationBar()));
