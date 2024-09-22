@@ -4,10 +4,12 @@ import 'package:silk_road/core/helpers/screen_utils.dart';
 class TrendingCoursesCard extends StatelessWidget {
   const TrendingCoursesCard({
     super.key,
-    required this.course,
+    required this.course,required this.borderColor,
   });
 
   final Map<String, dynamic> course;
+
+  final Color borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +19,8 @@ class TrendingCoursesCard extends StatelessWidget {
       child: (Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          side: const BorderSide(
-            color: Color(0xffB27743),
+          side:  BorderSide(
+            color: borderColor,
             width: 1, // Border width
           ),
         ),

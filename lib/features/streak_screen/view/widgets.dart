@@ -49,7 +49,7 @@ class StatsSection extends StatelessWidget {
             padding:
             EdgeInsets.all((16 / 932) * ScreenUtils.screenHeight(context)),
             decoration: BoxDecoration(
-              color: const Color(0xFFFAFAFA),
+              color: Theme.of(context).scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(

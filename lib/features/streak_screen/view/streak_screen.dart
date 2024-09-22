@@ -1,12 +1,69 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
 import 'package:silk_road/features/streak_screen/view/widgets.dart';
-
 import 'insight_pop_up.dart';
 
-class StreakScreen extends StatelessWidget {
+class Challenge {
+  final String id;
+  final String challengeName;
+  final int xpReward;
+  final String description;
+  final bool completed;
+
+  Challenge({
+    required this.id,
+    required this.challengeName,
+    required this.xpReward,
+    required this.description,
+    required this.completed,
+  });
+
+  factory Challenge.fromJson(Map<String, dynamic> json) {
+    return Challenge(
+      id: json['_id'],
+      challengeName: json['challenge_name'],
+      xpReward: json['xp_reward'],
+      description: json['description'],
+      completed: json['completed'],
+    );
+  }
+}
+
+class ChallengeService {
+  static const String apiUrl = 'https://silkroadapis-production.up.railway.app/api/v1/daily-challenges';
+
+  Future<List<Challenge>> fetchChallenges() async {
+    final response = await http.get(Uri.parse(apiUrl));
+
+    if (response.statusCode == 200) {
+      final Map<String, dynamic> json = jsonDecode(response.body);
+      return (json['data']['docs'] as List)
+          .map((challengeJson) => Challenge.fromJson(challengeJson))
+          .toList();
+    } else {
+      throw Exception('Failed to load challenges');
+    }
+  }
+}
+
+class StreakScreen extends StatefulWidget {
   const StreakScreen({Key? key}) : super(key: key);
+
+  @override
+  _StreakScreenState createState() => _StreakScreenState();
+}
+
+class _StreakScreenState extends State<StreakScreen> {
+  late Future<List<Challenge>> futureChallenges;
+
+  @override
+  void initState() {
+    super.initState();
+    futureChallenges = ChallengeService().fetchChallenges();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +84,7 @@ class StreakScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding:
-              EdgeInsets.all((17 / 432) * ScreenUtils.screenWidth(context)),
+          padding: EdgeInsets.all((17 / 432) * ScreenUtils.screenWidth(context)),
           child: Column(
             children: [
               SizedBox(height: (10 / 932) * ScreenUtils.screenHeight(context)),
@@ -59,8 +115,7 @@ class StreakScreen extends StatelessWidget {
                         '4',
                         style: TextStyle(
                             height: 0.6,
-                            fontSize:
-                                (64 / 430) * ScreenUtils.screenWidth(context),
+                            fontSize: (64 / 430) * ScreenUtils.screenWidth(context),
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -84,8 +139,7 @@ class StreakScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  for (var (index, day)
-                      in ['M', 'T', 'W', 'T', 'F', 'S', 'S'].indexed)
+                  for (var (index, day) in ['M', 'T', 'W', 'T', 'F', 'S', 'S'].indexed)
                     _buildDayItem(day, index < 4, context),
                 ],
               ),
@@ -98,22 +152,42 @@ class StreakScreen extends StatelessWidget {
                   Text(
                     'Challenges',
                     style: TextStyle(
-                        fontSize:
-                            (24 / 932) * ScreenUtils.screenHeight(context),
-                        fontWeight: FontWeight.w500,
-                  ),),Text(
+                        fontSize: (24 / 932) * ScreenUtils.screenHeight(context),
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
                     'XP',
                     style: TextStyle(
-                        fontSize:
-                            (24 / 932) * ScreenUtils.screenHeight(context),
-                        fontWeight: FontWeight.w500,
-                  ),),
+                        fontSize: (24 / 932) * ScreenUtils.screenHeight(context),
+                        fontWeight: FontWeight.w500),
+                  ),
                 ],
               ),
               SizedBox(height: (16 / 932) * ScreenUtils.screenHeight(context)),
-              _buildChallengeItem('Take a Track Assessment Quiz', true, '25',context),
-              _buildChallengeItem('Start a Discussion', false, '20',context),
-              _buildChallengeItem('Finish one Learning Course', false, '50',context),
+              FutureBuilder<List<Challenge>>(
+                future: futureChallenges,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Center(child: CircularProgressIndicator());
+                  } else if (snapshot.hasError) {
+                    return Center(child: Text('Error: ${snapshot.error}'));
+                  } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                    return Center(child: Text('No challenges available.'));
+                  } else {
+                    final challenges = snapshot.data!;
+                    return Column(
+                      children: challenges.map((challenge) {
+                        return _buildChallengeItem(
+                          challenge.challengeName,
+                          challenge.completed,
+                          challenge.xpReward.toString(),
+                          context,
+                        );
+                      }).toList(),
+                    );
+                  }
+                },
+              ),
             ],
           ),
         ),
@@ -153,8 +227,7 @@ class StreakScreen extends StatelessWidget {
                     day == 'F' ? '29' : (day == 'S' ? '30' : ''),
                     style: TextStyle(
                         color: Colors.black54,
-                        fontSize:
-                            (22 / 932) * ScreenUtils.screenHeight(context)),
+                        fontSize: (22 / 932) * ScreenUtils.screenHeight(context)),
                   ),
           ),
         ),
@@ -164,31 +237,31 @@ class StreakScreen extends StatelessWidget {
 
   Widget _buildChallengeItem(String title, bool completed, String xp, BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(vertical: (4 / 932) * ScreenUtils.screenHeight(context)),
+      padding: EdgeInsets.symmetric(vertical: (4 / 932) * ScreenUtils.screenHeight(context)),
       child: Row(
         children: [
           Container(
             width: (35 / 932) * ScreenUtils.screenHeight(context),
             height: (35 / 932) * ScreenUtils.screenHeight(context),
             decoration: BoxDecoration(
-              border: completed ? null : Border.all(color:Color(0xffDF6520),width: 2 ),
+              border: completed ? null : Border.all(color: Color(0xffDF6520), width: 2),
               shape: BoxShape.circle,
               gradient: completed
                   ? const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0xFFFF7324), Color(0xFF994516)],
-                stops: [0.26, 1.0],
-              )
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Color(0xFFFF7324), Color(0xFF994516)],
+                      stops: [0.26, 1.0],
+                    )
                   : null,
               color: completed ? null : Colors.transparent,
             ),
             child: Center(
               child: completed
                   ? Icon(Icons.check,
-                  color: Colors.white,
-                  size: (20 / 932) * ScreenUtils.screenHeight(context))
-                  : Text("")
+                      color: Colors.white,
+                      size: (20 / 932) * ScreenUtils.screenHeight(context))
+                  : Text(""),
             ),
           ),
           const SizedBox(width: 10),
@@ -199,9 +272,3 @@ class StreakScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
