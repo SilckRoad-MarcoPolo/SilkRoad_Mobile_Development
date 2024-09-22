@@ -3,7 +3,7 @@ import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/core/shared_components/custom_button.dart';
 import 'package:silk_road/core/shared_components/custom_text_field.dart';
 import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
-import 'package:silk_road/features/profile/widgets/User_picture.dart';
+import 'package:silk_road/features/profile/widgets/User_Picture.dart';
 import 'package:silk_road/features/profile/widgets/custom_button.dart';
 
 class ChangeProfileSetting extends StatelessWidget {
