@@ -74,6 +74,13 @@ class MyCourses extends StatelessWidget {
       elevation: 0,
       color: Colors.transparent,
       child: ListTile(
+        shape: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            color: Color.fromRGBO(196, 196, 196, 0.7),
+            width: 1.5,
+          ),
+        ),
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(8.0),
           child: Image.asset(
@@ -86,7 +93,7 @@ class MyCourses extends StatelessWidget {
         title: Text(
           course['name'],
           style: TextStyle(
-            fontSize: (18 / 932) * ScreenUtils.screenHeight(context),
+            fontSize: (16 / 932) * ScreenUtils.screenHeight(context),
             fontWeight: FontWeight.w500,
             color: const Color(0xff3F3F3F),
           ),
@@ -98,7 +105,14 @@ class MyCourses extends StatelessWidget {
             Text(
               course['instructor'],
               style: TextStyle(
-                fontSize: (15 / 932) * ScreenUtils.screenHeight(context),
+                fontSize: (10 / 932) * ScreenUtils.screenHeight(context),
+                fontWeight: FontWeight.w400,
+                color: const Color.fromARGB(125, 0, 0, 0),
+              ),
+            ),Text(
+              "40 hrs",
+              style: TextStyle(
+                fontSize: (8 / 932) * ScreenUtils.screenHeight(context),
                 fontWeight: FontWeight.w400,
                 color: const Color.fromARGB(125, 0, 0, 0),
               ),
@@ -116,8 +130,8 @@ class MyCourses extends StatelessWidget {
                   height: (50 / 432) * ScreenUtils.screenWidth(context),
                   child: CircularProgressIndicator(
                     value: course['progress'] / 100,
-                    strokeWidth: 3,
-                    backgroundColor: Colors.orangeAccent,
+                    strokeWidth: 1,
+                    backgroundColor: Color(0xbeffc100),
                     valueColor: const AlwaysStoppedAnimation<Color>(Colors.black),
                   ),
                 ),
@@ -136,6 +150,7 @@ class MyCourses extends StatelessWidget {
     );
   }
 
+
   Widget buildCourseSection(
       BuildContext context,
       String sectionTitle,
@@ -149,7 +164,7 @@ class MyCourses extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(
-            vertical: (10 / 932) * ScreenUtils.screenHeight(context),
+            vertical: (16 / 932) * ScreenUtils.screenHeight(context),
             horizontal: (15 / 432) * ScreenUtils.screenWidth(context),
           ),
           child: Row(
@@ -168,8 +183,8 @@ class MyCourses extends StatelessWidget {
                   sectionTitle,
                   style: TextStyle(
                     fontSize: (18 / 932) * ScreenUtils.screenHeight(context),
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -179,16 +194,25 @@ class MyCourses extends StatelessWidget {
                   'view all',
                   style: TextStyle(
                     fontSize: (16 / 932) * ScreenUtils.screenHeight(context),
-                    color: Colors.orange,
+                    color: const Color(0xffFDDD7B),
                   ),
                 ),
               ),
             ],
           ),
         ),
-        buildCourseCard(context, course1),
-        buildCourseCard(context, course2),
-        buildCourseCard(context, course3),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: buildCourseCard(context, course1),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: buildCourseCard(context, course2),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: buildCourseCard(context, course3),
+        ),
       ],
     );
   }
@@ -197,12 +221,23 @@ class MyCourses extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: ArrowBackButton(onTap: () {}),
+        centerTitle: true,
+        title: Text("My Courses",style: TextStyle(
+          fontSize: (22 / 932) * ScreenUtils.screenHeight(context),
+          fontWeight: FontWeight.w600
+        ),),
+        actions: [IconButton(onPressed: (){}, icon: const Icon(Icons.person))],
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        scrolledUnderElevation: 0,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustOmSearch(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 10),
+              child: CustOmSearch(),
+            ),
             buildCourseSection(
               context,
               "Backend development",
@@ -210,8 +245,8 @@ class MyCourses extends StatelessWidget {
               backendCourse2,
               backendCourse3,
               const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
                 colors: [Color(0xFFEB996E), Color(0xFFF2BDAC)],
               ),
             ),

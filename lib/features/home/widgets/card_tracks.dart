@@ -68,18 +68,16 @@ class ListOfTracks extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: (52 / 932) * ScreenUtils.screenHeight(context),
-      child: Expanded(
-        child: ListView.builder(
-            shrinkWrap: true,
-            itemCount: trackName.length,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext, index) {
-              return CardofTracks(
-                color: colorList[index],
-                text: trackName[index],
-              );
-            }),
-      ),
+      child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: trackName.length,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (BuildContext, index) {
+            return CardofTracks(
+              color: colorList[index],
+              text: trackName[index],
+            );
+          }),
     );
   }
 }

@@ -62,23 +62,27 @@ class TrendingCourses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            GradiantColorHeader(
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: GradiantColorHeader(
               title: "Trending Courses",
               button: true,
             ),
-            ListView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: courses.length,
-                itemBuilder: (context, index) {
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                    (context, index) {
                   var course = courses[index];
                   return TrendingCoursesCard(course: course);
-                }),
-          ],
-        ),
+                },
+                childCount: courses.length,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

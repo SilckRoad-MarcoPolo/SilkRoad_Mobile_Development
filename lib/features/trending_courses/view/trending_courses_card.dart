@@ -17,8 +17,8 @@ class TrendingCoursesCard extends StatelessWidget {
       child: (Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
-          side: BorderSide(
-            color: Colors.grey.withOpacity(0.5),
+          side: const BorderSide(
+            color: Color(0xffB27743),
             width: 1, // Border width
           ),
         ),

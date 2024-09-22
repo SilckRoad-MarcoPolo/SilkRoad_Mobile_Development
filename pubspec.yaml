@@ -56,6 +56,13 @@ dependencies:
   table_calendar: ^3.1.2
   video_player: ^2.9.1
 
+flutter_native_splash:
+  android: true
+  color: "#F1E5D6"
+  image: "assets/images/splash_background.png"
+  android_12:
+    color: "#F1E5D6"
+    image: "assets/images/splash_background.png"
 dev_dependencies:
   flutter_lints: ^4.0.0
   flutter_test:
