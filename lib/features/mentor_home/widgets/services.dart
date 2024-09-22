@@ -56,8 +56,8 @@ class Services extends StatelessWidget {
                 onPressed: () {},
                 icon: Icon(
                   Icons.star,
-                  color: Colors.yellow,
-                  size: (29 / 932) * ScreenUtils.screenHeight(context),
+                color: Color(0xffFFD747),
+                  size: (30 / 932) * ScreenUtils.screenHeight(context),
                 )),
             Text(
               'Reviews',

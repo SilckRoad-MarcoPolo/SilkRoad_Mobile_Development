@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:silk_road/features/mentor_home/views/bottom_nav_mentor.dart';
+import 'package:silk_road/features/user_profile/user_profile_view.dart';
 
 
 
@@ -23,7 +23,7 @@ class SilkRoad extends StatelessWidget {
         debugShowCheckedModeBanner: false,
 
 
-        home:BOttomNavMentor(),
+        home:UserProfilePage()
     );
 
         
