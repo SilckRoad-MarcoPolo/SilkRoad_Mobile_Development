@@ -30,7 +30,11 @@ class SilkRoad extends StatelessWidget {
 
             ),
         debugShowCheckedModeBanner: false,
+
         home:TrendingCourses(),
+
+
+
 
 
 
