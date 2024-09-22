@@ -6,6 +6,7 @@ import 'package:silk_road/core/shared_components/custom_text_field.dart';
 import 'package:silk_road/core/shared_components/google_button.dart';
 import 'package:silk_road/features/login/view/login_page.dart';
 
+import '../../../core/shared_components/BottomNavigationBa.dart';
 import '../logic/register_cubit/register_cubit.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -44,11 +45,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 SnackBar(content: Text(state.errorMessage)),
               );
             } else if (state is RegisterSuccess) {
-              // Show success message and navigate to login page
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Signup successful! Please log in.')),
-              );
-              Navigator.pushReplacementNamed(context, '/login');
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => BOttomNavigationBar()));
             }
           },
           child: BlocBuilder<RegisterCubit, RegisterState>(
