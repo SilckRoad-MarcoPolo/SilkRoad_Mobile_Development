@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:silk_road/features/Reviews/views/review_page.dart';
+import 'package:silk_road/features/Appointments_mentor/view/appointments.dart';
 
 
 
@@ -28,8 +28,7 @@ class SilkRoad extends StatelessWidget {
         debugShowCheckedModeBanner: false,
 
     
-        home:ReviewPage()
-
+        home:AppointmentsMentor()
 
 
 

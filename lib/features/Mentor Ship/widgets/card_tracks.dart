@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 
-class CardofTracks extends StatelessWidget {
-  const CardofTracks({
+class CardTracks extends StatelessWidget {
+  const CardTracks({
     super.key,
     required this.text,
     required this.color,
@@ -16,24 +16,32 @@ class CardofTracks extends StatelessWidget {
       padding:
           EdgeInsets.only(right: (16 / 414) * ScreenUtils.screenWidth(context)),
       child: Container(
-        width: (118 / 414) * ScreenUtils.screenWidth(context),
-        height: (52 / 932) * ScreenUtils.screenHeight(context),
+        width: (85 / 414) * ScreenUtils.screenWidth(context),
+        height: (38 / 932) * ScreenUtils.screenHeight(context),
         decoration: BoxDecoration(
+          border: Border.all(color: Color(0xffB27743)),
             color: color, borderRadius: BorderRadius.circular(16)),
         child: TextButton(
             onPressed: () {},
             child: Text(
               text,
-              style: TextStyle(fontSize: 18, color: Colors.white),
+              style: TextStyle(fontSize: 14, color: Colors.black),
             )),
       ),
     );
   }
 }
 
-class ListOfTracks extends StatelessWidget {
-  ListOfTracks({super.key});
+class ListTracks extends StatefulWidget {
+  ListTracks({super.key});
+
+  @override
+  State<ListTracks> createState() => _ListTracksState();
+}
+
+class _ListTracksState extends State<ListTracks> {
   final List<String> trackName = [
+    'All',
     'Backend',
     'Frontend',
     'UI/Ux ',
@@ -42,17 +50,8 @@ class ListOfTracks extends StatelessWidget {
     'Ai',
     
   ];
-  final List<Color> colorList = [
-    Color(0xff9F5514),
-    Color(0xffD89A46),
-    Color(0xffF2C1B9),
-    Color(0xffFFECB2),
-    Color(0xffE4B87D),
-    Color(0xffFFCE51),
-  ];
 
-
-
+bool isSelected=false;
 
   @override
   Widget build(BuildContext context) {
@@ -63,9 +62,17 @@ class ListOfTracks extends StatelessWidget {
           itemCount: trackName.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (BuildContext, index) {
-            return CardofTracks(
-              color: colorList[index],
-              text: trackName[index],
+            return GestureDetector(
+              onTap: () {
+                
+                setState(() {
+                  isSelected=true;
+                });
+              },
+              child: CardTracks(
+                color: isSelected?  Color(0xffB27743): Colors.white,
+                text: trackName[index],
+              ),
             );
           }),
     );

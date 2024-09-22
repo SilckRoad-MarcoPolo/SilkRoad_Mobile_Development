@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
 import 'package:silk_road/features/Reviews/widgets/rating_review.dart';
 import 'package:silk_road/features/Reviews/widgets/review_user.dart';
 
@@ -8,7 +9,9 @@ class ReviewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text(
+    return Scaffold(appBar: AppBar(
+       leading: ArrowBackButton(onTap: (){}),
+      title: Text(
               "Reviews",
               style: TextStyle(
                   fontSize: ScreenUtils.screenHeight(context) * (20 / 932),
