@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:silk_road/features/user_profile/user_profile_view.dart';
+
+
 
 import 'package:silk_road/core/shared_components/BottomNavigationBa.dart';
 
@@ -32,8 +35,9 @@ class SilkRoad extends StatelessWidget {
 
 
 
+        home:UserProfilePage()
 
-        home:BOttomNavMentor(),
+
 
 
 
