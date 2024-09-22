@@ -109,14 +109,14 @@ class _MyCoursesState extends State<MyCourses> {
                   width: (50 / 432) * ScreenUtils.screenWidth(context),
                   height: (50 / 432) * ScreenUtils.screenWidth(context),
                   child: CircularProgressIndicator(
-                    value: course['progress'] != null ? course['progress'] / 100 : 0, // Add progress logic if available
-                    strokeWidth: 1,
+                    value: course['progress'] != null ? course['progress'] / 100 : 0, // Merge both branches' logic
+                    strokeWidth: 2, // Retaining the stroke width from 'main'
                     backgroundColor: Color(0xbeffc100),
                     valueColor: const AlwaysStoppedAnimation<Color>(Colors.black),
                   ),
                 ),
                 Text(
-                  '${course['progress'] ?? 0}%', // Display progress
+                  '${course['progress'] ?? 0}%', // Display progress with null safety
                   style: TextStyle(
                     fontSize: (12 / 932) * ScreenUtils.screenHeight(context),
                     fontWeight: FontWeight.bold,

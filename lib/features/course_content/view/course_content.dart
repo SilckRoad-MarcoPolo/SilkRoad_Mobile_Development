@@ -3,7 +3,7 @@ import 'package:silk_road/features/trending_courses/view/trending_courses_card.d
 
 import '../../../core/shared_components/widgets/gradiant_color_header.dart';
 
-class TrendingCourses extends StatelessWidget {
+class CourseContent extends StatelessWidget {
   // Sample list of course data
   final List<Map<String, dynamic>> courses = [
     {
@@ -57,7 +57,7 @@ class TrendingCourses extends StatelessWidget {
     },
   ];
 
-  TrendingCourses({super.key});
+  CourseContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +66,7 @@ class TrendingCourses extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: GradiantColorHeader(
-              title: "Trending Courses",
+              title: "Python Course",
               icon: true,
             ),
           ),
@@ -76,7 +76,8 @@ class TrendingCourses extends StatelessWidget {
               delegate: SliverChildBuilderDelegate(
                     (context, index) {
                   var course = courses[index];
-                  return TrendingCoursesCard(course: course,borderColor:  Color(0xffB27743),);
+                  return TrendingCoursesCard(course: course,borderColor: Color(
+                      0xb3c4c4c4),);
                 },
                 childCount: courses.length,
               ),

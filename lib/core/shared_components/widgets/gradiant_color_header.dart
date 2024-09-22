@@ -6,9 +6,9 @@ import '../../helpers/screen_utils.dart';
 
 class GradiantColorHeader extends StatelessWidget {
   String title;
-  bool button;
+  bool icon;
   GradiantColorHeader({
-    this.button = false,
+    this.icon = false,
     required this.title,
     super.key,
   });
@@ -33,7 +33,7 @@ class GradiantColorHeader extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      button?ArrowBackButton(onTap: (){}): const Text(""),
+                      ArrowBackButton(onTap: (){}),
                       Text(
                         title,
                         style: TextStyle(
@@ -42,7 +42,7 @@ class GradiantColorHeader extends StatelessWidget {
                             color: Colors.black),
                       ),
                       Spacer(),
-                      Icon(Icons.filter_alt_rounded)
+                      icon?Icon(Icons.filter_alt_rounded):Text("")
                     ],
                   ),
                 ),

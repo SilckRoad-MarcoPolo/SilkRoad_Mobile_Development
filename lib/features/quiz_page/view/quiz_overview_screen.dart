@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
 
 
 class QuizOverviewScreen extends StatelessWidget {
-  const QuizOverviewScreen({Key? key}) : super(key: key);
-
+  bool arrowButton = true;
+   QuizOverviewScreen({Key? key,required this.arrowButton}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +15,9 @@ class QuizOverviewScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: (70 / 932) * ScreenUtils.screenHeight(context)),
+          arrowButton?Text(""):ArrowBackButton(onTap: (){
+            Navigator.pop(context);
+          }),
           Center(
             child: Text(
               'Quiz Overview',
@@ -151,7 +155,7 @@ class QuizOverviewScreen extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Align(
+          arrowButton?Align(
             alignment: Alignment.centerRight,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -176,7 +180,7 @@ class QuizOverviewScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ),
+          ):Text(""),
           Spacer(),
           Image.asset("assets/images/sahraa.png", width: ScreenUtils.screenWidth(context),)
         ],

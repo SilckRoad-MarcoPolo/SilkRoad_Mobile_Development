@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/features/profile/view/change_email_page.dart';
+import 'package:silk_road/features/profile/view/change_password_page.dart';
 import 'package:silk_road/features/profile/widgets/Upload_User_picture.dart';
+
+import 'change_profile_setting.dart';
 
 class SettingProfilePage extends StatelessWidget {
   const SettingProfilePage({super.key});
@@ -8,7 +12,7 @@ class SettingProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.transparent,
       body: Column(
         children: [
           UploadUserPicture(),
@@ -36,7 +40,9 @@ class SettingProfilePage extends StatelessWidget {
                 fontSize: ScreenUtils.screenHeight(context) * (22 / 932),
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ChangeProfileSetting()));
+            },
           ),
           SizedBox(
             height: ScreenUtils.screenHeight(context) * (10 / 932),
@@ -54,7 +60,9 @@ class SettingProfilePage extends StatelessWidget {
                 fontSize: ScreenUtils.screenHeight(context) * (22 / 932),
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> ChangePasswordPage()));
+            },
           ),
           SizedBox(
             height: ScreenUtils.screenHeight(context) * (10 / 932),
@@ -72,7 +80,9 @@ class SettingProfilePage extends StatelessWidget {
                 fontSize: ScreenUtils.screenHeight(context) * (22 / 932),
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> ChangeEmailPage()));
+            },
           ),
           SizedBox(
             height: ScreenUtils.screenHeight(context) * (10 / 932),
