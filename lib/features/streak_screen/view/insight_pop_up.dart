@@ -27,7 +27,7 @@ class InsightsPopup extends StatelessWidget {
             SizedBox(height: (10 / 932) * ScreenUtils.screenHeight(context)),
             Container(
               decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
+                  color: Color(0x59d9d9d9),
                   borderRadius: BorderRadius.circular(16)),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),

@@ -130,8 +130,8 @@ class MyCourses extends StatelessWidget {
                   height: (50 / 432) * ScreenUtils.screenWidth(context),
                   child: CircularProgressIndicator(
                     value: course['progress'] != null ? course['progress'] / 100 : 0, // Add progress logic if available
-                    strokeWidth: 1,
-                    backgroundColor: Color(0xbeffc100),
+                    strokeWidth: 2,
+                    backgroundColor: Color(0x78ffc100),
                     valueColor: const AlwaysStoppedAnimation<Color>(Colors.black),
                   ),
                 ),
