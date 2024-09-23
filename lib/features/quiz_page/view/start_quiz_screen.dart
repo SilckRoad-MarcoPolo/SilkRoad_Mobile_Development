@@ -54,7 +54,8 @@ class QuizStartScreen extends StatelessWidget {
           ),
           SizedBox(height: (51 / 932) * ScreenUtils.screenHeight(context)),
           Padding(
-            padding:  EdgeInsets.symmetric(horizontal:(60 / 430) * ScreenUtils.screenWidth(context) ),
+            padding: EdgeInsets.symmetric(
+                horizontal: (60 / 430) * ScreenUtils.screenWidth(context)),
             child: CustomButton(
               text: "start",
               onTap: () {

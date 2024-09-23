@@ -21,12 +21,14 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       body: Column(
         children: [
-           SizedBox(
-              height: ScreenUtils.screenHeight(context) * (60 / 932),
-            ),
+          SizedBox(
+            height: ScreenUtils.screenHeight(context) * (60 / 932),
+          ),
           Align(
               alignment: AlignmentDirectional.centerStart,
-              child: ArrowBackButton(onTap: (){Navigator.pop(context);})),
+              child: ArrowBackButton(onTap: () {
+                Navigator.pop(context);
+              })),
           SizedBox(
             height: ScreenUtils.screenHeight(context) * (20 / 932),
           ),
@@ -58,8 +60,10 @@ class _ProfilePageState extends State<ProfilePage> {
                           'User Profile',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: (18 / 932) * ScreenUtils.screenHeight(context),
-                            color: showUserProfile ? Colors.white : Colors.black,
+                            fontSize:
+                                (18 / 932) * ScreenUtils.screenHeight(context),
+                            color:
+                                showUserProfile ? Colors.white : Colors.black,
                           ),
                         ),
                       ),
@@ -82,8 +86,10 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: Text(
                           'Settings',
                           style: TextStyle(
-                            fontSize: (18 / 932) * ScreenUtils.screenHeight(context),
-                            color: showUserProfile ? Colors.black : Colors.white,
+                            fontSize:
+                                (18 / 932) * ScreenUtils.screenHeight(context),
+                            color:
+                                showUserProfile ? Colors.black : Colors.white,
                           ),
                         ),
                       ),
@@ -93,15 +99,13 @@ class _ProfilePageState extends State<ProfilePage> {
               ],
             ),
           ),
-        SizedBox(
-              height: ScreenUtils.screenHeight(context) * (35 / 932),
-            ),
-       
-         Expanded(
-              child: showUserProfile ? UserProfile() :SettingProfilePage() ,
-            ),
+          SizedBox(
+            height: ScreenUtils.screenHeight(context) * (35 / 932),
+          ),
+          Expanded(
+            child: showUserProfile ? UserProfile() : SettingProfilePage(),
+          ),
         ],
-
       ),
     );
   }

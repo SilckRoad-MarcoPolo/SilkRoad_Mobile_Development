@@ -8,7 +8,8 @@ class InsightsPopup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      insetPadding: EdgeInsets.symmetric(horizontal: (22 / 430) * ScreenUtils.screenWidth(context)),
+      insetPadding: EdgeInsets.symmetric(
+          horizontal: (22 / 430) * ScreenUtils.screenWidth(context)),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
       ),
@@ -42,10 +43,10 @@ class InsightsPopup extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                _buildPointsWidget('Week Points', '250', 'Dec 25 - Today',
+                    Color(0xffAD4E19), context),
                 _buildPointsWidget(
-                    'Week Points', '250', 'Dec 25 - Today', Color(0xffAD4E19),context),
-                _buildPointsWidget(
-                    'Streaks', '7', 'Dec 18 - 24', Color(0xffAD4E19),context),
+                    'Streaks', '7', 'Dec 18 - 24', Color(0xffAD4E19), context),
               ],
             ),
             SizedBox(height: (64 / 932) * ScreenUtils.screenHeight(context)),
@@ -81,7 +82,10 @@ class InsightsPopup extends StatelessWidget {
                             'THU',
                             'FRI'
                           ][value.toInt()],
-                          style: TextStyle(color: Colors.black, fontSize: (12 / 932) * ScreenUtils.screenHeight(context)),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: (12 / 932) *
+                                  ScreenUtils.screenHeight(context)),
                         ),
                       ),
                     ),
@@ -91,7 +95,10 @@ class InsightsPopup extends StatelessWidget {
                         reservedSize: 30,
                         getTitlesWidget: (value, meta) => Text(
                           value.toInt().toString(),
-                          style: TextStyle(color: Colors.black, fontSize: (12 / 932) * ScreenUtils.screenHeight(context)),
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: (12 / 932) *
+                                  ScreenUtils.screenHeight(context)),
                         ),
                       ),
                     ),
@@ -139,16 +146,22 @@ class InsightsPopup extends StatelessWidget {
             style: TextStyle(
                 fontSize: (20 / 932) * ScreenUtils.screenHeight(context),
                 color: color,
-            fontWeight: FontWeight.w600)),
+                fontWeight: FontWeight.w600)),
         Padding(
-          padding:  EdgeInsets.only(left: (25 / 932) *ScreenUtils.screenHeight(context)),
-          child: Text(points,
-              style: TextStyle(
+          padding: EdgeInsets.only(
+              left: (25 / 932) * ScreenUtils.screenHeight(context)),
+          child: Text(
+            points,
+            style: TextStyle(
                 color: Color(0xffD19544),
-                  fontSize: (24 / 932) * ScreenUtils.screenHeight(context),
-                  fontWeight: FontWeight.w500),),
+                fontSize: (24 / 932) * ScreenUtils.screenHeight(context),
+                fontWeight: FontWeight.w500),
+          ),
         ),
-        Text(dateRange, style: TextStyle(fontSize: (14 / 932) * ScreenUtils.screenHeight(context), color: Colors.grey)),
+        Text(dateRange,
+            style: TextStyle(
+                fontSize: (14 / 932) * ScreenUtils.screenHeight(context),
+                color: Colors.grey)),
       ],
     );
   }

@@ -78,7 +78,6 @@ class _AppointmentsState extends State<Appointments> {
     },
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,34 +106,34 @@ class _AppointmentsState extends State<Appointments> {
             ),
             selectedIndex == 0
                 ? ListView.builder(
-              itemCount: appointmentsListUpcoming.length,
-              shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (ctx, index) {
-                    return (AppointmentCard(
-                      text1: 'Message',
-                      text2: 'Review',
-                      instructorInfo: appointmentsListUpcoming[index],
-                    ));
-                  })
+                    itemCount: appointmentsListUpcoming.length,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (ctx, index) {
+                      return (AppointmentCard(
+                        text1: 'Message',
+                        text2: 'Review',
+                        instructorInfo: appointmentsListUpcoming[index],
+                      ));
+                    })
                 : ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-                itemCount: appointmentsListCompleted.length,
-                shrinkWrap: true,
-                itemBuilder: (ctx, index) {
-                    return (AppointmentCard(
-                      text1: 'Message',
-                      text2: 'Review',
-                      instructorInfo: appointmentsListCompleted[index],
-                    ));
-                  })
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: appointmentsListCompleted.length,
+                    shrinkWrap: true,
+                    itemBuilder: (ctx, index) {
+                      return (AppointmentCard(
+                        text1: 'Message',
+                        text2: 'Review',
+                        instructorInfo: appointmentsListCompleted[index],
+                      ));
+                    })
           ],
         ),
       ),
     );
   }
 
-  Widget _buildToggleButton(String text, int index ) {
+  Widget _buildToggleButton(String text, int index) {
     bool isSelected = selectedIndex == index;
     return GestureDetector(
       onTap: () {
@@ -167,4 +166,3 @@ class _AppointmentsState extends State<Appointments> {
     );
   }
 }
-

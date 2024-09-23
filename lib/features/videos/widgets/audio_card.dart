@@ -3,34 +3,32 @@ import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/features/videos/views/video_page.dart';
 
 class Audio_card extends StatefulWidget {
-  const Audio_card({this.text,this.timeLessons,
+  const Audio_card({
+    this.text,
+    this.timeLessons,
     super.key,
   });
-  
-final String ?text;
-final String? timeLessons;
+
+  final String? text;
+  final String? timeLessons;
   @override
   State<Audio_card> createState() => _Audio_cardState();
 }
 
 class _Audio_cardState extends State<Audio_card> {
   bool isClicked = false;
-   
- 
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.symmetric(horizontal: 12),
       onTap: () {
-           setState(() {
-             isClicked=true;
-             Navigator.push(context, MaterialPageRoute(builder: (context){
-return VideoPage();
-
-             }));
-           });
-
+        setState(() {
+          isClicked = true;
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return VideoPage();
+          }));
+        });
       },
       leading: Container(
         padding: const EdgeInsets.all(11),
@@ -43,12 +41,14 @@ return VideoPage();
       title: Text(
         widget.text!,
         style: TextStyle(
-            fontSize: (15 / 932) * ScreenUtils.screenHeight(context), color: isClicked ? Colors.black : Color(0xff939393)),
+            fontSize: (15 / 932) * ScreenUtils.screenHeight(context),
+            color: isClicked ? Colors.black : Color(0xff939393)),
       ),
       trailing: Text(
-       widget.timeLessons!,
+        widget.timeLessons!,
         style: TextStyle(
-            fontSize:(15 / 932) * ScreenUtils.screenHeight(context), color: isClicked ? Colors.black : Color(0xff939393)),
+            fontSize: (15 / 932) * ScreenUtils.screenHeight(context),
+            color: isClicked ? Colors.black : Color(0xff939393)),
       ),
     );
   }

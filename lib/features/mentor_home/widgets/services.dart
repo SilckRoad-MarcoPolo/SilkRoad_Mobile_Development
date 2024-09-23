@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/features/Reviews/views/review_page.dart';
@@ -8,7 +7,6 @@ class Services extends StatelessWidget {
   const Services({
     super.key,
   });
- 
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +30,7 @@ class Services extends StatelessWidget {
             )
           ],
         ),
-         Column(
+        Column(
           children: [
             IconButton(
                 onPressed: () {
@@ -51,15 +49,16 @@ class Services extends StatelessWidget {
             )
           ],
         ),
-         Column(
+        Column(
           children: [
             IconButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> ReviewPage()));
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ReviewPage()));
                 },
                 icon: Icon(
                   Icons.star,
-                color: Color(0xffFFD747),
+                  color: Color(0xffFFD747),
                   size: (30 / 932) * ScreenUtils.screenHeight(context),
                 )),
             Text(

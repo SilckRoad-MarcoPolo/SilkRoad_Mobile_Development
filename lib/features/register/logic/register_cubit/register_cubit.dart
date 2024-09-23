@@ -14,16 +14,18 @@ class RegisterCubit extends Cubit<RegisterState> {
   String baseUrl = "https://silkroadapis-production.up.railway.app/api/v1";
 
   // This function will handle the sign-up logic
-  Future<void> signUp(
-      BuildContext context, String firstName, String lastName, String email, String password) async {
+  Future<void> signUp(BuildContext context, String firstName, String lastName,
+      String email, String password) async {
     emit(RegisterLoading());
     try {
-      Response response = await AuthApi.signUpApi(firstName, lastName, email, password);
+      Response response =
+          await AuthApi.signUpApi(firstName, lastName, email, password);
 
       if (response.statusCode! < 300) {
         emit(RegisterSuccess());
         // On success, you can navigate to the next page or login screen
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BOttomNavigationBar()));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => BOttomNavigationBar()));
       } else {
         emit(RegisterFailure("Signup failed: ${response.data.toString()}"));
       }

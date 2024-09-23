@@ -11,7 +11,9 @@ class UserProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         leading: ArrowBackButton(onTap: (){Navigator.pop(context);}),
+        leading: ArrowBackButton(onTap: () {
+          Navigator.pop(context);
+        }),
         title: Text(
           'ElAmir Mansour',
           style: TextStyle(
@@ -19,7 +21,6 @@ class UserProfilePage extends StatelessWidget {
             fontSize: (20 / 932) * ScreenUtils.screenHeight(context),
           ),
         ),
-      
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(
@@ -70,15 +71,10 @@ class UserProfilePage extends StatelessWidget {
               height: ScreenUtils.screenHeight(context) * (8 / 932),
             ),
             Row(
-             children: [
-               
-               
-                Image.asset(
-                    'assets/images/2.png'),
-                Image.asset(
-                    'assets/images/3.png'),
-                     Image.asset(
-                    'assets/images/1.png'),
+              children: [
+                Image.asset('assets/images/2.png'),
+                Image.asset('assets/images/3.png'),
+                Image.asset('assets/images/1.png'),
                 Image.asset('assets/images/124196 (1).png')
               ],
             ),

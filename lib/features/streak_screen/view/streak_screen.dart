@@ -33,7 +33,8 @@ class Challenge {
 }
 
 class ChallengeService {
-  static const String apiUrl = 'https://silkroadapis-production.up.railway.app/api/v1/daily-challenges';
+  static const String apiUrl =
+      'https://silkroadapis-production.up.railway.app/api/v1/daily-challenges';
 
   Future<List<Challenge>> fetchChallenges() async {
     final response = await http.get(Uri.parse(apiUrl));
@@ -84,7 +85,8 @@ class _StreakScreenState extends State<StreakScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all((17 / 432) * ScreenUtils.screenWidth(context)),
+          padding:
+              EdgeInsets.all((17 / 432) * ScreenUtils.screenWidth(context)),
           child: Column(
             children: [
               SizedBox(height: (10 / 932) * ScreenUtils.screenHeight(context)),
@@ -115,7 +117,8 @@ class _StreakScreenState extends State<StreakScreen> {
                         '4',
                         style: TextStyle(
                             height: 0.6,
-                            fontSize: (64 / 430) * ScreenUtils.screenWidth(context),
+                            fontSize:
+                                (64 / 430) * ScreenUtils.screenWidth(context),
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -139,7 +142,8 @@ class _StreakScreenState extends State<StreakScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  for (var (index, day) in ['M', 'T', 'W', 'T', 'F', 'S', 'S'].indexed)
+                  for (var (index, day)
+                      in ['M', 'T', 'W', 'T', 'F', 'S', 'S'].indexed)
                     _buildDayItem(day, index < 4, context),
                 ],
               ),
@@ -152,13 +156,15 @@ class _StreakScreenState extends State<StreakScreen> {
                   Text(
                     'Challenges',
                     style: TextStyle(
-                        fontSize: (24 / 932) * ScreenUtils.screenHeight(context),
+                        fontSize:
+                            (24 / 932) * ScreenUtils.screenHeight(context),
                         fontWeight: FontWeight.w500),
                   ),
                   Text(
                     'XP',
                     style: TextStyle(
-                        fontSize: (24 / 932) * ScreenUtils.screenHeight(context),
+                        fontSize:
+                            (24 / 932) * ScreenUtils.screenHeight(context),
                         fontWeight: FontWeight.w500),
                   ),
                 ],
@@ -227,7 +233,8 @@ class _StreakScreenState extends State<StreakScreen> {
                     day == 'F' ? '29' : (day == 'S' ? '30' : ''),
                     style: TextStyle(
                         color: Colors.black54,
-                        fontSize: (22 / 932) * ScreenUtils.screenHeight(context)),
+                        fontSize:
+                            (22 / 932) * ScreenUtils.screenHeight(context)),
                   ),
           ),
         ),
@@ -235,16 +242,20 @@ class _StreakScreenState extends State<StreakScreen> {
     );
   }
 
-  Widget _buildChallengeItem(String title, bool completed, String xp, BuildContext context) {
+  Widget _buildChallengeItem(
+      String title, bool completed, String xp, BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: (4 / 932) * ScreenUtils.screenHeight(context)),
+      padding: EdgeInsets.symmetric(
+          vertical: (4 / 932) * ScreenUtils.screenHeight(context)),
       child: Row(
         children: [
           Container(
             width: (35 / 932) * ScreenUtils.screenHeight(context),
             height: (35 / 932) * ScreenUtils.screenHeight(context),
             decoration: BoxDecoration(
-              border: completed ? null : Border.all(color: Color(0xffDF6520), width: 2),
+              border: completed
+                  ? null
+                  : Border.all(color: Color(0xffDF6520), width: 2),
               shape: BoxShape.circle,
               gradient: completed
                   ? const LinearGradient(

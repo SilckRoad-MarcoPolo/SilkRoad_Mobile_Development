@@ -31,7 +31,8 @@ class _NewPasswordBodyState extends State<NewPasswordBody> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
 
@@ -57,7 +58,8 @@ class _NewPasswordBodyState extends State<NewPasswordBody> {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text('New password set successfully!')),
             );
-            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=> BOttomNavigationBar()) );
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => BOttomNavigationBar()));
           } else if (state is NewPasswordFailure) {
             // Show error message
             showDialog(
@@ -112,14 +114,16 @@ class _NewPasswordBodyState extends State<NewPasswordBody> {
                           validate: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your email';
-                            } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                            } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+')
+                                .hasMatch(value)) {
                               return 'Please enter a valid email address';
                             }
                             return null;
                           },
                         ),
                         SizedBox(
-                          height: (16 / 932) * ScreenUtils.screenHeight(context),
+                          height:
+                              (16 / 932) * ScreenUtils.screenHeight(context),
                         ),
                         CustomTextFormField(
                           controller: _passwordController,
@@ -141,7 +145,8 @@ class _NewPasswordBodyState extends State<NewPasswordBody> {
                           },
                         ),
                         SizedBox(
-                          height: (16 / 932) * ScreenUtils.screenHeight(context),
+                          height:
+                              (16 / 932) * ScreenUtils.screenHeight(context),
                         ),
                         CustomTextFormField(
                           controller: _confirmPasswordController,
@@ -176,7 +181,8 @@ class _NewPasswordBodyState extends State<NewPasswordBody> {
                     onTap: () {
                       if (_formKey.currentState!.validate()) {
                         // Trigger password confirmation via the cubit
-                        BlocProvider.of<NewPasswordCubit>(context).confirmNewPassword(
+                        BlocProvider.of<NewPasswordCubit>(context)
+                            .confirmNewPassword(
                           _emailController.text,
                           _passwordController.text,
                           _confirmPasswordController.text,

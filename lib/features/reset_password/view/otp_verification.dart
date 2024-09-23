@@ -86,7 +86,7 @@ class _OtpVerificationBodyState extends State<OtpVerificationBody> {
                       child: PasswordResetText(
                         title: "Verify OTP",
                         description:
-                        "We've sent a One-Time Password (OTP) to your \n"
+                            "We've sent a One-Time Password (OTP) to your \n"
                             "email. Please enter the 6-digit OTP below to \n"
                             "reset your password.",
                       ),
@@ -139,7 +139,8 @@ class _OtpVerificationBodyState extends State<OtpVerificationBody> {
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
-                                content: Text('Please enter a valid 6-digit OTP'),
+                                content:
+                                    Text('Please enter a valid 6-digit OTP'),
                               ),
                             );
                           }

@@ -14,34 +14,31 @@ class _MentorShipState extends State<MentorShip> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-appBar: AppBar(
-  title: Text(
-              "Mentor Ship",
-              style: TextStyle(
-                  fontSize: ScreenUtils.screenHeight(context) * (22 / 932),
-                  fontWeight: FontWeight.w600),
-            ),actions: [IconButton(onPressed: (){}, icon: Icon(Icons.search))],
-            
-            
-            ),
-            body: SingleChildScrollView(
-              child: Padding(
-               padding: EdgeInsets.symmetric(
-          horizontal: ScreenUtils.screenHeight(context) * (10 / 462),
+      appBar: AppBar(
+        title: Text(
+          "Mentor Ship",
+          style: TextStyle(
+              fontSize: ScreenUtils.screenHeight(context) * (22 / 932),
+              fontWeight: FontWeight.w600),
         ),
-                child: Column(
-                  children: [
-                    ListTracks(),
-                   SizedBox(height: (16 / 932)* ScreenUtils.screenHeight(context),),
-
-                   mentorShipList()
-                    
-                  ],
-                ),
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: ScreenUtils.screenHeight(context) * (10 / 462),
+          ),
+          child: Column(
+            children: [
+              ListTracks(),
+              SizedBox(
+                height: (16 / 932) * ScreenUtils.screenHeight(context),
               ),
-            ),
-
-
+              mentorShipList()
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

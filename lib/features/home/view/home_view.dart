@@ -51,9 +51,12 @@ class _HomeViewState extends State<HomeView> {
               height: (26 / 932) * ScreenUtils.screenHeight(context),
             ),
             GestureDetector(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> CareerMatchPage()));
-              },
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CareerMatchPage()));
+                },
                 child: Image.asset('assets/images/Group 481720.png')),
 
             SizedBox(

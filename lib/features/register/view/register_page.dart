@@ -23,7 +23,8 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   void _togglePasswordVisibility() {
     setState(() {
@@ -45,8 +46,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 SnackBar(content: Text(state.errorMessage)),
               );
             } else if (state is RegisterSuccess) {
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => BOttomNavigationBar()));
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => BOttomNavigationBar()));
             }
           },
           child: BlocBuilder<RegisterCubit, RegisterState>(
@@ -56,7 +59,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   SingleChildScrollView(
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: ScreenUtils.screenWidth(context) * (20 / 430),
+                        horizontal:
+                            ScreenUtils.screenWidth(context) * (20 / 430),
                       ),
                       child: Form(
                         key: _formKey,
@@ -64,7 +68,8 @@ class _RegisterPageState extends State<RegisterPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                              height: (75 / 932) * ScreenUtils.screenHeight(context),
+                              height: (75 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             const Text(
                               'Sign Up',
@@ -74,7 +79,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                   fontWeight: FontWeight.w500),
                             ),
                             SizedBox(
-                              height: (25 / 932) * ScreenUtils.screenHeight(context),
+                              height: (25 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             CustomTextFormField(
                               controller: _firstNameController,
@@ -87,7 +93,8 @@ class _RegisterPageState extends State<RegisterPage> {
                               },
                             ),
                             SizedBox(
-                              height: (25 / 932) * ScreenUtils.screenHeight(context),
+                              height: (25 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             CustomTextFormField(
                               controller: _lastNameController,
@@ -100,7 +107,8 @@ class _RegisterPageState extends State<RegisterPage> {
                               },
                             ),
                             SizedBox(
-                              height: (25 / 932) * ScreenUtils.screenHeight(context),
+                              height: (25 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             CustomTextFormField(
                               controller: _emailController,
@@ -113,7 +121,8 @@ class _RegisterPageState extends State<RegisterPage> {
                               },
                             ),
                             SizedBox(
-                              height: (25 / 932) * ScreenUtils.screenHeight(context),
+                              height: (25 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             CustomTextFormField(
                               controller: _passwordController,
@@ -137,7 +146,8 @@ class _RegisterPageState extends State<RegisterPage> {
                               },
                             ),
                             SizedBox(
-                              height: (25 / 932) * ScreenUtils.screenHeight(context),
+                              height: (25 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             CustomTextFormField(
                               controller: _confirmPasswordController,
@@ -161,19 +171,20 @@ class _RegisterPageState extends State<RegisterPage> {
                               },
                             ),
                             SizedBox(
-                              height: (43 / 932) * ScreenUtils.screenHeight(context),
+                              height: (43 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             CustomButton(
                               text: 'Sign up',
                               onTap: () {
                                 if (_formKey.currentState!.validate()) {
                                   context.read<RegisterCubit>().signUp(
-                                    context,
-                                    _firstNameController.text,
-                                    _lastNameController.text,
-                                    _emailController.text,
-                                    _passwordController.text,
-                                  );
+                                        context,
+                                        _firstNameController.text,
+                                        _lastNameController.text,
+                                        _emailController.text,
+                                        _passwordController.text,
+                                      );
                                 }
                               },
                             ),
@@ -186,18 +197,23 @@ class _RegisterPageState extends State<RegisterPage> {
                             ),
                             const GoogleButton(),
                             SizedBox(
-                              height: (11 / 932) * ScreenUtils.screenHeight(context),
+                              height: (11 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 const Text(
                                   'I already have an account?',
-                                  style: TextStyle(color: Colors.grey, fontSize: 16),
+                                  style: TextStyle(
+                                      color: Colors.grey, fontSize: 16),
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LoginPage()));
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => LoginPage()));
                                   },
                                   child: const Text(
                                     ' Sign in',

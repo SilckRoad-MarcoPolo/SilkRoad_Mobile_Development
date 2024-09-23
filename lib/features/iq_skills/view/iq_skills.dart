@@ -132,7 +132,6 @@ class _IqSkillsState extends State<IqSkills> {
     }
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -140,7 +139,9 @@ class _IqSkillsState extends State<IqSkills> {
         slivers: [
           SliverToBoxAdapter(
             child: GradiantColorHeader(
-              function: (){Navigator.pop(context);},
+              function: () {
+                Navigator.pop(context);
+              },
               title: "IQ Skills",
               icon: true,
             ),
@@ -180,7 +181,7 @@ class _IqSkillsState extends State<IqSkills> {
           Text(
             text,
             style: TextStyle(
-              color:  isSelected
+              color: isSelected
                   ? const Color(0xffD89A46)
                   : const Color(0xff000000),
               fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
@@ -241,14 +242,17 @@ class TracksAssessmentCard extends StatelessWidget {
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
-        side:  const BorderSide(
+        side: const BorderSide(
           color: Color(0xb3c4c4c4),
           width: 1, // Border width
         ),
       ),
       margin: EdgeInsets.only(bottom: 8),
       child: ListTile(
-        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> QuizStartScreen()));},
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => QuizStartScreen()));
+        },
         visualDensity: VisualDensity(vertical: 3),
         leading: Image.asset(
           assessment['image'],
@@ -262,17 +266,15 @@ class TracksAssessmentCard extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold)),
             Text('-${assessment['week']}',
                 style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize:  (12 / 932) * ScreenUtils.screenHeight(context)
-                )),
+                    fontWeight: FontWeight.w500,
+                    fontSize: (12 / 932) * ScreenUtils.screenHeight(context))),
           ],
         ),
         subtitle: Text(
-            '${assessment['questions']} questions',
-                style: TextStyle(
-                  color: const Color(0x80000000),
-            fontSize: (12 / 932) * ScreenUtils.screenHeight(context)
-        ),
+          '${assessment['questions']} questions',
+          style: TextStyle(
+              color: const Color(0x80000000),
+              fontSize: (12 / 932) * ScreenUtils.screenHeight(context)),
         ),
         trailing: Icon(Icons.arrow_forward_ios, size: 16),
       ),
@@ -294,7 +296,7 @@ class LastResultCard extends StatelessWidget {
       child: ListTile(
         visualDensity: VisualDensity(vertical: 3),
         horizontalTitleGap: 5,
-        contentPadding:EdgeInsets.zero,
+        contentPadding: EdgeInsets.zero,
         onTap: () {
           Navigator.push(
               context,
@@ -312,21 +314,23 @@ class LastResultCard extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-
         title: Text(result['name'],
             style: const TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(result['level'], style: TextStyle(
-                color: const Color(0xA6000000),
-                fontSize: (15 / 932) * ScreenUtils.screenHeight(context)
-            ),),
-            Text('${result['questions']} questions',
-            style: TextStyle(
-                color: const Color(0xA6000000),
-                fontSize: (12 / 932) * ScreenUtils.screenHeight(context)
-            ),),
+            Text(
+              result['level'],
+              style: TextStyle(
+                  color: const Color(0xA6000000),
+                  fontSize: (15 / 932) * ScreenUtils.screenHeight(context)),
+            ),
+            Text(
+              '${result['questions']} questions',
+              style: TextStyle(
+                  color: const Color(0xA6000000),
+                  fontSize: (12 / 932) * ScreenUtils.screenHeight(context)),
+            ),
           ],
         ),
         trailing: Stack(

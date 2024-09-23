@@ -11,7 +11,9 @@ class MentorProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         leading: ArrowBackButton(onTap: (){Navigator.pop(context);}),
+        leading: ArrowBackButton(onTap: () {
+          Navigator.pop(context);
+        }),
         title: Text(
           'Zeyad Salama',
           style: TextStyle(
@@ -44,7 +46,7 @@ class MentorProfilePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             MentorFollowers(
-              image:'assets/images/photo_1_2024-09-18_03-10-14 3.png',
+              image: 'assets/images/photo_1_2024-09-18_03-10-14 3.png',
             ),
             SizedBox(
               height: ScreenUtils.screenHeight(context) * (25 / 932),
@@ -86,12 +88,9 @@ class MentorProfilePage extends StatelessWidget {
             ),
             Row(
               children: [
-                Image.asset(
-                    'assets/images/1.png'),
-                Image.asset(
-                    'assets/images/2.png'),
-                Image.asset(
-                    'assets/images/3.png'),
+                Image.asset('assets/images/1.png'),
+                Image.asset('assets/images/2.png'),
+                Image.asset('assets/images/3.png'),
                 Image.asset('assets/images/124196 (1).png')
               ],
             ),

@@ -47,7 +47,7 @@ class StatsSection extends StatelessWidget {
             width: ScreenUtils.screenWidth(context) * 0.90,
             height: ScreenUtils.screenHeight(context) * 0.18,
             padding:
-            EdgeInsets.all((16 / 932) * ScreenUtils.screenHeight(context)),
+                EdgeInsets.all((16 / 932) * ScreenUtils.screenHeight(context)),
             decoration: BoxDecoration(
               color: Theme.of(context).scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(16),
@@ -69,7 +69,7 @@ class StatsSection extends StatelessWidget {
                 Padding(
                   padding: EdgeInsetsDirectional.symmetric(
                       horizontal:
-                      (30 / 430) * ScreenUtils.screenWidth(context)),
+                          (30 / 430) * ScreenUtils.screenWidth(context)),
                   child: Align(
                     alignment: AlignmentDirectional.centerStart,
                     child: ElevatedButton(
@@ -80,13 +80,13 @@ class StatsSection extends StatelessWidget {
                           context: context,
                           pageBuilder:
                               (context, animation, secondaryAnimation) =>
-                          const InsightsPopup(),
+                                  const InsightsPopup(),
                           transitionBuilder:
                               (context, animation, secondaryAnimation, child) {
                             var curve = Curves.easeInOut;
                             var tween = Tween(
-                                begin: const Offset(0, 1),
-                                end: const Offset(0, 0.15))
+                                    begin: const Offset(0, 1),
+                                    end: const Offset(0, 0.15))
                                 .chain(CurveTween(curve: curve));
                             return SlideTransition(
                               position: animation.drive(tween),
@@ -142,6 +142,7 @@ class StatsSection extends StatelessWidget {
     );
   }
 }
+
 class GradientBorderContainer extends StatelessWidget {
   final double width;
   final double height;
@@ -167,6 +168,7 @@ class GradientBorderContainer extends StatelessWidget {
     );
   }
 }
+
 class GradientBorderPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {

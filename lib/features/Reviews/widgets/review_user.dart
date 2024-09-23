@@ -38,7 +38,7 @@ class ReviewUser extends StatelessWidget {
                         ),
                       ),
                       Text(
-                       reviewsList['time'],
+                        reviewsList['time'],
                         style: TextStyle(
                           fontSize:
                               ScreenUtils.screenHeight(context) * (12 / 932),
@@ -112,22 +112,21 @@ class listOfRewviews extends StatelessWidget {
       'rate': '3.5',
       'desc':
           'He is a great Mentor. He is the best. i would recommend to anyone .',
-  
-      'time':'2 weeks ago'
+      'time': '2 weeks ago'
     },
     {
       'name': 'Tamer Elgayar',
       'rate': '3',
       'desc':
           'Amazing mentor! Helped me break down complex concepts into simple steps.',
-      'time':'3 weeks ago'
+      'time': '3 weeks ago'
     },
     {
       'name': 'Youssef Shedeed',
       'rate': '4',
       'desc':
           'He is a great Mentor. He is the best. i would recommend to anyone .',
-           'time':'3 weeks ago'
+      'time': '3 weeks ago'
     },
     {
       'name': 'Lelia Abdelrahman',
@@ -141,7 +140,7 @@ class listOfRewviews extends StatelessWidget {
       'rate': '2.5',
       'desc':
           'Great experience! My mentor provided clear explanations and actionable advice.',
-           'time':'3 weeks ago'
+      'time': '3 weeks ago'
     },
     {
       'name': 'Allawi Abu Hussien',

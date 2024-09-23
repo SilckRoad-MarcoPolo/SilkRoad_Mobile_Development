@@ -6,7 +6,8 @@ import 'package:silk_road/core/shared_components/custom_button.dart';
 class CareerPathConfirmationPage extends StatelessWidget {
   final String careerPath;
 
-  const CareerPathConfirmationPage({Key? key, required this.careerPath}) : super(key: key);
+  const CareerPathConfirmationPage({Key? key, required this.careerPath})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class CareerPathConfirmationPage extends StatelessWidget {
               SizedBox(height: ScreenUtils.screenHeight(context) * 0.02),
               Text(
                 "Your journey toward mastering the tech starts here—let's build something amazing!",
-              textAlign: TextAlign.center,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: ScreenUtils.screenWidth(context) * 0.04,
                   color: Colors.grey[600],
@@ -46,7 +47,10 @@ class CareerPathConfirmationPage extends StatelessWidget {
               CustomButton(
                 text: "Continue",
                 onTap: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>BOttomNavigationBar()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BOttomNavigationBar()));
                 },
               ),
             ],

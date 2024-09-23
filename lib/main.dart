@@ -5,13 +5,6 @@ import 'package:silk_road/features/on_boarding/view/on_boarding.dart';
 
 import 'features/Mentor Ship/views/Mentor_Ship.dart';
 
-
-
-
-
-
-
-
 void main() {
   runApp(const SilkRoad());
 }
@@ -28,19 +21,10 @@ class SilkRoad extends StatelessWidget {
 
             ),
         debugShowCheckedModeBanner: false,
+        home: OnBoarding()
+        //zeyad@example.com
+        //74108520
 
-
-    
-        home:OnBoarding()
-
-
-
-
-
-
-
-    );
-
-        
+        );
   }
 }

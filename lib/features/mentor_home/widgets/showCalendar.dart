@@ -9,7 +9,7 @@ void showCalendar(BuildContext context) {
       return AlertDialog(
         content: Container(
           width: ScreenUtils.screenWidth(context) * (420 / 462),
-          height: (400/ 932) * ScreenUtils.screenHeight(context),
+          height: (400 / 932) * ScreenUtils.screenHeight(context),
           child: TableCalendar(
             firstDay: DateTime.utc(2010, 10, 16),
             lastDay: DateTime.utc(2030, 3, 14),
@@ -20,4 +20,3 @@ void showCalendar(BuildContext context) {
     },
   );
 }
-

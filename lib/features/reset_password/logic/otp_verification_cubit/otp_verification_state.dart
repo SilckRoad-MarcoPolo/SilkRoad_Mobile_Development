@@ -1,6 +1,5 @@
 part of 'otp_verification_cubit.dart';
 
-
 abstract class OtpVerificationState {}
 
 class OtpVerificationInitial extends OtpVerificationState {}

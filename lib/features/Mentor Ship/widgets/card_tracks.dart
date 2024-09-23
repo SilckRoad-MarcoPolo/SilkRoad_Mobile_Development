@@ -19,8 +19,9 @@ class CardTracks extends StatelessWidget {
         width: (100 / 414) * ScreenUtils.screenWidth(context),
         height: (38 / 932) * ScreenUtils.screenHeight(context),
         decoration: BoxDecoration(
-          border: Border.all(color: Color(0xffB27743)),
-            color: color, borderRadius: BorderRadius.circular(16)),
+            border: Border.all(color: Color(0xffB27743)),
+            color: color,
+            borderRadius: BorderRadius.circular(16)),
         child: TextButton(
             onPressed: () {},
             child: Text(
@@ -48,10 +49,9 @@ class _ListTracksState extends State<ListTracks> {
     'Flutter ',
     'IOs',
     'Ai',
-    
   ];
 
-bool isSelected=false;
+  bool isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -64,13 +64,12 @@ bool isSelected=false;
           itemBuilder: (BuildContext, index) {
             return GestureDetector(
               onTap: () {
-                
                 setState(() {
-                  isSelected=true;
+                  isSelected = true;
                 });
               },
               child: CardTracks(
-                color: isSelected?  Color(0xffB27743): Colors.white,
+                color: isSelected ? Color(0xffB27743) : Colors.white,
                 text: trackName[index],
               ),
             );

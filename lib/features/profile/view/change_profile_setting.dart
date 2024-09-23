@@ -23,9 +23,10 @@ class ChangeProfileSetting extends StatelessWidget {
               height: ScreenUtils.screenHeight(context) * (60 / 932),
             ),
             Align(
-              alignment: AlignmentDirectional.centerStart,
-                child: ArrowBackButton(onTap: (){Navigator.pop(context);}))
-            ,
+                alignment: AlignmentDirectional.centerStart,
+                child: ArrowBackButton(onTap: () {
+                  Navigator.pop(context);
+                })),
             UserPicture(
               width: ScreenUtils.screenHeight(context) * (106 / 462),
               // Set width
@@ -82,7 +83,6 @@ class ChangeProfileSetting extends StatelessWidget {
               height: (25 / 932) * ScreenUtils.screenHeight(context),
             ),
             CustomButton(text: 'Confirm'),
-
           ],
         ),
       ),

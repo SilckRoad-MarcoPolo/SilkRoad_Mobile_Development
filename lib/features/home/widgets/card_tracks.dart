@@ -24,7 +24,8 @@ class CardofTracks extends StatelessWidget {
             color: color, borderRadius: BorderRadius.circular(16)),
         child: TextButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => QuizStartScreen()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => QuizStartScreen()));
             },
             child: Text(
               text,
@@ -44,7 +45,6 @@ class ListOfTracks extends StatelessWidget {
     'Flutter ',
     'IOs',
     'Ai',
-    
   ];
   final List<Color> colorList = [
     Color(0xff9F5514),
@@ -54,9 +54,6 @@ class ListOfTracks extends StatelessWidget {
     Color(0xffE4B87D),
     Color(0xffFFCE51),
   ];
-
-
-
 
   @override
   Widget build(BuildContext context) {

@@ -3,12 +3,9 @@ import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/features/course_content/view/course_content.dart';
 
 class TrendingCoursesCard extends StatelessWidget {
-   TrendingCoursesCard({
-    super.key,
-    required this.course,required this.borderColor,this.ontap
-  });
-  VoidCallback? ontap  ;
-
+  TrendingCoursesCard(
+      {super.key, required this.course, required this.borderColor, this.ontap});
+  VoidCallback? ontap;
 
   final Map<String, dynamic> course;
 
@@ -24,7 +21,7 @@ class TrendingCoursesCard extends StatelessWidget {
         child: (Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
-            side:  BorderSide(
+            side: BorderSide(
               color: borderColor,
               width: 1, // Border width
             ),
@@ -61,7 +58,8 @@ class TrendingCoursesCard extends StatelessWidget {
                     Text(
                       course['instructor'],
                       style: TextStyle(
-                        fontSize: (15 / 932) * ScreenUtils.screenHeight(context),
+                        fontSize:
+                            (15 / 932) * ScreenUtils.screenHeight(context),
                         fontWeight: FontWeight.w400,
                         color: const Color.fromARGB(125, 0, 0, 0),
                       ),
@@ -69,7 +67,8 @@ class TrendingCoursesCard extends StatelessWidget {
                     Text(
                       course['hours'],
                       style: TextStyle(
-                        fontSize: (11 / 932) * ScreenUtils.screenHeight(context),
+                        fontSize:
+                            (11 / 932) * ScreenUtils.screenHeight(context),
                         fontWeight: FontWeight.w500,
                         color: const Color.fromARGB(125, 0, 0, 0),
                       ),

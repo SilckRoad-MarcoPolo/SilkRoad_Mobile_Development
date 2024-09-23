@@ -21,9 +21,8 @@ class _VideoPageState extends State<VideoPage> {
     super.initState();
     flickManager = FlickManager(
         videoPlayerController: VideoPlayerController.networkUrl(
-          Uri.parse(
-              "https://www.w3schools.com/html/mov_bbb.mp4"),
-        ));
+      Uri.parse("https://www.w3schools.com/html/mov_bbb.mp4"),
+    ));
   }
 
   void dispose() {
@@ -47,11 +46,9 @@ class _VideoPageState extends State<VideoPage> {
                 horizontal: ScreenUtils.screenWidth(context) * (16 / 462),
               ),
               child: Column(
-
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,25 +91,27 @@ class _VideoPageState extends State<VideoPage> {
                     children: [
                       Padding(
                         padding: EdgeInsets.only(
-                            right: (13 / 414) * ScreenUtils.screenWidth(context)),
+                            right:
+                                (13 / 414) * ScreenUtils.screenWidth(context)),
                         child: Text(
                           '100 views',
                           style: TextStyle(
                               color: Color(0xffAFB1A0),
-                              fontSize:
-                              (12 / 932) * ScreenUtils.screenHeight(context),
+                              fontSize: (12 / 932) *
+                                  ScreenUtils.screenHeight(context),
                               fontWeight: FontWeight.w800),
                         ),
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                            right: (13 / 414) * ScreenUtils.screenWidth(context)),
+                            right:
+                                (13 / 414) * ScreenUtils.screenWidth(context)),
                         child: Text(
                           ' 12d ago',
                           style: TextStyle(
                               color: Color(0xffAFB1A0),
-                              fontSize:
-                              (12 / 932) * ScreenUtils.screenHeight(context),
+                              fontSize: (12 / 932) *
+                                  ScreenUtils.screenHeight(context),
                               fontWeight: FontWeight.w800),
                         ),
                       ),
@@ -120,7 +119,7 @@ class _VideoPageState extends State<VideoPage> {
                         '.....more',
                         style: TextStyle(
                             fontSize:
-                            (12 / 932) * ScreenUtils.screenHeight(context),
+                                (12 / 932) * ScreenUtils.screenHeight(context),
                             fontWeight: FontWeight.w800),
                       ),
                     ],
@@ -134,7 +133,9 @@ class _VideoPageState extends State<VideoPage> {
                   ),
                   Text(
                     "Play List",
-                    style: TextStyle(fontSize:(20 / 932) * ScreenUtils.screenHeight(context),
+                    style: TextStyle(
+                        fontSize:
+                            (20 / 932) * ScreenUtils.screenHeight(context),
                         fontWeight: FontWeight.w600),
                   ),
                   SizedBox(
@@ -148,7 +149,6 @@ class _VideoPageState extends State<VideoPage> {
               physics: NeverScrollableScrollPhysics(),
               slivers: [Audio_List()],
             )
-
           ],
         ),
       ),

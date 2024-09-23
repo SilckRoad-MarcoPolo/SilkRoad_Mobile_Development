@@ -10,7 +10,7 @@ class CommentSection extends StatelessWidget {
       children: [
         Container(
           height: ScreenUtils.screenHeight(context) * (30 / 932),
-          width:  ScreenUtils.screenWidth(context) * (125 / 430),
+          width: ScreenUtils.screenWidth(context) * (125 / 430),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8), color: Colors.grey[200]),
           child: Center(
@@ -22,29 +22,27 @@ class CommentSection extends StatelessWidget {
                   height: 5,
                   color: Color(0xffA2A2A2),
                 ),
-                SizedBox(width:  ScreenUtils.screenWidth(context) * (3 / 430)),
+                SizedBox(width: ScreenUtils.screenWidth(context) * (3 / 430)),
                 Text("77", style: TextStyle(color: Color(0xff37474F))),
-                SizedBox(width: ScreenUtils.screenWidth(context) * (10 / 430) ),
+                SizedBox(width: ScreenUtils.screenWidth(context) * (10 / 430)),
                 //  Text(".", style: TextStyle(fontSize: 25, color: Color(0xff37474F))),
 
-                
                 Divider(
-                  height: ScreenUtils.screenHeight(context) * (15/ 932),
+                  height: ScreenUtils.screenHeight(context) * (15 / 932),
                   color: Color(0xffA2A2A2),
                 ),
                 Icon(Icons.thumb_down_alt_outlined, color: Color(0xff37474F)),
-                 Divider(
-                  height:  ScreenUtils.screenHeight(context) * (15 / 932),
+                Divider(
+                  height: ScreenUtils.screenHeight(context) * (15 / 932),
                   color: Color(0xffA2A2A2),
                 ),
-                SizedBox(width:  ScreenUtils.screenWidth(context) * (5 / 430)),
+                SizedBox(width: ScreenUtils.screenWidth(context) * (5 / 430)),
                 Text("9", style: TextStyle(color: Color(0xff37474F))),
               ],
             ),
           ),
         ),
-        SizedBox(height: (16 / 932) *
-            ScreenUtils.screenHeight(context)),
+        SizedBox(height: (16 / 932) * ScreenUtils.screenHeight(context)),
         // Comment Section
         Container(
           width: ScreenUtils.screenHeight(context) * (398 / 462), // Set width
@@ -62,7 +60,9 @@ class CommentSection extends StatelessWidget {
               children: [
                 Text(
                   "Comments 300",
-                  style: TextStyle(fontSize: ScreenUtils.screenHeight(context) * (14 / 932), fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                      fontSize: ScreenUtils.screenHeight(context) * (14 / 932),
+                      fontWeight: FontWeight.w500),
                 ),
                 Row(
                   children: [

@@ -40,13 +40,9 @@ List<Map<String, dynamic>> jangoBackEndQuestions = [
     'correctAnswer': 1,
   },
   {
-    'question': 'Which file is used to define URL patterns in a Django project?',
-    'options': [
-      'A) views.py',
-      'B) models.py',
-      'C) urls.py',
-      'D) settings.py'
-    ],
+    'question':
+        'Which file is used to define URL patterns in a Django project?',
+    'options': ['A) views.py', 'B) models.py', 'C) urls.py', 'D) settings.py'],
     'correctAnswer': 2,
   },
   {
@@ -150,7 +146,8 @@ List<Map<String, dynamic>> jangoBackEndQuestions = [
     'correctAnswer': 3,
   },
   {
-    'question': 'What is the purpose of Django\'s `get_object_or_404()` function?',
+    'question':
+        'What is the purpose of Django\'s `get_object_or_404()` function?',
     'options': [
       'A) To retrieve an object from the database or return a 404 error',
       'B) To create a new object if it doesn\'t exist',
@@ -200,7 +197,8 @@ List<Map<String, dynamic>> jangoBackEndQuestions = [
     'correctAnswer': 2,
   },
   {
-    'question': 'Which of the following is NOT a valid Django model relationship?',
+    'question':
+        'Which of the following is NOT a valid Django model relationship?',
     'options': [
       'A) OneToOneField',
       'B) ManyToManyField',
@@ -220,7 +218,8 @@ List<Map<String, dynamic>> jangoBackEndQuestions = [
     'correctAnswer': 1,
   },
   {
-    'question': 'Which of the following is used for user authentication in Django?',
+    'question':
+        'Which of the following is used for user authentication in Django?',
     'options': [
       'A) django.contrib.auth',
       'B) django.auth',
@@ -240,13 +239,9 @@ List<Map<String, dynamic>> jangoBackEndQuestions = [
     'correctAnswer': 2,
   },
   {
-    'question': 'Which of the following is NOT a valid Django model field option?',
-    'options': [
-      'A) null',
-      'B) blank',
-      'C) default',
-      'D) required'
-    ],
+    'question':
+        'Which of the following is NOT a valid Django model field option?',
+    'options': ['A) null', 'B) blank', 'C) default', 'D) required'],
     'correctAnswer': 3,
   },
   {

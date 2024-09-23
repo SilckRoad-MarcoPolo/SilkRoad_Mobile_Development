@@ -68,7 +68,12 @@ class _QuizScreenState extends State<QuizScreen> {
 
   void finishQuiz() {
     timer?.cancel();
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>QuizOverviewScreen(arrowButton: true,)));
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context) => QuizOverviewScreen(
+                  arrowButton: true,
+                )));
   }
 
   List<int> getVisibleIndicatorIndices() {
@@ -98,21 +103,21 @@ class _QuizScreenState extends State<QuizScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
               children: [
-                ArrowBackButton(onTap: () {
-                }),
+                ArrowBackButton(onTap: () {}),
                 SizedBox(width: (72 / 430) * ScreenUtils.screenWidth(context)),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    border: Border.all(
-                      color: const Color(0xffEDCEA4),
-
-                    ),
-                    borderRadius: BorderRadius.circular(12)
-                  ),
+                      color: Colors.transparent,
+                      border: Border.all(
+                        color: const Color(0xffEDCEA4),
+                      ),
+                      borderRadius: BorderRadius.circular(12)),
                   child: Padding(
-                    padding:  EdgeInsets.symmetric(horizontal: (18 / 430) * ScreenUtils.screenWidth(context),
-                    vertical: (6 / 932) * ScreenUtils.screenHeight(context)),
+                    padding: EdgeInsets.symmetric(
+                        horizontal:
+                            (18 / 430) * ScreenUtils.screenWidth(context),
+                        vertical:
+                            (6 / 932) * ScreenUtils.screenHeight(context)),
                     child: Row(
                       children: [
                         Icon(
@@ -120,12 +125,13 @@ class _QuizScreenState extends State<QuizScreen> {
                           size: (28 / 932) * ScreenUtils.screenHeight(context),
                         ),
                         SizedBox(
-                            width: (14 / 430) * ScreenUtils.screenWidth(context)),
+                            width:
+                                (14 / 430) * ScreenUtils.screenWidth(context)),
                         Text(
                           '00:${timeLeft.toString().padLeft(2, '0')}',
                           style: TextStyle(
-                              fontSize:
-                                  (20 / 932) * ScreenUtils.screenHeight(context),
+                              fontSize: (20 / 932) *
+                                  ScreenUtils.screenHeight(context),
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -143,22 +149,25 @@ class _QuizScreenState extends State<QuizScreen> {
               children: visibleIndices.map((index) {
                 bool isCurrent = index == currentQuestionIndex;
                 return Container(
-                  margin: EdgeInsets.symmetric(horizontal: (5 / 430) * ScreenUtils.screenWidth(context)),
+                  margin: EdgeInsets.symmetric(
+                      horizontal: (5 / 430) * ScreenUtils.screenWidth(context)),
                   width: (60 / 430) * ScreenUtils.screenWidth(context),
                   height: (60 / 430) * ScreenUtils.screenWidth(context),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: isCurrent ? const Color(0xffB27743) : (Colors.transparent),
-                    border: Border.all(
-                        color: const Color(0xffB27743),width: 2 ),
+                    color: isCurrent
+                        ? const Color(0xffB27743)
+                        : (Colors.transparent),
+                    border:
+                        Border.all(color: const Color(0xffB27743), width: 2),
                   ),
                   child: Center(
                     child: Text(
                       '${index + 1}',
                       style: TextStyle(
-                        color: isCurrent ? Colors.white : Colors.black,
-                        fontSize: (20 / 932) * ScreenUtils.screenHeight(context)
-                      ),
+                          color: isCurrent ? Colors.white : Colors.black,
+                          fontSize:
+                              (20 / 932) * ScreenUtils.screenHeight(context)),
                     ),
                   ),
                 );
@@ -170,21 +179,23 @@ class _QuizScreenState extends State<QuizScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
               '${currentQuestionIndex + 1}. ${questions[currentQuestionIndex]['question']}',
-              style: TextStyle(fontSize: (20 / 932) * ScreenUtils.screenHeight(context), fontWeight: FontWeight.w500),
+              style: TextStyle(
+                  fontSize: (20 / 932) * ScreenUtils.screenHeight(context),
+                  fontWeight: FontWeight.w500),
             ),
           ),
           SizedBox(height: (26 / 932) * ScreenUtils.screenHeight(context)),
           ...List.generate(
             questions[currentQuestionIndex]['options'].length,
             (index) => Padding(
-              padding: EdgeInsets.symmetric(vertical:(14 / 932) * ScreenUtils.screenHeight(context),
-                horizontal: (34 / 430) * ScreenUtils.screenWidth(context)
-              ),
+              padding: EdgeInsets.symmetric(
+                  vertical: (14 / 932) * ScreenUtils.screenHeight(context),
+                  horizontal: (34 / 430) * ScreenUtils.screenWidth(context)),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(
-                    horizontal: (14 / 430) * ScreenUtils.screenWidth(context),
-                      vertical:(20 / 932) * ScreenUtils.screenHeight(context)),
+                      horizontal: (14 / 430) * ScreenUtils.screenWidth(context),
+                      vertical: (20 / 932) * ScreenUtils.screenHeight(context)),
                   elevation: 0,
                   foregroundColor: Colors.black,
                   backgroundColor: answers[currentQuestionIndex] == index
@@ -197,10 +208,12 @@ class _QuizScreenState extends State<QuizScreen> {
                 ),
                 child: Align(
                   alignment: Alignment.topLeft,
-                  child:
-                      Text(questions[currentQuestionIndex]['options'][index]
-                          ,style: TextStyle(fontSize: (14 / 932) * ScreenUtils.screenHeight(context)),
-                      ),
+                  child: Text(
+                    questions[currentQuestionIndex]['options'][index],
+                    style: TextStyle(
+                        fontSize:
+                            (14 / 932) * ScreenUtils.screenHeight(context)),
+                  ),
                 ),
                 onPressed: () => selectAnswer(index),
               ),
@@ -214,18 +227,22 @@ class _QuizScreenState extends State<QuizScreen> {
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-
-
                   SizedBox(
-                    width: (62 / 430) * ScreenUtils.screenWidth(context),
+                      width: (62 / 430) * ScreenUtils.screenWidth(context),
                       height: (62 / 430) * ScreenUtils.screenWidth(context),
-                      child: CircularProgressIndicator(color:  answers[currentQuestionIndex] != null
-                          ?Colors.black: Colors.grey,value: 100,strokeWidth: 2,)),
+                      child: CircularProgressIndicator(
+                        color: answers[currentQuestionIndex] != null
+                            ? Colors.black
+                            : Colors.grey,
+                        value: 100,
+                        strokeWidth: 2,
+                      )),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
                       shape: CircleBorder(),
-                      padding: EdgeInsets.all((10 / 430) * ScreenUtils.screenWidth(context)),
+                      padding: EdgeInsets.all(
+                          (10 / 430) * ScreenUtils.screenWidth(context)),
                     ),
                     child: Icon(Icons.arrow_forward, color: Colors.white),
                     onPressed: answers[currentQuestionIndex] != null
@@ -237,7 +254,10 @@ class _QuizScreenState extends State<QuizScreen> {
             ),
           ),
           Spacer(),
-          Image.asset("assets/images/sahraa.png", width: ScreenUtils.screenWidth(context),)
+          Image.asset(
+            "assets/images/sahraa.png",
+            width: ScreenUtils.screenWidth(context),
+          )
         ],
       ),
     );

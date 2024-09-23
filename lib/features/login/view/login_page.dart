@@ -56,7 +56,8 @@ class _LoginPageState extends State<LoginPage> {
                   SingleChildScrollView(
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: ScreenUtils.screenHeight(context) * (14 / 462),
+                        horizontal:
+                            ScreenUtils.screenHeight(context) * (14 / 462),
                       ),
                       child: Form(
                         key: _formKey,
@@ -64,7 +65,8 @@ class _LoginPageState extends State<LoginPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                              height: (90 / 932) * ScreenUtils.screenHeight(context),
+                              height: (90 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             const Text(
                               'Welcome',
@@ -83,7 +85,8 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                             SizedBox(
-                              height: (90 / 932) * ScreenUtils.screenHeight(context),
+                              height: (90 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             CustomTextFormField(
                               controller: _emailController,
@@ -96,7 +99,8 @@ class _LoginPageState extends State<LoginPage> {
                               },
                             ),
                             SizedBox(
-                              height: (45 / 932) * ScreenUtils.screenHeight(context),
+                              height: (45 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             CustomTextFormField(
                               controller: _passwordController,
@@ -120,7 +124,8 @@ class _LoginPageState extends State<LoginPage> {
                               },
                             ),
                             SizedBox(
-                              height: (17 / 932) * ScreenUtils.screenHeight(context),
+                              height: (17 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             Row(
                               children: [
@@ -155,7 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                            const ForgotPassword()));
+                                                const ForgotPassword()));
                                   },
                                   child: Text(
                                     'Forgot Password?',
@@ -168,23 +173,27 @@ class _LoginPageState extends State<LoginPage> {
                               ],
                             ),
                             SizedBox(
-                              height: (110 / 932) * ScreenUtils.screenHeight(context),
+                              height: (110 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             CustomButton(
                               text: 'Sign in',
                               onTap: () {
                                 if (_formKey.currentState!.validate()) {
-                                  if(_emailController.text == 'yosef@silkroad.com'){
-                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BOttomNavMentor()));
-                                  }
-                                  else{
+                                  if (_emailController.text ==
+                                      'yosef@silkroad.com') {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                BOttomNavMentor()));
+                                  } else {
                                     context.read<LoginCubit>().signIn(
-                                      context,
-                                      _emailController.text,
-                                      _passwordController.text,
-                                    );
+                                          context,
+                                          _emailController.text,
+                                          _passwordController.text,
+                                        );
                                   }
-
                                 }
                               },
                             ),
@@ -197,14 +206,16 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             const GoogleButton(),
                             SizedBox(
-                              height: (11 / 932) * ScreenUtils.screenHeight(context),
+                              height: (11 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 const Text(
                                   'Don’t have an account?',
-                                  style: TextStyle(color: Colors.grey, fontSize: 16),
+                                  style: TextStyle(
+                                      color: Colors.grey, fontSize: 16),
                                 ),
                                 GestureDetector(
                                   onTap: () {
@@ -212,7 +223,7 @@ class _LoginPageState extends State<LoginPage> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                            const RegisterPage()));
+                                                const RegisterPage()));
                                   },
                                   child: const Text(
                                     ' Sign up',
@@ -224,7 +235,8 @@ class _LoginPageState extends State<LoginPage> {
                               ],
                             ),
                             SizedBox(
-                              height: (35 / 932) * ScreenUtils.screenHeight(context),
+                              height: (35 / 932) *
+                                  ScreenUtils.screenHeight(context),
                             ),
                           ],
                         ),
@@ -247,4 +259,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-

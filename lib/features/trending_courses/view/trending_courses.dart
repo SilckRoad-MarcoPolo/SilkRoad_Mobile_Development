@@ -70,8 +70,7 @@ class TrendingCourses extends StatelessWidget {
       "progress": 79,
       "image": "assets/images/trending/react.png"
     }
-  ]
-  ;
+  ];
 
   TrendingCourses({super.key});
 
@@ -84,18 +83,27 @@ class TrendingCourses extends StatelessWidget {
             child: GradiantColorHeader(
               title: "Trending Courses",
               icon: true,
-              function: (){Navigator.pop(context);},
+              function: () {
+                Navigator.pop(context);
+              },
             ),
           ),
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
-                    (context, index) {
+                (context, index) {
                   var course = courses[index];
-                  return TrendingCoursesCard(course: course,borderColor:  Color(0xffB27743),ontap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => CourseContent()));
-                  },);
+                  return TrendingCoursesCard(
+                    course: course,
+                    borderColor: Color(0xffB27743),
+                    ontap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CourseContent()));
+                    },
+                  );
                 },
                 childCount: courses.length,
               ),

@@ -8,19 +8,18 @@ class UploadUserPicture extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return Stack(
+    return Stack(
       children: [
-       
         Container(
           width: ScreenUtils.screenHeight(context) * (106 / 462), // Set width
-         height: ScreenUtils.screenHeight(context) * (106 / 932),
-           decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: Colors.black, 
-            width: 3.0, // Border width
+          height: ScreenUtils.screenHeight(context) * (106 / 932),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: Colors.black,
+              width: 3.0, // Border width
+            ),
           ),
-        ),
           child: CircleAvatar(
             radius: 50, // Size of the avatar
             backgroundColor: Colors.white, // Background color
@@ -33,20 +32,19 @@ class UploadUserPicture extends StatelessWidget {
         ),
         // Edit icon
         Positioned(
-       
-           right: 57,
+          right: 57,
           bottom: 4,
           child: GestureDetector(
-            onTap: (){},
+            onTap: () {},
             child: Container(
               padding: EdgeInsets.all(3),
               decoration: BoxDecoration(
-                color: Colors.white, 
+                color: Colors.white,
                 shape: BoxShape.circle,
                 border: Border.all(color: Colors.black, width: 1),
               ),
               child: Icon(
-                Icons.camera_enhance, 
+                Icons.camera_enhance,
                 size: 15,
                 color: Colors.black,
               ),
@@ -55,9 +53,5 @@ class UploadUserPicture extends StatelessWidget {
         ),
       ],
     );
-    
-  
-
-
   }
 }

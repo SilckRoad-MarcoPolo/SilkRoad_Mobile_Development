@@ -71,7 +71,6 @@ class MyCourses extends StatelessWidget {
     'image': 'assets/images/trending/photoshop.png',
   };
 
-
   MyCourses({super.key});
 
   Widget buildCourseCard(BuildContext context, Map<String, dynamic> course) {
@@ -83,7 +82,8 @@ class MyCourses extends StatelessWidget {
       color: Colors.transparent,
       child: ListTile(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => CourseContent()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => CourseContent()));
         },
         shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -98,7 +98,9 @@ class MyCourses extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
             child: SizedBox(
               width: (100 / 430) * ScreenUtils.screenWidth(context),
-              height: (80 / 932) * ScreenUtils.screenHeight(context), // Explicit height and width
+              height: (80 / 932) *
+                  ScreenUtils.screenHeight(
+                      context), // Explicit height and width
               child: Image.asset(
                 course['image'],
                 fit: BoxFit.cover, // Ensures the image fits within the box
@@ -146,10 +148,13 @@ class MyCourses extends StatelessWidget {
                   width: (50 / 432) * ScreenUtils.screenWidth(context),
                   height: (50 / 432) * ScreenUtils.screenWidth(context),
                   child: CircularProgressIndicator(
-                    value: course['progress'] != null ? course['progress'] / 100 : 0, // Add progress logic if available
+                    value: course['progress'] != null
+                        ? course['progress'] / 100
+                        : 0, // Add progress logic if available
                     strokeWidth: 2,
                     backgroundColor: Color(0x78ffc100),
-                    valueColor: const AlwaysStoppedAnimation<Color>(Colors.black),
+                    valueColor:
+                        const AlwaysStoppedAnimation<Color>(Colors.black),
                   ),
                 ),
                 Text(
@@ -165,18 +170,16 @@ class MyCourses extends StatelessWidget {
         ),
       ),
     );
-
   }
 
-
   Widget buildCourseSection(
-      BuildContext context,
-      String sectionTitle,
-      Map<String, dynamic> course1,
-      Map<String, dynamic> course2,
-      Map<String, dynamic> course3,
-      Gradient gradient,
-      ) {
+    BuildContext context,
+    String sectionTitle,
+    Map<String, dynamic> course1,
+    Map<String, dynamic> course2,
+    Map<String, dynamic> course3,
+    Gradient gradient,
+  ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -207,8 +210,9 @@ class MyCourses extends StatelessWidget {
                 ),
               ),
               TextButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> CourseContent()));
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CourseContent()));
                 },
                 child: Text(
                   'view all',
@@ -242,11 +246,13 @@ class MyCourses extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("My Courses",style: TextStyle(
-          fontSize: (22 / 932) * ScreenUtils.screenHeight(context),
-          fontWeight: FontWeight.w600
-        ),),
-        actions: [IconButton(onPressed: (){}, icon: const Icon(Icons.person))],
+        title: Text(
+          "My Courses",
+          style: TextStyle(
+              fontSize: (22 / 932) * ScreenUtils.screenHeight(context),
+              fontWeight: FontWeight.w600),
+        ),
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.person))],
         backgroundColor: Colors.transparent,
         elevation: 0,
         scrolledUnderElevation: 0,
@@ -255,7 +261,8 @@ class MyCourses extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 10),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10),
               child: CustOmSearch(),
             ),
             buildCourseSection(

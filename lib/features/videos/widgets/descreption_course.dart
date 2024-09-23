@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 
@@ -22,9 +21,7 @@ class Descreption extends StatelessWidget {
           height: ScreenUtils.screenHeight(context) * (8 / 932),
         ),
         Text(
-          maxLines: 4
-          
-          ,
+          maxLines: 4,
           overflow: TextOverflow.ellipsis,
           "A Python course guide typically serves as a structured roadmap for learning the Python programming language. It outlines the core concepts, syntax, and best practices that form the foundation of Python development.......Read more",
           style: TextStyle(
@@ -37,10 +34,10 @@ class Descreption extends StatelessWidget {
           children: [
             Text(
               'Enrolled  2k',
-              style: TextStyle(fontSize:  ScreenUtils.screenHeight(context) * (16 / 932)),
+              style: TextStyle(
+                  fontSize: ScreenUtils.screenHeight(context) * (16 / 932)),
             ),
-            SizedBox(
-                width: ScreenUtils.screenHeight(context) * (45 / 462)),
+            SizedBox(width: ScreenUtils.screenHeight(context) * (45 / 462)),
             Icon(
               Icons.star,
               color: Colors.orange,
@@ -51,8 +48,7 @@ class Descreption extends StatelessWidget {
               '4.9',
               style: TextStyle(fontSize: 16.0),
             ),
-            SizedBox(
-                width: ScreenUtils.screenHeight(context) * (45 / 462)),
+            SizedBox(width: ScreenUtils.screenHeight(context) * (45 / 462)),
             Row(
               children: [
                 Icon(
@@ -64,8 +60,7 @@ class Descreption extends StatelessWidget {
                 Text(
                   '45 hrs',
                   style: TextStyle(
-                      fontSize: ScreenUtils.screenHeight(context) *
-                          (16 / 932)),
+                      fontSize: ScreenUtils.screenHeight(context) * (16 / 932)),
                 ),
               ],
             ),

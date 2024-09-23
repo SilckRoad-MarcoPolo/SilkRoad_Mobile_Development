@@ -7,9 +7,11 @@ part 'new_password_state.dart';
 class NewPasswordCubit extends Cubit<NewPasswordState> {
   NewPasswordCubit() : super(NewPasswordInitial());
 
-  final String baseUrl = "https://silkroadapis-production.up.railway.app/api/v1";
+  final String baseUrl =
+      "https://silkroadapis-production.up.railway.app/api/v1";
 
-  void confirmNewPassword(String email, String password, String confirmPassword) async {
+  void confirmNewPassword(
+      String email, String password, String confirmPassword) async {
     if (password != confirmPassword) {
       emit(NewPasswordFailure('Passwords do not match'));
       return;
@@ -18,7 +20,6 @@ class NewPasswordCubit extends Cubit<NewPasswordState> {
     emit(NewPasswordLoading());
 
     try {
-      
       // API call to reset the password
       Response response = await AuthApi.confirmNewPasswordApi(email, password);
 
@@ -28,7 +29,8 @@ class NewPasswordCubit extends Cubit<NewPasswordState> {
         emit(NewPasswordFailure("Password reset failed: ${response.data}"));
       }
     } on DioException catch (e) {
-      String errorMessage = e.response?.data?['message'] ?? e.message ?? 'An error occurred';
+      String errorMessage =
+          e.response?.data?['message'] ?? e.message ?? 'An error occurred';
       emit(NewPasswordFailure(errorMessage));
     } catch (e) {
       emit(NewPasswordFailure("An unexpected error occurred: $e"));

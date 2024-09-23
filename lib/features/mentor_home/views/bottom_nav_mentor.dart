@@ -1,12 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/constants.dart';
 import 'package:silk_road/features/Appointments_mentor/view/appointments.dart';
 import 'package:silk_road/features/Mentor%20Ship/views/Mentor_Ship.dart';
 import 'package:silk_road/features/mentor_home/views/mentor_home_view.dart';
-
-
-
 
 class BOttomNavMentor extends StatefulWidget {
   @override
@@ -17,28 +13,24 @@ class _BOttomNavMentorState extends State<BOttomNavMentor> {
   int _selectedIndex = 0;
   List<Widget> bodyContent = [
     MentorHomeView(),
-    AppointmentsMentor(button: false,),
+    AppointmentsMentor(
+      button: false,
+    ),
     MentorShip()
-   
   ];
 
-
- 
   void _onItemTapped(int index) {
-    if(index < 3){
+    if (index < 3) {
       setState(() {
         _selectedIndex = index;
       });
     }
-
   }
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-   
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

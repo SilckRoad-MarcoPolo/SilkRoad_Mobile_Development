@@ -58,8 +58,6 @@ class CourseContent extends StatelessWidget {
     },
   ];
 
-
-
   CourseContent({super.key});
 
   @override
@@ -71,19 +69,27 @@ class CourseContent extends StatelessWidget {
             child: GradiantColorHeader(
               title: "Python Course",
               icon: true,
-              function: (){Navigator.pop(context);},
+              function: () {
+                Navigator.pop(context);
+              },
             ),
           ),
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
-                    (context, index) {
+                (context, index) {
                   var course = courses[index];
-                  return TrendingCoursesCard(course: course,borderColor: Color(
-                      0xb3c4c4c4),ontap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => CouresPage()));
-                  },);
+                  return TrendingCoursesCard(
+                    course: course,
+                    borderColor: Color(0xb3c4c4c4),
+                    ontap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CouresPage()));
+                    },
+                  );
                 },
                 childCount: courses.length,
               ),

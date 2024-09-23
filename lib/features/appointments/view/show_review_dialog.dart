@@ -20,7 +20,8 @@ void showReviewDialog(BuildContext context) {
         const end = Offset(0.0, 0.0);
         const curve = Curves.easeInOut;
 
-        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
         var offsetAnimation = animation.drive(tween);
 
         return SlideTransition(
@@ -94,7 +95,6 @@ class _SlideReviewDialogState extends State<SlideReviewDialog> {
 
             // Interactive Rating Bar
             RatingBar.builder(
-
               glow: false,
               initialRating: rating,
               minRating: 1,

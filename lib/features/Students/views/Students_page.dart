@@ -11,15 +11,15 @@ class StudentsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: ArrowBackButton(onTap: (){
-          Navigator.pop(context);
-        }),
+          leading: ArrowBackButton(onTap: () {
+            Navigator.pop(context);
+          }),
           title: Text(
-        "Students",
-        style: TextStyle(
-            fontSize: ScreenUtils.screenHeight(context) * (22 / 932),
-            fontWeight: FontWeight.w600),
-      )),
+            "Students",
+            style: TextStyle(
+                fontSize: ScreenUtils.screenHeight(context) * (22 / 932),
+                fontWeight: FontWeight.w600),
+          )),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -27,14 +27,14 @@ class StudentsPage extends StatelessWidget {
           ),
           child: Column(
             children: [
-               SizedBox(
+              SizedBox(
                 height: (20 / 932) * ScreenUtils.screenHeight(context),
               ),
               CustOmSearch(),
               SizedBox(
                 height: (20 / 932) * ScreenUtils.screenHeight(context),
               ),
-             studentList()
+              studentList()
             ],
           ),
         ),

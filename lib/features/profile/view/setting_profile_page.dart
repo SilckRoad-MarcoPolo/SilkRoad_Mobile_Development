@@ -41,7 +41,10 @@ class SettingProfilePage extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>ChangeProfileSetting()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ChangeProfileSetting()));
             },
           ),
           SizedBox(
@@ -61,7 +64,10 @@ class SettingProfilePage extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> ChangePasswordPage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ChangePasswordPage()));
             },
           ),
           SizedBox(
@@ -81,7 +87,8 @@ class SettingProfilePage extends StatelessWidget {
               ),
             ),
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> ChangeEmailPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ChangeEmailPage()));
             },
           ),
           SizedBox(

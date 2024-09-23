@@ -16,127 +16,149 @@ class MentorHomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       drawer: DrawerMentor(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             
-         Padding(
-        padding: EdgeInsets.symmetric(
-                    horizontal: ScreenUtils.screenHeight(context) * (12 / 462),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtils.screenHeight(context) * (12 / 462),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  customAppBar(
+                    title: 'Welcome',
+                    subtile: 'Zeyad',
+                    actions: [
+                      CircleAvatar(
+                          radius:
+                              ScreenUtils.screenHeight(context) * (22 / 932),
+                          backgroundColor: Color(0xffD9D9D9),
+                          child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.notifications,
+                                color: Colors.black,
+                              )))
+                    ],
                   ),
-           child: Column(
-               crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-               
-               customAppBar(
-                title: 'Welcome',
-                subtile: 'Zeyad',
-                actions: [
-                  CircleAvatar(
-                      radius: ScreenUtils.screenHeight(context) * (22 / 932),
-                      backgroundColor: Color(0xffD9D9D9),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.notifications,
-                            color: Colors.black,
-                          )))
+                  SizedBox(
+                    height: ScreenUtils.screenHeight(context) * (18 / 932),
+                  ),
+                  CustOmSearch(),
+                  SizedBox(
+                    height: ScreenUtils.screenHeight(context) * (20 / 932),
+                  ),
+                  Text(
+                    "Services",
+                    style: TextStyle(
+                        fontSize:
+                            (22 / 932) * ScreenUtils.screenHeight(context),
+                        fontWeight: FontWeight.w800),
+                  ),
+                  SizedBox(
+                    height: ScreenUtils.screenHeight(context) * (10 / 932),
+                  ),
+                  Services(),
+                  SizedBox(
+                    height: ScreenUtils.screenHeight(context) * (20 / 932),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Upcoming Appointments',
+                        style: TextStyle(
+                            fontSize:
+                                (22 / 932) * ScreenUtils.screenHeight(context),
+                            fontWeight: FontWeight.w500),
+                      ),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        AppointmentsMentor()));
+                          },
+                          child: Text(
+                            'more >',
+                            style: TextStyle(
+                                color: kOrange,
+                                fontSize: (14 / 932) *
+                                    ScreenUtils.screenHeight(context)),
+                          ))
+                    ],
+                  ),
                 ],
               ),
-               SizedBox(
-                height: ScreenUtils.screenHeight(context) * (18 / 932),
-              ),
-              
-              CustOmSearch(),
-              SizedBox(
-                height: ScreenUtils.screenHeight(context) * (20 / 932),
-              ),
-              Text(
-                "Services",
-                style: TextStyle(
-                    fontSize: (22 / 932) * ScreenUtils.screenHeight(context),
-                    fontWeight: FontWeight.w800),
-              ),
-              SizedBox(
-                height: ScreenUtils.screenHeight(context) * (10 / 932),
-              ),
-              Services(),
-                 SizedBox(
-                height: ScreenUtils.screenHeight(context) * (20 / 932),
-              ),
-               
-               Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Upcoming Appointments',
-                      style: TextStyle(fontSize:(22 / 932) * ScreenUtils.screenHeight(context), fontWeight: FontWeight.w500),
-                    ),
-                    TextButton(
-                        onPressed:
-                              (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> AppointmentsMentor()));
-
-                        },
-                        child: Text(
-                          'more >',
-                          style: TextStyle(color: kOrange, fontSize: (14 / 932) * ScreenUtils.screenHeight(context)),
-                        ))
-                  ],
-                ),
-            
-           ],),
-        
-           
-         ),
-        AppointmentCard(
-          dialog: false,
+            ),
+            AppointmentCard(
+              dialog: false,
               text1: 'Complete',
-                          text2: 'Reschedule',
-              instructorInfo:{
-                 'name': 'Nour Ehab',
-                 'id': '#DR4546F',
-                 'photo': 'assets/images/temp_profile_photo.png',
-                 'date': 'may 25, 2024 - 10:00 AM'
-              } ,),
-               SizedBox(
-                height: ScreenUtils.screenHeight(context) * (5 / 932),
+              text2: 'Reschedule',
+              instructorInfo: {
+                'name': 'Nour Ehab',
+                'id': '#DR4546F',
+                'photo': 'assets/images/temp_profile_photo.png',
+                'date': 'may 25, 2024 - 10:00 AM'
+              },
+            ),
+            SizedBox(
+              height: ScreenUtils.screenHeight(context) * (5 / 932),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: ScreenUtils.screenHeight(context) * (12 / 462),
               ),
-        
-         Padding(
-          padding: EdgeInsets.symmetric(
-                    horizontal: ScreenUtils.screenHeight(context) * (12 / 462),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Students',
+                        style: TextStyle(
+                            fontSize:
+                                (18 / 932) * ScreenUtils.screenHeight(context),
+                            fontWeight: FontWeight.w500),
+                      ),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => StudentsPage()));
+                          },
+                          child: Text(
+                            'more >',
+                            style: TextStyle(
+                                color: kOrange,
+                                fontSize: (14 / 932) *
+                                    ScreenUtils.screenHeight(context)),
+                          ))
+                    ],
                   ),
-           child: Column(children: [ 
-               Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Students',
-                      style: TextStyle(fontSize:(18 / 932) * ScreenUtils.screenHeight(context), fontWeight: FontWeight.w500),
-                    ),
-                    TextButton(
-                        onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> StudentsPage()));
-                        },
-                        child: Text(
-                          'more >',
-                          style: TextStyle(color: kOrange, fontSize: (14 / 932) * ScreenUtils.screenHeight(context)),
-                        ))
-                  ],
-                ),
-           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-             Students(name: "Amira Shawki",
-                   photo: 'assets/images/photo_6008145075550404211_m 5 (2).png',        ),
-              Students(name: "ElAmir Mansour",
-              photo: 'assets/images/photo_1_2024-09-18_03-10-14 3 (1).png',)
-           ],)],),
-         )
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Students(
+                        name: "Amira Shawki",
+                        photo:
+                            'assets/images/photo_6008145075550404211_m 5 (2).png',
+                      ),
+                      Students(
+                        name: "ElAmir Mansour",
+                        photo:
+                            'assets/images/photo_1_2024-09-18_03-10-14 3 (1).png',
+                      )
+                    ],
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

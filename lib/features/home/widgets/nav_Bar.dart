@@ -14,10 +14,7 @@ class NavBar extends StatelessWidget {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
-
         children: [
-
-
           Container(
             height: (116 / 932) * ScreenUtils.screenHeight(context),
             decoration: BoxDecoration(
@@ -25,35 +22,39 @@ class NavBar extends StatelessWidget {
             ),
             child: Padding(
               padding: EdgeInsets.only(
-                left: (13 / 414) * ScreenUtils.screenWidth(context), top:
-              (46 / 932) * ScreenUtils.screenHeight(context),
-
+                left: (13 / 414) * ScreenUtils.screenWidth(context),
+                top: (46 / 932) * ScreenUtils.screenHeight(context),
               ),
-              child: Row(children: [
-                Image.asset('assets/images/photo_6008145075550404211_m 4.png'),
-
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: (13 / 414) * ScreenUtils.screenWidth(context),),
-                  child: Text('Navigator', style: TextStyle(color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600),),
-                ),
-
-
-              ],),
+              child: Row(
+                children: [
+                  Image.asset(
+                      'assets/images/photo_6008145075550404211_m 4.png'),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: (13 / 414) * ScreenUtils.screenWidth(context),
+                    ),
+                    child: Text(
+                      'Navigator',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          )
-          , ListTile(leading: Icon(Icons.person),
-            title: Text('Profile Settings',),
+          ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text(
+              'Profile Settings',
+            ),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ProfilePage()));
             },
-
-
           ),
-
           ListTile(
             leading: Icon(Icons.note_alt_rounded),
             title: Text('IQ Test'),
@@ -104,9 +105,8 @@ class NavBar extends StatelessWidget {
             title: Text('My Learnings'),
             onTap: () {
               // Handle tap
-            },),
-
-
+            },
+          ),
           SizedBox(
             height: ScreenUtils.screenHeight(context) * (210 / 932),
           ),
@@ -114,15 +114,16 @@ class NavBar extends StatelessWidget {
             padding: EdgeInsets.symmetric(
               horizontal: ScreenUtils.screenHeight(context) * (9 / 462),
             ),
-            child: CustomButton(text: 'log out', onTap: () {
-              Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context)=> LoginPage()));
-            },),
+            child: CustomButton(
+              text: 'log out',
+              onTap: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => LoginPage()));
+              },
+            ),
           )
-
-        ],),
-
-
+        ],
+      ),
     );
   }
 }

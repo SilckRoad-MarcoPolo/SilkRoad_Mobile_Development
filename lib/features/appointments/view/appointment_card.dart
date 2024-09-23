@@ -5,10 +5,15 @@ import '../../../core/helpers/screen_utils.dart';
 
 class AppointmentCard extends StatelessWidget {
   Map<String, String> instructorInfo;
-  final String text1,text2;
-  bool? dialog ;
+  final String text1, text2;
+  bool? dialog;
 
-  AppointmentCard({super.key, required this.instructorInfo, required this.text1, required this.text2,this.dialog = true});
+  AppointmentCard(
+      {super.key,
+      required this.instructorInfo,
+      required this.text1,
+      required this.text2,
+      this.dialog = true});
 
   @override
   Widget build(BuildContext context) {
@@ -64,13 +69,13 @@ class AppointmentCard extends StatelessWidget {
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize:
-                            (17 / 932) * ScreenUtils.screenHeight(context),
+                                (17 / 932) * ScreenUtils.screenHeight(context),
                             color: Colors.black,
                           ),
                         ),
                         SizedBox(
                             height:
-                            (17 / 932) * ScreenUtils.screenHeight(context)),
+                                (17 / 932) * ScreenUtils.screenHeight(context)),
                         RichText(
                           text: TextSpan(
                             text: 'Booking ID: ',
@@ -118,7 +123,7 @@ class AppointmentCard extends StatelessWidget {
                     onPressed: () {
                       // Add action here
                     },
-                    child:  Text(
+                    child: Text(
                       text1,
                       style: TextStyle(
                         color: Colors.black,
@@ -137,12 +142,12 @@ class AppointmentCard extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      if(dialog == true){
+                      if (dialog == true) {
                         showReviewDialog(context);
                       }
                     },
                     child: Text(
-                     text2,
+                      text2,
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

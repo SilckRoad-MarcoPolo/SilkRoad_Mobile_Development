@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 
 class MentorFollowers extends StatelessWidget {
-  const MentorFollowers({super.key,this.image});
-final String ?image;
+  const MentorFollowers({super.key, this.image});
+  final String? image;
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       height: (110 / 932) * ScreenUtils.screenHeight(context),
       child: Row(
         children: [
@@ -24,8 +24,9 @@ final String ?image;
                   )),
               Text('200',
                   style: TextStyle(
-                     fontSize: (20 / 932) * ScreenUtils.screenHeight(context),
-                      color: Colors.grey, fontWeight: FontWeight.w400)),
+                      fontSize: (20 / 932) * ScreenUtils.screenHeight(context),
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w400)),
               Container(
                 width: (109 / 462) * ScreenUtils.screenWidth(context),
                 height: (34 / 932) * ScreenUtils.screenHeight(context),
@@ -59,8 +60,9 @@ final String ?image;
                   )),
               Text('200',
                   style: TextStyle(
-                     fontSize: (20 / 932) * ScreenUtils.screenHeight(context),
-                      color: Colors.grey, fontWeight: FontWeight.w400)),
+                      fontSize: (20 / 932) * ScreenUtils.screenHeight(context),
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w400)),
               Container(
                 height: (34 / 932) * ScreenUtils.screenHeight(context),
                 width: (109 / 462) * ScreenUtils.screenWidth(context),
@@ -83,6 +85,5 @@ final String ?image;
         ],
       ),
     );
-    
   }
 }

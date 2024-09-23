@@ -14,8 +14,9 @@ class ForgotPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => ForgotPasswordCubit(),  // Provide ForgotPasswordCubit here
-      child: ForgotPasswordBody(),           // Move the rest of the UI into a separate widget
+      create: (_) => ForgotPasswordCubit(), // Provide ForgotPasswordCubit here
+      child:
+          ForgotPasswordBody(), // Move the rest of the UI into a separate widget
     );
   }
 }
@@ -29,7 +30,8 @@ class ForgotPasswordBody extends StatefulWidget {
 
 class _ForgotPasswordBodyState extends State<ForgotPasswordBody> {
   final _formKey = GlobalKey<FormState>(); // Form key for validation
-  final TextEditingController _emailController = TextEditingController(); // Email controller
+  final TextEditingController _emailController =
+      TextEditingController(); // Email controller
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +87,7 @@ class _ForgotPasswordBodyState extends State<ForgotPasswordBody> {
                       child: PasswordResetText(
                         title: "Forgot Password?",
                         description:
-                        "Enter your email address below, and we'll send \n"
+                            "Enter your email address below, and we'll send \n"
                             "you a One-Time Password (OTP) to reset your \n"
                             "password. If you don't see the email, please\n"
                             "check your spam folder",
@@ -137,7 +139,7 @@ class _ForgotPasswordBodyState extends State<ForgotPasswordBody> {
                       // Access the ForgotPasswordCubit inside the BlocProvider's context
                       BlocProvider.of<ForgotPasswordCubit>(context)
                           .sendPasswordResetEmail(
-                          context, _emailController.text);
+                              context, _emailController.text);
                     }
                   },
                 ),

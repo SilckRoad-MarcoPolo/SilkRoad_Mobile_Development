@@ -3,20 +3,23 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class ScreenUtils {
-  static double screenWidth(BuildContext context) => MediaQuery.of(context).size.width;
-  static double screenHeight(BuildContext context) => MediaQuery.of(context).size.height;
+  static double screenWidth(BuildContext context) =>
+      MediaQuery.of(context).size.width;
+  static double screenHeight(BuildContext context) =>
+      MediaQuery.of(context).size.height;
 }
 
 class RoadmapView extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
           width: ScreenUtils.screenWidth(context),
-          child: Image.asset("assets/images/Roadmap_upscayl_4x_realesrgan-x4plus.png",
-          fit: BoxFit.fitHeight,),
+          child: Image.asset(
+            "assets/images/Roadmap_upscayl_4x_realesrgan-x4plus.png",
+            fit: BoxFit.fitHeight,
+          ),
         ),
       ),
     );
@@ -31,13 +34,12 @@ class RoadmapView extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(
-          padding: EdgeInsets.all(8.0),
-          child:
-              Text(item.description, style: TextStyle(fontSize: (10 / 932) * ScreenUtils.screenHeight(context)))
-
-          ),
-        ),
-      );
+            padding: EdgeInsets.all(8.0),
+            child: Text(item.description,
+                style: TextStyle(
+                    fontSize: (10 / 932) * ScreenUtils.screenHeight(context)))),
+      ),
+    );
   }
 }
 

@@ -19,7 +19,8 @@ class CustomTextFormField extends StatelessWidget {
   TextEditingController? controller;
   Function(String)? onChanged;
   String? Function(String?)? validate;
-  bool isEditable; // New variable to control whether the field is editable or not
+  bool
+      isEditable; // New variable to control whether the field is editable or not
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,8 @@ class CustomTextFormField extends StatelessWidget {
       obscureText: obscureText!,
       validator: validate,
       onChanged: onChanged,
-      enabled: isEditable, // Enable or disable the field based on the isEditable flag
+      enabled:
+          isEditable, // Enable or disable the field based on the isEditable flag
       decoration: InputDecoration(
         suffixIcon: suffixIcon,
         hintText: hintText,

@@ -5,7 +5,7 @@ import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
 import 'appointment_card.dart';
 
 class AppointmentsMentor extends StatefulWidget {
-   AppointmentsMentor({super.key, this.button = true});
+  AppointmentsMentor({super.key, this.button = true});
   bool button;
   @override
   State<AppointmentsMentor> createState() => _AppointmentsMentorState();
@@ -82,7 +82,11 @@ class _AppointmentsMentorState extends State<AppointmentsMentor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading:widget.button? ArrowBackButton(onTap: () {Navigator.pop(context);}): Text(""),
+        leading: widget.button
+            ? ArrowBackButton(onTap: () {
+                Navigator.pop(context);
+              })
+            : Text(""),
         title: Text(
           "Appointments",
           style: TextStyle(
@@ -106,35 +110,34 @@ class _AppointmentsMentorState extends State<AppointmentsMentor> {
             ),
             selectedIndex == 0
                 ? ListView.builder(
-              itemCount: appointmentsListUpcoming.length,
-              shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemBuilder: (ctx, index) {
-                    return (AppointmentCard(
-
-                      text1: 'Complete',
-                      text2: 'Reschedule',
-                      instructorInfo: appointmentsListUpcoming[index],
-                    ));
-                  })
+                    itemCount: appointmentsListUpcoming.length,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (ctx, index) {
+                      return (AppointmentCard(
+                        text1: 'Complete',
+                        text2: 'Reschedule',
+                        instructorInfo: appointmentsListUpcoming[index],
+                      ));
+                    })
                 : ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-                itemCount: appointmentsListCompleted.length,
-                shrinkWrap: true,
-                itemBuilder: (ctx, index) {
-                    return (AppointmentCard(
-                      text1: 'Complete',
-                      text2: 'Reschedule',
-                      instructorInfo: appointmentsListCompleted[index],
-                    ));
-                  })
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: appointmentsListCompleted.length,
+                    shrinkWrap: true,
+                    itemBuilder: (ctx, index) {
+                      return (AppointmentCard(
+                        text1: 'Complete',
+                        text2: 'Reschedule',
+                        instructorInfo: appointmentsListCompleted[index],
+                      ));
+                    })
           ],
         ),
       ),
     );
   }
 
-  Widget _buildToggleButton(String text, int index ) {
+  Widget _buildToggleButton(String text, int index) {
     bool isSelected = selectedIndex == index;
     return GestureDetector(
       onTap: () {
@@ -167,4 +170,3 @@ class _AppointmentsMentorState extends State<AppointmentsMentor> {
     );
   }
 }
-

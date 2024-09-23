@@ -6,8 +6,6 @@ import '/core/networking/auth_functions.dart'; // Adjust to your networking file
 
 part 'forgotpassword_state.dart';
 
-
-
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   ForgotPasswordCubit() : super(ForgotPasswordInitial());
 
