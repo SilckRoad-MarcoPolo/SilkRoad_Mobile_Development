@@ -31,7 +31,7 @@ class SilkRoad extends StatelessWidget {
 
 
     
-        home:BOttomNavMentor()
+        home:OnBoarding()
 
 
 
