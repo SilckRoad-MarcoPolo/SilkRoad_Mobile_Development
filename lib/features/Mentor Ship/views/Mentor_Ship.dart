@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
-import 'package:silk_road/core/shared_components/widgets/shared_buttons.dart';
 import 'package:silk_road/features/Mentor%20Ship/widgets/card_tracks.dart';
 import 'package:silk_road/features/Mentor%20Ship/widgets/mentorReview.dart';
 
@@ -33,16 +32,7 @@ appBar: AppBar(
                 child: Column(
                   children: [
                     ListTracks(),
-                    SizedBox( height: (20 / 932) * ScreenUtils.screenHeight(context),),
-                      ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: 10,
-                    itemBuilder: (context,index){
-                    return Mentorreview();
-                   }
-                   
-                   )
-
+                   mentorShipList()
                     
                   ],
                 ),

@@ -3,8 +3,8 @@ import 'package:silk_road/core/helpers/screen_utils.dart';
 import 'package:silk_road/features/user_profile/user_profile_view.dart';
 
 class StudentCard extends StatelessWidget {
-  const StudentCard({super.key});
-
+  const StudentCard({super.key,required this.studentList});
+ final Map<String, dynamic> studentList;
   @override
   Widget build(BuildContext context) {
     return Column(children: [
@@ -21,7 +21,7 @@ class StudentCard extends StatelessWidget {
         leading: Image.asset(
             'assets/images/photo_6008145075550404211_m 6 (1).png'),
         title: Text(
-          'Amira Shawk',
+          studentList['name'],
           style: TextStyle(
               fontSize: (16 / 932) *
                   ScreenUtils.screenHeight(context),
@@ -43,3 +43,32 @@ class StudentCard extends StatelessWidget {
                 height: (20 / 932) * ScreenUtils.screenHeight(context),
               ),
     ]);}}
+
+    class studentList extends StatelessWidget {
+ studentList({super.key});
+List<Map<String,String>> students=[
+
+{'name':'Amira Shawki',},
+{'name':'Dina Ragab',},
+{'name':'Nourhan Ehab',},
+{'name':'anar Eldesoki',},
+{'name':'Alaa Tarek',},
+{'name':'Sara Ahmed',},
+{'name':'Mena Elsayad',},
+{'name':'Ali Ahmed',},
+{'name':'Salma Ahmed',},
+
+
+];
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+                 shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+                  itemCount: students.length,
+                  itemBuilder: (context, index) {
+                    return StudentCard(studentList:students[index] ,);
+                  });
+  }
+}

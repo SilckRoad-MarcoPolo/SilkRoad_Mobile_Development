@@ -31,11 +31,16 @@ class _HomeViewState extends State<HomeView> {
             customAppBar(
               title: 'Welcome',
               subtile: 'navigator',
-              actions: [GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> StreakScreen()));
-                },
-                  child: Image.asset('assets/images/Group 481506.png'))],
+              actions: [
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => StreakScreen()));
+                    },
+                    child: Image.asset('assets/images/Group 481506.png'))
+              ],
             ),
             SizedBox(
               height: (26 / 932) * ScreenUtils.screenHeight(context),
