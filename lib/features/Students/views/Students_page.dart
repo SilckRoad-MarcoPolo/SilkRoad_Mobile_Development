@@ -34,12 +34,7 @@ class StudentsPage extends StatelessWidget {
               SizedBox(
                 height: (20 / 932) * ScreenUtils.screenHeight(context),
               ),
-              ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return StudentCard();
-                  })
+             studentList()
             ],
           ),
         ),
