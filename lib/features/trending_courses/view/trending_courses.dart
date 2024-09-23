@@ -8,55 +8,70 @@ class TrendingCourses extends StatelessWidget {
   // Sample list of course data
   final List<Map<String, dynamic>> courses = [
     {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
+      "name": "Adobe",
+      "instructor": "Jane Smith",
+      "hours": "15/20 hrs",
+      "progress": 75,
+      "image": "assets/images/trending/adobe.png"
     },
     {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
+      "name": "Bootstrap",
+      "instructor": "David Lee",
+      "hours": "10/15 hrs",
+      "progress": 67,
+      "image": "assets/images/trending/bootstrap.png"
     },
     {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
+      "name": "Data Analysis",
+      "instructor": "Emily Clark",
+      "hours": "37/40 hrs",
+      "progress": 92,
+      "image": "assets/images/trending/data_analysis.png"
     },
     {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
+      "name": "Django",
+      "instructor": "Michael Johnson",
+      "hours": "25/30 hrs",
+      "progress": 83,
+      "image": "assets/images/trending/django.png"
     },
     {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
+      "name": "Full Stack",
+      "instructor": "Sophia Garcia",
+      "hours": "18/25 hrs",
+      "progress": 72,
+      "image": "assets/images/trending/full_stack.png"
     },
     {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
+      "name": "MERN",
+      "instructor": "Chris Evans",
+      "hours": "12/20 hrs",
+      "progress": 60,
+      "image": "assets/images/trending/mern.png"
     },
     {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
+      "name": "Next.js",
+      "instructor": "Sarah Connor",
+      "hours": "5/10 hrs",
+      "progress": 50,
+      "image": "assets/images/trending/next_js.png"
     },
-  ];
+    {
+      "name": "Python",
+      "instructor": "Robert Brown",
+      "hours": "30/35 hrs",
+      "progress": 85,
+      "image": "assets/images/trending/python.png"
+    },
+    {
+      "name": "React",
+      "instructor": "Laura Wilson",
+      "hours": "22/28 hrs",
+      "progress": 79,
+      "image": "assets/images/trending/react.png"
+    }
+  ]
+  ;
 
   TrendingCourses({super.key});
 

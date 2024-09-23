@@ -19,7 +19,7 @@ class SettingProfilePage extends StatelessWidget {
           SizedBox(
             height: ScreenUtils.screenHeight(context) * (32 / 932),
           ),
-          Text('Amira shawki',
+          Text('Yosef shedid',
               style: TextStyle(
                   fontSize: ScreenUtils.screenHeight(context) * (32 / 932),
                   color: Colors.black,

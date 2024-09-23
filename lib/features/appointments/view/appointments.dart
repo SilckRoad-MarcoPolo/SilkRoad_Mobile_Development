@@ -13,38 +13,71 @@ class Appointments extends StatefulWidget {
 
 class _AppointmentsState extends State<Appointments> {
   int selectedIndex = 0;
-  List<Map<String, String>> appointments = [
+  List<Map<String, String>> appointmentsListUpcoming = [
     {
       'name': 'Nour Ehab',
-      'id': '#DR4546F',
+      'id': '#DR8392C',
       'photo': 'assets/images/temp_profile_photo.png',
-      'date': 'July 25, 2024 - 10:00 AM'
+      'date': 'August 12, 2024 - 09:30 AM',
     },
     {
-      'name': 'Nour Ehab',
-      'id': '#DR4546F',
+      'name': 'Hassan Marie',
+      'id': '#DR9394F',
       'photo': 'assets/images/temp_profile_photo.png',
-      'date': 'may 25, 2024 - 10:00 AM'
+      'date': 'June 20, 2024 - 11:00 AM',
     },
     {
-      'name': 'Nour Ehab',
-      'id': '#DR4546F',
+      'name': 'Sofian Khaled',
+      'id': '#DR7632A',
       'photo': 'assets/images/temp_profile_photo.png',
-      'date': 'July 25, 2024 - 10:00 AM'
+      'date': 'September 02, 2024 - 02:00 PM',
     },
     {
-      'name': 'Nour Ehab',
-      'id': '#DR4546F',
+      'name': 'Mohammed Emad',
+      'id': '#DR4589D',
       'photo': 'assets/images/temp_profile_photo.png',
-      'date': 'July 25, 2024 - 10:00 AM'
+      'date': 'October 15, 2024 - 08:00 AM',
     },
     {
-      'name': 'Nour Ehab',
-      'id': '#DR4546F',
+      'name': 'Mahmoud Khaled',
+      'id': '#DR2290T',
       'photo': 'assets/images/temp_profile_photo.png',
-      'date': 'July 25, 2024 - 10:00 AM'
-    }
+      'date': 'July 10, 2024 - 04:00 PM',
+    },
   ];
+  List<Map<String, String>> appointmentsListCompleted = [
+    {
+      'name': 'Mohammed Aziz',
+      'id': '#DR9438G',
+      'photo': 'assets/images/temp_profile_photo.png',
+      'date': 'November 18, 2024 - 12:00 PM',
+    },
+    {
+      'name': 'Hassan Marie',
+      'id': '#DR3874M',
+      'photo': 'assets/images/temp_profile_photo.png',
+      'date': 'May 22, 2024 - 03:30 PM',
+    },
+    {
+      'name': 'Sofian Khaled',
+      'id': '#DR8329N',
+      'photo': 'assets/images/temp_profile_photo.png',
+      'date': 'September 29, 2024 - 01:00 PM',
+    },
+    {
+      'name': 'Mohammed Emad',
+      'id': '#DR5720P',
+      'photo': 'assets/images/temp_profile_photo.png',
+      'date': 'December 03, 2024 - 10:00 AM',
+    },
+    {
+      'name': 'Mahmoud Khaled',
+      'id': '#DR1039V',
+      'photo': 'assets/images/temp_profile_photo.png',
+      'date': 'August 21, 2024 - 09:00 AM',
+    },
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -74,25 +107,25 @@ class _AppointmentsState extends State<Appointments> {
             ),
             selectedIndex == 0
                 ? ListView.builder(
-              itemCount: appointments.length,
+              itemCount: appointmentsListUpcoming.length,
               shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (ctx, index) {
                     return (AppointmentCard(
                       text1: 'Message',
                       text2: 'Review',
-                      instructorInfo: appointments[index],
+                      instructorInfo: appointmentsListUpcoming[index],
                     ));
                   })
                 : ListView.builder(
               physics: NeverScrollableScrollPhysics(),
-                itemCount: appointments.length,
+                itemCount: appointmentsListCompleted.length,
                 shrinkWrap: true,
                 itemBuilder: (ctx, index) {
                     return (AppointmentCard(
                       text1: 'Message',
                       text2: 'Review',
-                      instructorInfo: appointments[1],
+                      instructorInfo: appointmentsListCompleted[index],
                     ));
                   })
           ],

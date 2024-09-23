@@ -84,7 +84,6 @@ flutter:
   assets:
     - assets/images/onboarding/
     - assets/images/google_icon/
-    - assets/images/techs/
     - assets/images/auth/Group 481592 (1).png
 
     - assets/images/auth/Group 481593.png
@@ -92,6 +91,7 @@ flutter:
     - assets/images/Group 481720.png
 
     - assets/images/reset_password/
+    - assets/images/trending/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

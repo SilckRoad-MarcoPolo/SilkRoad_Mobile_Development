@@ -5,27 +5,27 @@ import 'package:silk_road/features/trending_courses/view/trending_courses_card.d
 class TrendingCourseList extends StatelessWidget {
   TrendingCourseList({super.key});
     final List<Map<String, dynamic>> courses = [
-    {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
-    },
-    {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
-    },
-    {
-      'name': 'Data Analysis',
-      'instructor': 'Jhon Doe',
-      'hours': '37/40 hrs',
-      'progress': 80,
-      'image': 'assets/data_analysis.png',
-    },
+      {
+        "name": "Adobe",
+        "instructor": "Jane Smith",
+        "hours": "15/20 hrs",
+        "progress": 75,
+        "image": "assets/images/trending/adobe.png"
+      },
+      {
+        "name": "Bootstrap",
+        "instructor": "David Lee",
+        "hours": "10/15 hrs",
+        "progress": 67,
+        "image": "assets/images/trending/bootstrap.png"
+      },
+      {
+        "name": "Data Analysis",
+        "instructor": "Emily Clark",
+        "hours": "37/40 hrs",
+        "progress": 92,
+        "image": "assets/images/trending/data_analysis.png"
+      },
     ];
 
   @override

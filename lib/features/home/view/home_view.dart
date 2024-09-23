@@ -72,7 +72,9 @@ class _HomeViewState extends State<HomeView> {
             ),
             ListOfTracks(),
             // ListOfTracks(),
-            SizedBox(),
+            SizedBox(
+              height: (37 / 932) * ScreenUtils.screenHeight(context),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -92,9 +94,6 @@ class _HomeViewState extends State<HomeView> {
                       style: TextStyle(color: kOrange, fontSize: 14),
                     ))
               ],
-            ),
-            SizedBox(
-              height: (37 / 932) * ScreenUtils.screenHeight(context),
             ),
             // TrendingCourseList(),
             CustomScrollView(

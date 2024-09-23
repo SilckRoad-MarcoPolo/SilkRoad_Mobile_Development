@@ -34,15 +34,15 @@ class TrendingCoursesCard extends StatelessWidget {
             children: [
               ListTile(
                 contentPadding: EdgeInsetsDirectional.symmetric(
-                    horizontal: (5 / 430) * ScreenUtils.screenWidth(context),
+                    horizontal: (16 / 430) * ScreenUtils.screenWidth(context),
                     vertical: (10 / 932) * ScreenUtils.screenHeight(context)),
                 leading: ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
                   child: Image.asset(
-                    'assets/images/onboarding/second.png',
+                    course['image'],
                     // Replace with your image path
-                    width: (117 / 430) * ScreenUtils.screenWidth(context),
-                    height: (74 / 932) * ScreenUtils.screenHeight(context),
+                    width: (110 / 430) * ScreenUtils.screenWidth(context),
+                    height: (130 / 430) * ScreenUtils.screenWidth(context),
                     fit: BoxFit.cover,
                   ),
                 ),

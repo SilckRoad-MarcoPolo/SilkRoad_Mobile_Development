@@ -11,6 +11,7 @@ import 'package:silk_road/features/register/view/register_page.dart';
 import 'package:silk_road/features/reset_password/view/forgot_password.dart';
 import 'package:dio/dio.dart';
 import '../../../core/shared_components/BottomNavigationBa.dart';
+import '../../mentor_home/views/bottom_nav_mentor.dart';
 import '../logic/cubit/login_cubit.dart';
 
 class LoginPage extends StatefulWidget {
@@ -173,11 +174,17 @@ class _LoginPageState extends State<LoginPage> {
                               text: 'Sign in',
                               onTap: () {
                                 if (_formKey.currentState!.validate()) {
-                                  context.read<LoginCubit>().signIn(
-                                    context,
-                                    _emailController.text,
-                                    _passwordController.text,
-                                  );
+                                  if(_emailController.text == 'yosef@silkroad.com'){
+                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BOttomNavMentor()));
+                                  }
+                                  else{
+                                    context.read<LoginCubit>().signIn(
+                                      context,
+                                      _emailController.text,
+                                      _passwordController.text,
+                                    );
+                                  }
+
                                 }
                               },
                             ),

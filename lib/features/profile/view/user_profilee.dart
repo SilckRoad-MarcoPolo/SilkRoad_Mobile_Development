@@ -26,35 +26,28 @@ class UserProfile extends StatelessWidget {
             ),
             CustomTextFormField(
               isEditable: false,
-              hintText: 'Dina Ragab',
+              hintText: 'userName: yosef shedid',
             ),
             SizedBox(
               height: (22 / 932) * ScreenUtils.screenHeight(context),
             ),
             CustomTextFormField(
               isEditable: false,
-              hintText: 'userName',
+              hintText: 'Phone Number:',
             ),
             SizedBox(
               height: (22 / 932) * ScreenUtils.screenHeight(context),
             ),
             CustomTextFormField(
               isEditable: false,
-              hintText: 'Phone Number',
+              hintText: 'Age: 21',
             ),
             SizedBox(
               height: (22 / 932) * ScreenUtils.screenHeight(context),
             ),
             CustomTextFormField(
               isEditable: false,
-              hintText: 'Age',
-            ),
-            SizedBox(
-              height: (22 / 932) * ScreenUtils.screenHeight(context),
-            ),
-            CustomTextFormField(
-              isEditable: false,
-              hintText: 'E-mail',
+              hintText: 'E-mail: yosef.shedied656@gmail.com',
             ),
             SizedBox(
               height: (22 / 932) * ScreenUtils.screenHeight(context),

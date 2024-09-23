@@ -10,60 +10,67 @@ class MyCourses extends StatelessWidget {
   // Dummy data for the three sections
   final Map<String, dynamic> backendCourse1 = {
     'name': 'Bootstrap',
-    'instructor': 'John Doe',
+    'instructor': 'Charlie Johnson',
     'progress': 80,
-    'image': 'assets/bootstrap.png',
+    'image': 'assets/images/trending/bootstrap.png',
   };
+
   final Map<String, dynamic> backendCourse2 = {
     'name': 'React',
-    'instructor': 'Jane Doe',
+    'instructor': 'Eve Thompson',
     'progress': 50,
-    'image': 'assets/react.png',
+    'image': 'assets/images/trending/react.png',
   };
+
   final Map<String, dynamic> backendCourse3 = {
     'name': 'Python',
-    'instructor': 'John Smith',
+    'instructor': 'Liam Matthews',
     'progress': 30,
-    'image': 'assets/python.png',
+    'image': 'assets/images/trending/python.png',
   };
 
   final Map<String, dynamic> frontendCourse1 = {
     'name': 'Bootstrap',
-    'instructor': 'Alice',
+    'instructor': 'Alice Williams',
     'progress': 80,
-    'image': 'assets/frontend_bootstrap.png',
+    'image': 'assets/images/trending/bootstrap.png',
   };
+
   final Map<String, dynamic> frontendCourse2 = {
     'name': 'Data Analysis',
-    'instructor': 'John Doe',
+    'instructor': 'David Johnson',
     'progress': 50,
-    'image': 'assets/data_analysis.png',
+    'image': 'assets/images/trending/data_analysis.png',
   };
+
   final Map<String, dynamic> frontendCourse3 = {
     'name': 'Docker',
-    'instructor': 'Mary Jane',
+    'instructor': 'Emily Adams',
     'progress': 30,
-    'image': 'assets/docker.png',
+    'image': 'assets/images/trending/docker.png',
   };
 
   final Map<String, dynamic> designCourse1 = {
     'name': 'Figma',
-    'instructor': 'Sarah Lee',
+    'instructor': 'Megan Lee',
     'progress': 80,
-    'image': 'assets/figma.png',
+    'image': 'assets/images/trending/figma.png',
   };
+
   final Map<String, dynamic> designCourse2 = {
     'name': 'Illustration',
-    'instructor': 'Mike Ross',
+    'instructor': 'Michael Green',
     'progress': 40,
-    'image': 'assets/illustration.png',
+    'image': 'assets/images/trending/illustration.png',
   };
+
   final Map<String, dynamic> designCourse3 = {
     'name': 'Photoshop',
-    'instructor': 'Anna Scott',
+    'instructor': 'Sophia Clark',
     'progress': 80,
-    'image': 'assets/photoshop.png',
+    'image': 'assets/images/trending/photoshop.png',
   };
+
 
   MyCourses({super.key});
 
@@ -75,8 +82,8 @@ class MyCourses extends StatelessWidget {
       elevation: 0,
       color: Colors.transparent,
       child: ListTile(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> CourseContent()));
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => CourseContent()));
         },
         shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -85,13 +92,18 @@ class MyCourses extends StatelessWidget {
             width: 1.5,
           ),
         ),
-        leading: ClipRRect(
-          borderRadius: BorderRadius.circular(8.0),
-          child: Image.asset(
-            "assets/images/onboarding/second.png",
-            width: (117 / 430) * ScreenUtils.screenWidth(context),
-            height: (74 / 932) * ScreenUtils.screenHeight(context),
-            fit: BoxFit.cover,
+        leading: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 6),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: SizedBox(
+              width: (100 / 430) * ScreenUtils.screenWidth(context),
+              height: (80 / 932) * ScreenUtils.screenHeight(context), // Explicit height and width
+              child: Image.asset(
+                course['image'],
+                fit: BoxFit.cover, // Ensures the image fits within the box
+              ),
+            ),
           ),
         ),
         title: Text(
@@ -113,7 +125,8 @@ class MyCourses extends StatelessWidget {
                 fontWeight: FontWeight.w400,
                 color: const Color.fromARGB(125, 0, 0, 0),
               ),
-            ),Text(
+            ),
+            Text(
               "40 hrs",
               style: TextStyle(
                 fontSize: (8 / 932) * ScreenUtils.screenHeight(context),
@@ -152,6 +165,7 @@ class MyCourses extends StatelessWidget {
         ),
       ),
     );
+
   }
 
 

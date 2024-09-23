@@ -16,60 +16,122 @@ class _IqSkillsState extends State<IqSkills> {
   int selectedIndex = 0;
 
   final List<Map<String, dynamic>> tracksAssessments = [
-    {'name': 'Bootstrap', 'week': 'week 1', 'questions': 50},
-    {'name': 'Python', 'week': 'week 2', 'questions': 50},
-    {'name': 'Adobe', 'week': 'week 3', 'questions': 50},
-    {'name': 'Python', 'week': 'week 1', 'questions': 50},
-    {'name': 'Django', 'week': 'week 2', 'questions': 50},
-    {'name': 'NEXT.JS', 'week': 'week 3', 'questions': 50},
-    {'name': 'MERN Stack', 'week': 'week 1', 'questions': 50},
-    {'name': 'Full Stack', 'week': 'week 2', 'questions': 50},
+    {
+      'name': 'Bootstrap',
+      'week': 'week 1',
+      'questions': 50,
+      'image': 'assets/images/trending/bootstrap.png'
+    },
+    {
+      'name': 'Python',
+      'week': 'week 2',
+      'questions': 50,
+      'image': 'assets/images/trending/python.png'
+    },
+    {
+      'name': 'Adobe',
+      'week': 'week 3',
+      'questions': 50,
+      'image': 'assets/images/trending/adobe.png'
+    },
+    {
+      'name': 'Python',
+      'week': 'week 1',
+      'questions': 50,
+      'image': 'assets/images/trending/python.png'
+    },
+    {
+      'name': 'Django',
+      'week': 'week 2',
+      'questions': 50,
+      'image': 'assets/images/trending/django.png'
+    },
+    {
+      'name': 'NEXT.JS',
+      'week': 'week 3',
+      'questions': 50,
+      'image': 'assets/images/trending/next_js.png'
+    },
+    {
+      'name': 'MERN Stack',
+      'week': 'week 1',
+      'questions': 50,
+      'image': 'assets/images/trending/mern.png'
+    },
+    {
+      'name': 'Full Stack',
+      'week': 'week 2',
+      'questions': 50,
+      'image': 'assets/images/trending/full_stack.png'
+    },
   ];
 
   final List<Map<String, dynamic>> lastResults = [
     {
+      'name': 'Adobe',
+      'level': 'Beginner',
+      'questions': 50,
+      'progress': 75,
+      'image': 'assets/images/trending/adobe.png'
+    },
+    {
+      'name': 'Bootstrap',
+      'level': 'Intermediate',
+      'questions': 50,
+      'progress': 60,
+      'image': 'assets/images/trending/bootstrap.png'
+    },
+    {
       'name': 'Data Analysis',
-      'level': 'Beginner',
-      'questions': 50,
-      'progress': 80
-    },
-    {
-      'name': 'SQL Server',
-      'level': 'Intermediate',
-      'questions': 50,
-      'progress': 80
-    },
-    {
-      'name': 'Flutter',
       'level': 'Professional',
       'questions': 50,
-      'progress': 80
+      'progress': 90,
+      'image': 'assets/images/trending/data_analysis.png'
     },
     {
-      'name': 'Web Development',
+      'name': 'Django',
       'level': 'Beginner',
       'questions': 50,
-      'progress': 80
+      'progress': 85,
+      'image': 'assets/images/trending/django.png'
     },
     {
-      'name': 'Linux Basics',
+      'name': 'Full Stack',
       'level': 'Intermediate',
       'questions': 50,
-      'progress': 80
+      'progress': 70,
+      'image': 'assets/images/trending/full_stack.png'
     },
     {
-      'name': 'Docker',
+      'name': 'MERN Stack',
       'level': 'Professional',
       'questions': 50,
-      'progress': 80
+      'progress': 65,
+      'image': 'assets/images/trending/mern.png'
     },
     {
-      'name': 'Node JS',
+      'name': 'Next.js',
       'level': 'Intermediate',
       'questions': 50,
-      'progress': 80
+      'progress': 80,
+      'image': 'assets/images/trending/next_js.png'
     },
+    {
+      'name': 'Python',
+      'level': 'Professional',
+      'questions': 50,
+      'progress': 88,
+      'image': 'assets/images/trending/python.png'
+    },
+    {
+      'name': 'React',
+      'level': 'Intermediate',
+      'questions': 50,
+      'progress': 78,
+      'image': 'assets/images/trending/react.png'
+    }
   ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -189,7 +251,7 @@ class TracksAssessmentCard extends StatelessWidget {
         onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> QuizStartScreen()));},
         visualDensity: VisualDensity(vertical: 3),
         leading: Image.asset(
-          "assets/images/techs/data_analysis.png",
+          assessment['image'],
           width: (100 / 430) * ScreenUtils.screenWidth(context),
           height: (70 / 932) * ScreenUtils.screenHeight(context),
         ),
@@ -231,7 +293,7 @@ class LastResultCard extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 8),
       child: ListTile(
         visualDensity: VisualDensity(vertical: 3),
-        horizontalTitleGap: 0,
+        horizontalTitleGap: 5,
         contentPadding:EdgeInsets.zero,
         onTap: () {
           Navigator.push(
@@ -241,11 +303,16 @@ class LastResultCard extends StatelessWidget {
                         arrowButton: false,
                       )));
         },
-        leading: Image.asset(
-          "assets/images/techs/data_analysis.png",
-          width: (130 / 430) * ScreenUtils.screenWidth(context),
-          height: (100 / 932) * ScreenUtils.screenHeight(context),
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Image.asset(
+            result['image'],
+            width: (100 / 430) * ScreenUtils.screenWidth(context),
+            height: (70 / 932) * ScreenUtils.screenHeight(context),
+            fit: BoxFit.cover,
+          ),
         ),
+
         title: Text(result['name'],
             style: const TextStyle(fontWeight: FontWeight.bold)),
         subtitle: Column(
