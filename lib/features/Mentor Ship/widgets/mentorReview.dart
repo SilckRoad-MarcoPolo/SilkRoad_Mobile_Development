@@ -94,4 +94,72 @@ class Mentorreview extends StatelessWidget {
         SizedBox( height: (18 / 932) * ScreenUtils.screenHeight(context),)
       ],
     );
+
+
+  }}
+
+  
+class mentorShipList extends StatelessWidget {
+  mentorShipList({super.key});
+
+ final List<Map<String,dynamic>>listRewviews=[
+  {'name':'Youssef Shedeed',
+  'rate':'3.5',
+  'track':'-Monile',
+
+  },
+  {'name':'Ahmed Magdy-AI',
+  'rate':'3.5',
+  'track':'-AI',
+
+ 
+  },
+   {'name':'Tamer Elgayar',
+  'rate':'3.2',
+  'track':'-Mobile',
+
+ 
+  }, {'name':'Mahmoud Salama-Frontend',
+  'rate':'2.3',
+  'track':'-Frontend',
+
+ 
+  }, {'name':'TAhmed Magdy-UI/UX',
+  'rate':'3',
+  'track':'-Monile',
+
+ 
+  }, {'name':'Peter Parker-DevOps',
+  'rate':'3',
+  'track':'-Monile',
+
+ 
+  }, {'name':'Bruce Wayne-Mobile',
+  'rate':'3',
+  'track':'-Monile',
+
+ 
+  },
+  
+  
+  
+  
+  
+  ];
+
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return  ListView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: 10,
+                    itemBuilder: (context,index){
+                      var reviewsList=listRewviews[index];
+                    return ReviewUser(reviewsList:reviewsList ,);
+                   }
+                   
+                   ) ;
   }}

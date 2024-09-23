@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
 
 class ReviewUser extends StatelessWidget {
-  const ReviewUser({super.key});
+  const ReviewUser({super.key,required this.reviewsList,
+  });
+
+ final Map<String, dynamic> reviewsList;
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +29,14 @@ class ReviewUser extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Youssef Shedeed',
+                       reviewsList['name'],
                         style: TextStyle(
                           fontSize:  ScreenUtils.screenHeight(context) * (16 / 932),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
-                        '2 weeks ago',
+                        reviewsList['time'],
                         style: TextStyle(
                           fontSize:  ScreenUtils.screenHeight(context) * (12 / 932),
                           color: Colors.grey,
@@ -51,7 +54,7 @@ class ReviewUser extends StatelessWidget {
                 thickness: 3, 
                 color: Color(0xffAFB1A0), 
               ),
-                      Text('3.5',style: TextStyle(
+                      Text(reviewsList['rate'],style: TextStyle(
         
                           color: Color(0xffAFB1A0),
                           fontSize:  ScreenUtils.screenHeight(context) * (16 / 932)
@@ -62,7 +65,7 @@ class ReviewUser extends StatelessWidget {
                   // Review text
                   
                   Text(
-                    'He is a great Mentor. He is the best. I would recommend to anyone.',
+                  reviewsList['desc'],
                     style: TextStyle(fontSize:  ScreenUtils.screenHeight(context) * (14 / 932)),
                   ),
                   
@@ -88,5 +91,61 @@ class ReviewUser extends StatelessWidget {
      
       ],
     );
+  }
+}
+class listOfRewviews extends StatelessWidget {
+  listOfRewviews({super.key});
+
+ final List<Map<String,dynamic>>listRewviews=[
+  {'name':'Youssef Shedeed',
+  'rate':'3.5',
+  'desc':'He is a great Mentor. He is the best. i would recommend to anyone .',
+  'time':'2 weeks ago'
+  },
+  {'name':'Tamer Elgayar',
+  'rate':'3',
+  'desc':'Amazing mentor! Helped me break down complex concepts into simple steps.',
+  'time':'3 weeks ago'
+  },
+{'name':'Youssef Shedeed',
+  'rate':'4',
+  'desc':'He is a great Mentor. He is the best. i would recommend to anyone .',
+  },
+{'name':'Lelia Abdelrahman',
+  'rate':'3.8',
+  'desc':'Super patient and knowledgeable—guided me through my toughest challenges.',
+  'time':'3 weeks ago'
+  },
+{'name':'Abdelbaset',
+  'rate':'2.5',
+  'desc':'Great experience! My mentor provided clear explanations and actionable advice.',
+  },
+{'name':'Allawi Abu Hussien',
+  'rate':'3.6',
+  'desc':'Very supportive and always available to help with career guidance.',
+  'time':'2 weeks ago'
+  },
+  {'name':'Adel Shakal',
+  'rate':'3.5',
+  'desc':'A true expert in the field—learned a lot in just a few sessions.',
+  'time':'3 weeks ago'
+  },
+
+
+
+ ];
+
+  @override
+  Widget build(BuildContext context) {
+    return  ListView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: 10,
+                    itemBuilder: (context,index){
+                      var reviewsList=listRewviews[index];
+                    return ReviewUser(reviewsList:reviewsList ,);
+                   }
+                   
+                   ) ;
   }
 }
