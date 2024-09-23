@@ -131,8 +131,10 @@ class MentorHomeView extends StatelessWidget {
            Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-             Students(name: "Amira Shawki",),
-              Students(name: "ElAmir Mansour",)
+             Students(name: "Amira Shawki",
+                   photo: 'assets/images/photo_6008145075550404211_m 5 (2).png',        ),
+              Students(name: "ElAmir Mansour",
+              photo: 'assets/images/photo_1_2024-09-18_03-10-14 3 (1).png',)
            ],)],),
          )
           ],

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
-import 'package:silk_road/features/Reviews/widgets/review_user.dart';
 
 class Mentorreview extends StatelessWidget {
-  const Mentorreview({super.key});
-
+  const Mentorreview({super.key,required this.mentorsList});
+final Map<String,dynamic>mentorsList;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,14 +28,14 @@ class Mentorreview extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Yousef Elgamily',
+                          mentorsList['name'],
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
-                          ' Backend',
+                          mentorsList['track'],
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.grey,
@@ -53,7 +52,7 @@ class Mentorreview extends StatelessWidget {
                         Icon(Icons.person, size: 19),
                         SizedBox(
                             width: (4 / 462) * ScreenUtils.screenWidth(context)),
-                        Text('7'),
+                        Text(mentorsList['people']), 
                       ],
                     ),
         
@@ -62,7 +61,7 @@ class Mentorreview extends StatelessWidget {
                         Icon(Icons.star, color: Colors.amber, size: 19),
                         SizedBox(
                             width: (4 / 462) * ScreenUtils.screenWidth(context)),
-                        Text('3.5'),
+                        Text(mentorsList['rate']),
                          SizedBox(
                             width: (140/ 462) * ScreenUtils.screenWidth(context)),
                           Container(
@@ -103,41 +102,48 @@ class Mentorreview extends StatelessWidget {
 class mentorShipList extends StatelessWidget {
   mentorShipList({super.key});
 
- final List<Map<String,dynamic>>listRewviews=[
+ final List<Map<String,dynamic>>mentorsList=[
   {'name':'Youssef Shedeed',
   'rate':'3.5',
-  'track':'-Monile',
+  'track':'-Mobile',
+   'people':'8'
 
   },
   {'name':'Ahmed Magdy-AI',
   'rate':'3.5',
   'track':'-AI',
+   'people':'9'
 
  
   },
    {'name':'Tamer Elgayar',
   'rate':'3.2',
   'track':'-Mobile',
+   'people':'5'
 
  
-  }, {'name':'Mahmoud Salama-Frontend',
+  }, {'name':'Mahmoud Salama',
   'rate':'2.3',
   'track':'-Frontend',
+ 'people':'10'
 
  
   }, {'name':'TAhmed Magdy-UI/UX',
   'rate':'3',
   'track':'-Monile',
+   'people':'11'
 
  
   }, {'name':'Peter Parker-DevOps',
   'rate':'3',
-  'track':'-Monile',
+  'track':'-DevOps',
+   'people':'12'
 
  
-  }, {'name':'Bruce Wayne-Mobile',
+  }, {'name':'Bruce Wayne',
   'rate':'3',
-  'track':'-Monile',
+  'track':'-Backend',
+   'people':'7'
 
  
   },
@@ -156,10 +162,10 @@ class mentorShipList extends StatelessWidget {
     return  ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
-                    itemCount: listRewviews.length,
+                    itemCount: mentorsList.length,
                     itemBuilder: (context,index){
-                      var reviewsList=listRewviews[index];
-                    return ReviewUser(reviewsList:reviewsList ,);
+                      var mentorShipList=mentorsList[index];
+                    return Mentorreview(mentorsList: mentorShipList,);
                    }
                    
                    ) ;

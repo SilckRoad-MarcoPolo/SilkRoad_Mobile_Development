@@ -4,8 +4,9 @@ import 'package:silk_road/core/helpers/screen_utils.dart';
 import '../../user_profile/user_profile_view.dart';
 
 class Students extends StatelessWidget {
-   Students({super.key, required this.name});
+   Students({super.key, required this.name,required this.photo});
   String name;
+  String photo;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class Students extends StatelessWidget {
        },
        child: Container(
         width: ScreenUtils.screenHeight(context) * (90 / 462), // Set width
-              height: ScreenUtils.screenHeight(context) * (183 / 932),
+              height: ScreenUtils.screenHeight(context) * (190 / 932),
           decoration: BoxDecoration(
                   border: Border.all(
                     color: Color(0xffDDDDDD),
@@ -33,7 +34,7 @@ class Students extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Center(child: Image.asset('assets/images/amir.jpeg')),
+          Center(child: Image.asset(photo)),
           Text(
                         name,
                         style: TextStyle(fontSize: ScreenUtils.screenHeight(context) * (20 / 932), fontWeight: FontWeight.w500),
