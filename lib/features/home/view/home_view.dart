@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/constants.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/features/ai_page/view/career_match_page.dart';
 import 'package:silk_road/features/home/widgets/card_tracks.dart';
 import 'package:silk_road/features/home/widgets/customSearch.dart';
 import 'package:silk_road/features/home/widgets/custom_appBar.dart';
@@ -44,7 +45,11 @@ class _HomeViewState extends State<HomeView> {
             SizedBox(
               height: (26 / 932) * ScreenUtils.screenHeight(context),
             ),
-            Image.asset('assets/images/Group 481720.png'),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> CareerMatchPage()));
+              },
+                child: Image.asset('assets/images/Group 481720.png')),
 
             SizedBox(
               height: (37 / 932) * ScreenUtils.screenHeight(context),

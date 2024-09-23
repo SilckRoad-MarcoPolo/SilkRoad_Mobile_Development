@@ -7,8 +7,10 @@ class CustOmSearch extends StatefulWidget {
     super.key,
     this.onChanged,
     this.prefixIcon,
+    this.controller
   });
   Widget? prefixIcon;
+  TextEditingController? controller;
   Function(String)? onChanged;
   @override
   State<CustOmSearch> createState() => _CustOmSearchState();
@@ -26,6 +28,7 @@ class _CustOmSearchState extends State<CustOmSearch> {
               _searchQuery = value;
             });
           },
+          controller: widget.controller,
           decoration: InputDecoration(
             hintText: 'Search',
             hintStyle: TextStyle(color: kGrey),

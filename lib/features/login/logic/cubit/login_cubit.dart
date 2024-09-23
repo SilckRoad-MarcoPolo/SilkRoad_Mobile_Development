@@ -21,7 +21,6 @@ class LoginCubit extends Cubit<LoginState> {
       Response response = await AuthApi.signInApi(email, password);
 
       if (response.statusCode == 200) {
-        // On success, emit LoginSuccess state
         emit(LoginSuccess());
         // You can navigate to the next page here after a successful login
 
