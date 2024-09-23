@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:silk_road/core/helpers/screen_utils.dart';
+import 'package:silk_road/features/Reviews/widgets/review_user.dart';
 
 class Mentorreview extends StatelessWidget {
   const Mentorreview({super.key});
@@ -155,7 +156,7 @@ class mentorShipList extends StatelessWidget {
     return  ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
-                    itemCount: 10,
+                    itemCount: listRewviews.length,
                     itemBuilder: (context,index){
                       var reviewsList=listRewviews[index];
                     return ReviewUser(reviewsList:reviewsList ,);

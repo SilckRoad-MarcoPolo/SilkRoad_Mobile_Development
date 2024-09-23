@@ -96,53 +96,60 @@ class ReviewUser extends StatelessWidget {
 class listOfRewviews extends StatelessWidget {
   listOfRewviews({super.key});
 
- final List<Map<String,dynamic>>listRewviews=[
-  {'name':'Youssef Shedeed',
-  'rate':'3.5',
-  'desc':'He is a great Mentor. He is the best. i would recommend to anyone .',
-  'time':'2 weeks ago'
-  },
-  {'name':'Tamer Elgayar',
-  'rate':'3',
-  'desc':'Amazing mentor! Helped me break down complex concepts into simple steps.',
-  'time':'3 weeks ago'
-  },
-{'name':'Youssef Shedeed',
-  'rate':'4',
-  'desc':'He is a great Mentor. He is the best. i would recommend to anyone .',
-  },
-{'name':'Lelia Abdelrahman',
-  'rate':'3.8',
-  'desc':'Super patient and knowledgeable—guided me through my toughest challenges.',
-  'time':'3 weeks ago'
-  },
-{'name':'Abdelbaset',
-  'rate':'2.5',
-  'desc':'Great experience! My mentor provided clear explanations and actionable advice.',
-  },
-{'name':'Allawi Abu Hussien',
-  'rate':'3.6',
-  'desc':'Very supportive and always available to help with career guidance.',
-  'time':'2 weeks ago'
-  },
-  {'name':'Adel Shakal',
-  'rate':'3.5',
-  'desc':'A true expert in the field—learned a lot in just a few sessions.',
-  'time':'3 weeks ago'
-  },
+final List<Map<String,dynamic>> listReviews = [
+    {
+      'name': 'Youssef Shedeed',
+      'rate': '3.5',
+      'desc': 'He is a great Mentor. He is the best. I would recommend him to anyone.',
+      'time': '2 weeks ago',
+    },
+    {
+      'name': 'Tamer Elgayar',
+      'rate': '3',
+      'desc': 'Amazing mentor! Helped me break down complex concepts into simple steps.',
+      'time': '3 weeks ago',
+    },
+    {
+      'name': 'Youssef Shedeed',
+      'rate': '4',
+      'desc': 'He is a great Mentor. He is the best. I would recommend him to anyone.',
+      'time': '3 weeks ago',
+    },
+    {
+      'name': 'Lelia Abdelrahman',
+      'rate': '3.8',
+      'desc': 'Super patient and knowledgeable—guided me through my toughest challenges.',
+      'time': '3 weeks ago',
+    },
+    {
+      'name': 'Abdelbaset',
+      'rate': '2.5',
+      'desc': 'Great experience! My mentor provided clear explanations and actionable advice.',
+      'time': '4 weeks ago',
+    },
+    {
+      'name': 'Allawi Abu Hussien',
+      'rate': '3.6',
+      'desc': 'Very supportive and always available to help with career guidance.',
+      'time': '2 weeks ago',
+    },
+    {
+      'name': 'Adel Shakal',
+      'rate': '3.5',
+      'desc': 'A true expert in the field—learned a lot in just a few sessions.',
+      'time': '3 weeks ago',
+    },
+  ];
 
-
-
- ];
 
   @override
   Widget build(BuildContext context) {
     return  ListView.builder(
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
-                    itemCount: 10,
+                    itemCount: listReviews.length,
                     itemBuilder: (context,index){
-                      var reviewsList=listRewviews[index];
+                      var reviewsList=listReviews[index];
                     return ReviewUser(reviewsList:reviewsList ,);
                    }
                    
