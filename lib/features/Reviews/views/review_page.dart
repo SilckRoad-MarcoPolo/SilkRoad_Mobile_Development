@@ -32,16 +32,7 @@ class ReviewPage extends StatelessWidget {
                 
                     RatingSummary(),
                     SizedBox(height: ScreenUtils.screenHeight(context) * (32 / 932),),
-                   ListView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: 10,
-                    itemBuilder: (context,index){
-                    return ReviewUser();
-                   }
-                   
-                   )
-                  ],
+                  listOfRewviews()]
                 ),
               ),
             ) ,
