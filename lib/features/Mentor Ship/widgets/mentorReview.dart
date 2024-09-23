@@ -30,8 +30,8 @@ final Map<String,dynamic>mentorsList;
                         Text(
                           mentorsList['name'],
                           style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                            fontSize:  ScreenUtils.screenHeight(context) * (18 / 932),
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
                         Text(
@@ -109,7 +109,7 @@ class mentorShipList extends StatelessWidget {
    'people':'8'
 
   },
-  {'name':'Ahmed Magdy-AI',
+  {'name':'Ahmed Magdy',
   'rate':'3.5',
   'track':'-AI',
    'people':'9'
@@ -128,13 +128,13 @@ class mentorShipList extends StatelessWidget {
  'people':'10'
 
  
-  }, {'name':'TAhmed Magdy-UI/UX',
+  }, {'name':'TAhmed Magdy',
   'rate':'3',
   'track':'-Monile',
    'people':'11'
 
  
-  }, {'name':'Peter Parker-DevOps',
+  }, {'name':'Peter Parker',
   'rate':'3',
   'track':'-DevOps',
    'people':'12'
